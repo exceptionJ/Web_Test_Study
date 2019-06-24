@@ -15,6 +15,7 @@ text-align: center;
 /* display:flex;align-items:center;justify-content:center; */
 
 line-height: 400px;
+position: relative;
 
 }
 .box011{
@@ -22,7 +23,12 @@ line-height: 400px;
     height: 100px;
     vertical-align:middle;
     /* display:inline-block;vertical-align:middle; */
-    
+    position: fixed;
+    top:50%;
+    right:10px;
+
+     margin-top:-50px;
+    /*margin-left: -50px; */
 }
 
 
@@ -32,6 +38,7 @@ line-height: 400px;
 float: right;
 width: 300px;
 height: 400px;
+
 
 }
 
