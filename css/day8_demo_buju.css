@@ -1,0 +1,44 @@
+.box00{
+border: 2px solid red;
+width: 500px;
+height: 400px;
+}
+.box01{
+float: left;
+height: 400px;
+width: 200px;
+margin: 0px;
+padding: 0px;
+
+text-align: center;
+/* padding-top:150px; */
+/* display:flex;align-items:center;justify-content:center; */
+
+line-height: 400px;
+
+}
+.box011{
+    width: 100px;
+    height: 100px;
+    vertical-align:middle;
+    /* display:inline-block;vertical-align:middle; */
+    
+}
+
+
+.box02{
+    margin: 0;
+    padding: 0;
+float: right;
+width: 300px;
+height: 400px;
+
+}
+
+.box022 p,.box023 p,.box024 p,.box021 p{
+padding: 0;
+margin: 0;
+height: 100px;
+line-height: 100px;
+
+}
