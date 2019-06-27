@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./list1-style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="list">
+
+        <form class="list-list" action="127.0.0.1" method="POST">
+            <fieldset>
+                <legend>Personal information:</legend>
+                <span>*</span> 游戏账号: <input type="text" name="youxizhanghao" id=""><br />
+                <ul>
+                    <li>账号长度不合法,请控制</li>
+                </ul>
+
+                &emsp;&emsp;<span>*</span> 密码: <input type="password" name="youximima" id=""><br />
+                <ul>
+                    <li>密码为数过少</li>
+                </ul>
+
+                <span>*</span> 确认密码: <input type="password" name="querenmima" id=""><br />
+                <ul>
+                    <li>密码不能为空</li>
+                </ul>
+
+                <span>*</span> 电子邮件: <input type="email" name="dianziyoujian" id=""><br />
+                <ul>
+                    <li>你输入的邮箱长度非法,请确认</li>
+                </ul>
+                <span>*</span> 身份证号: <input type="text" name="shengfenid" id=""><br />
+                <ul>
+                    <li>身份证号不正确</li>
+                </ul>
+
+                &emsp;&emsp;<span>*</span> 性别: &emsp;<label for="1">男</label><input type="radio" name="sex" id="1">
+                &emsp;<label for="2">女</label><input type="radio" name="sex" id="2"> <br /><br />
+
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" name="tongyi" id=""><a href="#">我已同意完全接受服务协议</a><br /><br /><br />
+
+                <input class="qurenzhuce" type="submit" value="确认注册">
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

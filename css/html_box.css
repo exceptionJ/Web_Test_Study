@@ -1,0 +1,7 @@
+td.t1 {padding: 1.5cm}
+td.t2 {padding: 0.5cm 5cm}
+h2.pos{
+    position: absolute;
+    left: 100px;
+    top: 350px
+}

@@ -1,0 +1,19 @@
+
+h1{
+     font-size: 80px;
+
+     color: #334433;
+}
+.pppp{
+     color: #2cca34;
+     background: #d3d3d3;
+     
+}
+
+body
+  { 
+    background-image:url('/img/1.png');
+    background-repeat:no-repeat;
+    background-position:50px 250px;
+    background-position:50% 50%;
+  }

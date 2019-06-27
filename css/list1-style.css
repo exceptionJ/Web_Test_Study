@@ -1,0 +1,32 @@
+ul{
+    position: relative;
+
+}
+li{
+    position: absolute;
+    top:-38px;
+    left: 300px;
+}
+div{
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+}
+span{
+    vertical-align:middle;
+    color: rgb(202, 16, 16);
+}
+/* fieldset{
+    width: 600px;
+    height: 400px;
+    
+} */
+.qurenzhuce{
+    display: block;
+    background-color: yellow;
+    width: 110px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+  
+}

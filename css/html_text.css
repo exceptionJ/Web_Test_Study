@@ -1,0 +1,16 @@
+p{
+    text-indent: -5em;
+    padding-left: 5em;
+}
+#p2{
+    text-indent: 10em;
+}
+div {width: 500px;}
+p {text-indent: 20%;}
+
+p.spread {word-spacing: 30px;}
+p.tight {word-spacing: -0.5em;}
+
+p.letter {
+    letter-spacing: 20px;
+}
