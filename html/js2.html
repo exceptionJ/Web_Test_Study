@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // alert(null==0);//返回false
+        // alert(!null==0);//返回false
+        // alert(!!null==0);//返回ture
+
+        // var all = {
+        //     1:2,
+        //     10:100,
+        //     name :'张三',
+        //     200:18,
+        //     98:'足球',
+        //     0:'男'
+        // };
+
+        // alert(all["name"])//这样就可以调用
+        // alert(all.name)//这样也可以调用
+        // // 因为默认会识别你的name是一个变量,所以要加引号,或者换个方式,用.的方式调用
+
+
+        //  var sum =2;
+        //  switch (sum) {
+        //      case 1:
+        //      alert('优秀');
+        //          break;
+        //     case 2:
+        //     alert('垃圾');
+        //         break;
+        //      default :
+
+        //      alert('哈麻批');
+        //          break;
+        //  }   
+        // var all = {
+        //     'name': '安吉拉北鼻',
+        //     'age': 88,
+        //     'work': 'av',
+        //     'sex': 'nv'
+        // }
+        // alert(all.age + all.name + all.work + all.sex);
+        // alert(all['name'] + all['age'] + all['work'] + all['sex']); //一样的,但是不建议
+
+        // var n =all.name;
+        // var a =all.age;
+        // var s =all.sex;
+        // var w =all.work;
+        // alert(n+a+w+s);
+        // //以下是with语句改良,吧属性作用域指定
+
+        // with(all) {
+        //         var n=name;
+        //         var a =age;
+        //         var s =sex;
+        //         var w =work;
+        // }
+        // alert(n+a+w+s);v
+        //     function all() {
+        //         var sum =0;
+        //         for (var v = 1; v <=3; v++) {
+        //             sum += v;
+        //         }
+        //         return sum;
+        //     }
+
+        //     alert(all()); //这里直接调用就可以来.return返回出里面计算的值给了all(),
+
+        //
+
+
+        //     function sum(a, b) {
+
+        //        var  sum = a + b;
+        //         return sum;
+        //     }
+        //     var c= sum(10,20)
+        //     alert(c);
+        //  //   alert(sum(10,20));
+
+        // function all() {
+        //     var sum=0;
+        //     for (var i = 0; i < arguments.length; i++) {
+        //          sum += arguments[i];
+        //     }
+        //     return sum;
+        // }
+        // alert(all(50,30,50));
+        // function all() {
+
+        //     for (var i = 0; i < arguments.length; i++) {
+
+        //     var c= arguments[i];
+        // }
+        // alert(all(c));
+
+        // var arr=[3,5,1,8,6,2,6];
+        // function bl() {
+        //     for(var i=0 ; i<arr.length; i++){
+        //         document.write(arr[i]+'\n');
+        //     }
+
+        // }
+        // // bl();
+
+        // function age(a) {
+        //     return a;
+        // }
+        // function age(a ,b) {
+        //     return a+b;
+        // }
+        // alert(age(20));
+        // function run(){
+        //     return 'pao';
+        // }
+        // var obj = new Object();
+        // obj.name='傻逼';
+        // obj.age=18;
+        // obj.run=run();
+        //     //这里介绍的是给对象添加方法
+
+        // document.write(obj.run);
+
+        // function sun(obj) {
+        //     if (obj.name != undefined) {
+        //         alert(obj.name)
+        //     };
+        //     if (obj.love != undefined) {
+        //         alert(obj.love)
+        //     }; //如果这里没有这个属性,却使用的调用,就会返回undefined
+        //     if (obj.age != undefined) {
+        //         alert(obj.age)
+        //     }; //所以可以在前面加一个判断
+        //     alert(obj.sex);
+
+        // }
+        // // var obj = {
+        // //     name: 'mic',
+        // //     age: 50,
+        // //     sex: 'nan'
+        // // }
+        // //这里的obj对象可以使用一个匿名对象写在下面.就是更高级版本.把对象封装到匿名函数里
+        // sun({
+        //     name: 'mic',
+        //      age: 50,
+        //     sex: 'nan'});
+        //     //这样就会更安全
+        // var arr =new Array();
+        //  alert(arr);
+        //  var arr2 =new Array(1,5,6,68,)
+        //     alert(arr2);
+
+        // 第一种方式自己添加属性和属性值
+        //     var arr =[];
+        //     arr['name']='高级黑';
+        //     arr['age']=55
+        //     //alert(arr); //这样添加字符串下标和属性是可以的.但是调用不能这样使用
+        //     alert(arr.name);//这样就可以返回'高级黑'
+        //     alert(arr['age']);//这样也是可以的 .
+        // //第二种方式添加
+        // var arr2 =[];
+        //     arr2[0]='高级黑';
+        //     arr2[1]=55              //如果是数字下标,就可以直接访问,体现数组
+        //     alert(arr2[0]);
+        //     alert(arr2[1]);
+
+
+
+        // var arr = ['张大', 18, '男人']
+        // arr[arr.length] = '贱人';
+        // alert(arr);  //此时返回的数字就是'张大', 18, '男人''贱人',已经在末尾添加来一个字符串
+
+            // var arr=['a','b','c'];
+            // arr.push('x','y','z');
+            // alert(arr);         //这里返回 a,b,c,x,y,z 
+
+            // arr.pop();      //这个方法会减去数组中最后一个元素,后进先出的原理
+            // alert(arr);         //返回 a,b,c,x,y
+
+
+            // var arr=['a','b','c'];
+            // var arr2=['x','u'];
+            // arr3 =arr.concat(arr2); //这里一定要有第3个数组来接收
+            // //或者写成   var arr3 =arr.concat('x','u');
+            // alert(arr2);
+            // alert(arr)  
+            // alert(arr3);   //因为当前数组arr arr2没有被改变
+
+var arr=['a','b','c'];
+var arr2=arr.slice(0,-1);
+alert(arr);
+alert(arr2);
+
+
+    </script>
+</body>
+
+</html>
