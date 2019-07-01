@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    var  date =new Date(Date.UTC(2019,11,12,20,2,3));
+        //     alert(date);
+        //  //  alert(Date.parse('11/2/2017'));
+        //   // alert(Date.UTC(2019,11,12,1,2,3));
+
+        // var date =new Date(2019,1,1,1,1,1);
+        // alert(date);
+        // alert(date.toString());
+        // alert(date.valueOf());
+
+        // var date =new Date();
+        // alert(date.getMonth()+1);//获取到的月份要+1才正常
+        // alert(date.getDay());
+
+        // var reg =new RegExp("dow","igm");
+        // console.log(reg);
+
+        //  var reg =/dow/igm;
+        //  console.log(reg);
+        //     var reg = new RegExp('oO','gm');
+        //     var str="12 fuck googleisbad";
+        //   alert(reg.exec(str)) ;
+        //     var reg=/[A-z]/ig;
+        //     var str='Today is fine day,today is fine day,1a2a3a4a5e6f7A8B9C';
+
+        //   alert(str.match(reg));//这里就会返回除了数字以外的字母所有
+
+        // var pattern = /(\d+)([a-z])/; //捕获性分组
+        // var str = '123abc';
+        // alert(pattern.exec(str))     //   123a,123,a
+
+
+        // var pattern = /(\d+)(?:[a-z])/; //非捕获性分组
+        // var str = '123abc';         //?:这个东西就标识不要被捕获
+        // alert(pattern.exec(str));     //123a,123
+
+
+        // 邮政编码匹配
+        // 一共6位,第一位不能为0,必须是全数字
+
+        //        var str ='           abc   b     c            ';
+        //        var reg=/\s/g;
+        //       var result= str.replace(reg,'');
+        //       alert('|'+result+'|');
+
+        //     var pattern = /\s/g; //g 必须全局，才能全部匹配
+        //     var str = '              111 222     333        ';
+        //     var result = str.replace(pattern, ''); //把空格匹配成无空格
+        //     alert(result);
+
+        // function age(num) {
+        //     if (num <= 1) {
+        //         return 1;
+        //     } else {
+        //         return num * arguments.callee(num - 1);
+        //     }//arguments.callee指的就是age函数本身
+
+        // }
+        // alert(age(3));//实现递归 3*2*1=6
+        window.name ='88号美女'
+        //alert(window.name);
+        //alert(this.name);
+
+        var person ={
+            name:'98号美女',
+            name2 :function(){
+                alert(this.name);
+            }
+           
+        }
+      
+        alert(person.name);
+        person.name2();
+    </script>
+</body>
+
+</html>
