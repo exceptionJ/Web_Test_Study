@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<SCript type="">
+
+
+
+    function fun() {
+        // console.log(this);
+        // console.log(this.name);
+        // var a = 123;
+        // return undefinded
+
+        return 123;
+
+    }
+    // fun();
+
+    // (function () {
+    //         alert(this);
+    //          alert(this.name)
+    //     })()
+
+
+
+    var obj1 ={
+        name:'abc',
+        sayName:fun,
+        // sayName:function () {
+        //     alert(this);
+        //      alert(this.name)
+        // }
+    }
+
+    // console.log(obj1);
+    // var obj2 ={
+    //     name:'xyz',
+    //     sayName : fun
+    // }
+    // var name ='全局window';
+
+    // window.fun();
+    // obj1.sayName;
+
+    console.log(obj1.sayName())
+
+ 
+// window
+</SCript>
+</body>
+</html>

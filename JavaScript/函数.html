@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function box(a ,num1){
+            return a(num1);          //sum(10)     20
+        }
+        function sum(num2) {
+            return num2+10;
+        }
+        // console.log(box(sum,10));//这里的sum是一个函数,当做参数传递到另一个函数里
+        // alert(box(sum,10));     //这里的返回是20
+
+
+
+        //arguments.collee  递归问题????????????
+        // function digui(num) {
+        //         if(num<=1){
+        //             return num=1;
+
+        //         }else{
+        //             return num*digui(num-1)
+        //         }
+        // }
+
+        // console.log(digui(5));
+
+
+
+        //this问题
+
+        // var color = "全局红"
+
+        // var jubu = {
+        //     color: '局部蓝',
+
+        //     sayColor: function () {
+        //         alert(this);
+        //         alert(this.color);
+        //     }
+        // }
+
+        // alert(this.color);  //这里的this是全局window下的
+        // jubu.sayColor();//这里是局部的.this指向的是jubu
+
+
+        // function person(name,age) {
+        //     return name+age;
+        // }
+        // //想知道函数传了多少个参数可以用length
+        // alert(person.length);//返回2个参数
+
+
+        //apply的使用
+
+        // function sum(num1, num2) {
+        //     return num1 + num2;
+        // }
+
+        // function maochong(num1, num2) {
+        //     return sum.apply(this, [num1, num2]); //this 表示作用域，这里是 window
+        // } //[]表示 box 所需要的参数
+        // function maochong2(num1, num2) {
+        //     return sum.apply(this, arguments); //也可以这样写 //arguments 对象表示 box 所需要的参数
+        // } //arguments本身就是一个接收数组的属性
+
+        // console.log(sum(10, 10));
+        // console.log(maochong(10, 10));
+        // console.log(maochong2(10, 10));
+
+
+        ///冒充对象
+        // var color='全局红';
+
+        // var box ={
+        //     color : "局部蓝",
+
+        // }
+
+        // function sayColor(){
+        //     alert(this.color);
+        // }
+
+        // //this.color;
+        // //sayColor();         // 全局
+        // // sayColor.call(box); //"局部蓝"用call方法时间对象冒充,冒充box作用域下
+        // // sayColor.call(window);//'全局红'冒充window.全局
+        // // sayColor.call(this);//'全局红'this就是window
+
+        // sayColor.apply(box);
+
+
+        // 函数列子
+        //     console.log("你好");
+        // sayHello();	// 调用函数
+
+        // // 定义函数
+        // function sayHello(){
+        // 	console.log("欢迎");
+        // 	console.log("welcome");
+        // }
+
+        //     function sum(a,b) {
+        //         return a+b;
+        //     }
+
+        //    console.log(sum(3,4));
+        //    console.log(sum('3',4)) ;
+        //    console.log(sum('hello','word'));
+
+        // console.log(fn) == console.log(function fn() {
+        //     alert(1)
+        // });
+
+        // //定义fn方法
+        // function fn() {
+        //     alert(1)
+        // };
+        // var aaa;
+
+
+        alert(aaa);
+
+        var aaa=123;
+    </script>
+</body>
+
+</html>
