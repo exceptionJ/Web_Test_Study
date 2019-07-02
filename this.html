@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<SCript type="">
+
+
+
+    function fun() {
+        alert(this);
+        alert(this.name)
+    }
+
+    var obj1 ={
+        name:'abc',
+        sayName:fun
+        // sayName:function () {
+        //     alert(this);
+        //      alert(this.name)
+        // }
+    }
+    var obj2 ={
+        name:'xyz',
+        sayName : fun
+    }
+    var name ='全局window';
+
+    //fun();
+    obj1.sayName();
+
+
+
+</SCript>
+</body>
+</html>
