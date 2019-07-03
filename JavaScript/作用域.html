@@ -10,26 +10,103 @@
 
 <body>
     <script>
-        var a = 5;
+        // var a = 5;
 
-        function foo() {
-            console.log(123);
-        }
+        // function foo() {
+        //     console.log(123);
+        // }
 
 
-        function foo3(){
-                console.log(this.a);
-            }
+        // function foo3(){
+        //         console.log(this.a);
+        //     }
 
-        var box = {
-            a :1 ,
-            foo2:foo3
-        }
+        // var box = {
+        //     a :1 ,
+        //     foo2:foo3
+        // }
 
-        window.foo(); //2  window.foo()
-        // box.foo2
+        // window.foo(); //2  window.foo()
+        // // box.foo2
 
         // console.log(a); //打印结果是2//1
+
+
+
+        // function box(a) { //按值传递，传递的参数是引用类型
+        //     a.name = 'Lee';
+        // }
+        // var p = new Object();
+        // box(p);
+        // alert(p.name);
+
+
+        var box = {
+            name: '哈皮'
+        };
+        box.name = 'dog';
+        box.name = null;   
+        box.name = 'dog';
+        console.log(box);
+
+        console.log(box.name);
+
+        // var box = {
+        //     name: '哈皮',
+        //     do1:a1,
+        //     do2:a1(),
+        //     do3:a2,
+        //     do4:b1
+        // };
+
+        // var c = 8;
+        // var d = 7;
+
+
+        // function a1(){
+        //     b = 2;
+        //     console.log("a1 函数执行打印出this:"+ this);
+            
+        // }
+
+   
+
+        // function a2(){
+        //     console.log("c 变量的值:"+ c);
+        //     // var c = 9;
+        //     // console.log("c 变量的值:"+ c);
+        //     d = 6;
+        //     console.log("d 变量的值:"+ d);
+        // }
+
+        // var b = 1;
+
+        // box.name = "hapi"
+
+
+
+        // console.log("b 变量的值:"+ b);    //         1
+
+        // a2();//a2 执行后依次打印出来的值              8     9    6
+
+        // console.log("box.name 的值:" + box.name);  //    hapi
+
+        // console.log("box.do1 的值:" + box.do1);    // a1函数体 
+
+        // console.log("box.do2 的值:" + box.do2); //undidefind
+
+        // console.log("box.do3 的值:" + box.do3); //a2函数体
+
+        // box.do1();  //box.do1 执行后
+
+        // box.do3();  //box.do3 执行后
+
+
+        // function b1(){
+        //     console.log(this);
+        // }
+        // b1();
+        // box.do4();
     </script>
 </body>
 

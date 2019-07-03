@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        //     var str = new String('字符串');
+
+        //     var num = new Number(110);
+
+        //     var bulr = new Boolean(true);
+
+        //     console.log(typeof str);
+
+        //     var str2 = '字符串2';
+        //     console.log(typeof str2); 
+
+        //    var c= str.substring(2);
+        //    alert(typeof c);
+
+
+        //   sort();   底层用到了charCodeAt();
+      
+        //需求：求一个字符串占有几个字符位。
+        //思路；如果是英文，站一个字符位，如果不是英文占两个字符位。
+        //技术点：判断该字符是否在0-127之间。（在的话是英文，不在是非英文）
+        var str = "sdfsfsdfwo我爱你";
+        alert(getZFWlength(str));
+        alert(str.length);​
+        //定义方法：字符位
+        function getZFWlength(string) {
+            //定义一个计数器
+            
+            var count = 0;
+            for (var i = 0; i < string.length; i++) {
+                //对每一位字符串进行判断，如果Unicode编码在0-127，计数器+1；否则+2
+                if (string.charCodeAt(i) < 128 && string.charCodeAt(i) >= 0) {
+                    count++;
+                } else {
+                    count += 2;
+                }
+            }
+            return count;
+        }
+    </script>
+</body>
+
+</html>

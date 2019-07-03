@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // var str = '\\我草?你大爷#';
+        // var a = encodeURL(str);
+        // var b = encodeURLcomponent(str);
+        // console.log(a);
+        // console.log(b);
+
+        // var str ='\\我草?你大爷#';
+        // var a =encodeURI(str);
+        // var b =encodeURIComponent(str);
+        // console.log(a);
+        // console.log(b);
+        // console.log("---------------------------------");
+
+        //  //解码
+        //  console.log(decodeURI(a));
+        //  console.log(decodeURIComponent(b));
+
+2-5
+        //随机数的生成
+       //  console.log        (Math.floor(Math.random()*10));//0-9随机数
+
+         function rom(a,b) {
+             var c= b-a+1;
+             return Math.floor(Math.random()*c+a);
+         }
+         document.write(rom(0,10));
+         document.write('<br />');
+
+         for(var i =0;i<8;i++){
+            document.write(rom(0,9));
+         }
+
+    </script>
+</body>
+
+</html>

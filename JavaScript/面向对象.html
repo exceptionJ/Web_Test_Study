@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var person=new Object();
+        // person.name='99号幺妹';
+        // person.age=28;
+        // person.run=function(){
+        //     return this.name+this.age+"岁"+"贵宾到了,接客了~~~"
+        // };
+
+
+        // var person2=person;
+        // person2.name='888号幺妹';
+        // person2.age=20;
+        // person2.run=function(){
+        //     return this.name+this.age+"岁"+"贵宾到了,接客了~~~"
+        // };
+
+        // console.log(person.run());
+        // console.log(person2.run());
+
+        // // var a = [1,2,3]
+        // var b = a;
+        // b[0] = 4;
+        // alert(a);
+        // alert(b);
+
+        // var a = {}
+        // var b = {}
+
+
+        // var obj1 = new Object();
+        // obj1.test = undefined;
+
+        // //创建对象 obj2
+        // var obj2 = new Object();
+        // obj2.name = "smyhvae";
+
+        // //将整个 obj2 对象，设置为 obj1 的属性
+        // obj1.test = obj2;
+
+        // console.log(obj1.test.name);
+
+
+     //工厂模式
+     //构造函数
+            function Factory(name,age) {
+                //var obj =new Object();
+                this.name=name;
+                this.age=age;
+                this.run=function () {
+                   return this.name+this.age+"运行中~~~~~~~~"
+                };
+
+                //return obj;
+            };
+            console.log((new Factory('王麻子1',60)).run()) ;
+            var b =new Factory('王麻子2',60);
+            var c =new Factory('王麻子3',60);
+            var d =new Factory('王麻子4',60);
+            var e =new Factory('王麻子5',60);
+           // console.log(a.run());
+            // console.log(b.run());
+            // console.log(c.run());
+            // console.log(d.run());
+            // console.log(e.run());
+            
+    </script>
+</body>
+
+</html>
