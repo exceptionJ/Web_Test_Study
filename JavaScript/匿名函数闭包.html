@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li class="a">111111</li>
+        <li class="a">11111</li>
+        <li class="a">1111</li>
+        <li class="a">1111</li>
+        <li class="a">111</li>
+        <li class="a">111</li>
+    </ul>
+
+    <script>
+        // //把匿名函数的返回值赋值给变量
+        // var box =(function (){
+        // return'Lee';
+        // })();
+        // alert(box);
+        //匿名函数的调动
+        // function box() {
+        //     return function () {
+        //             return 'lee'
+        //     }
+        // }
+
+        // console.log(box()());
+
+        //闭包
+
+        // 函数里面有函数,里通过宁一个函数方位这个函数的局部变量\
+
+        // 通过闭包可以返回局部变量
+
+        // function box(){
+        //     var user ='worinima';
+        //     return function(){
+        //         return user; 
+        //     };
+        // }
+
+        // console.log(box()());
+
+        // 闭包的一个特点就是把局部变量驻留在内存中可以避免使用全局变量
+        // var a=100;
+        // function add(){
+        //     a++;
+        //     return a;
+        // }
+        // add()
+        // alert(a);
+        // add()
+        // alert(a);
+        // add()
+        // alert(a);
+
+        // function add(){
+        //     var a=100;
+        //     return function(){
+        //         a++;
+        //         return a;
+        //     };
+        // }
+
+        // var sum=add();
+        // alert(sum());
+        // alert(sum());
+        // alert(sum());
+
+        //数组闭包 和匿名函数循环中出现的问题
+
+
+        // function bl() {
+        //     var arr=[5,56,8,1,3,7];
+        //     for (var i = 0 ; i<arr.length;i++) {
+        //         arr[i]=(function(x){
+        //             return x;
+        //             })(arr[i]);
+        //         }
+        //         return arr;
+        // }
+        // var a=bl();
+        // alert(a);
+        // alert(a.lenght);
+        // for(var i =0 ; i<a.length;i++){
+        //     alert(a[i]);
+        // }
+
+
+        // var aLi = document.getElementsByClassName("a");
+        // for (var i = 0 ; i< aLi.length; i++) {
+        //     (function(x){aLi[i].onclick = function(){
+        //         console.log(x);
+        //     }
+        //     })(i)
+        // }
+
+        // function box(){
+        //     var a = 1;
+        //     a++;
+        //     console.log(a);
+
+        // }
+
+        // box();
+        // box();box();box();box();
+
+
+        //闭包驻留父函数的局部变量
+        // function box(){
+        //     var  a = 1;
+        //     return function (){
+        //         a++;
+        //         console.log(a);
+        //     }
+        // }
+
+        // var fn = box();
+
+        // fn();
+        // fn();
+        // fn();
+        // fn();
+
+
+
+        // //将父函数的 this 传给闭包函数内，不然的话闭包内的 this 是永远指向 window 的
+        // function box2(){
+        //     var  _this = this;
+        //     return function (n){
+        //         console.log(n);
+        //     }(_this)
+        // }
+
+        // box2();
+
+        // function obj(o) {
+        //     function F() {}
+        //     F.prototype = o;
+        //     return new F();
+        // }
+
+        // function create(box, desk) {
+        //     var f = obj(box.prototype);
+        //     f.constructor = desk;
+        //     desk.prototype = f;
+        // }
+
+        // function Box(n) {
+        //     this.name = n;
+        //     this.arr = ['哥哥', '妹妹', '父母'];
+        // }
+        // Box.prototype.run = function () {
+        //     return this.name;
+        // };
+
+        // function Desk(name, age) {
+
+        //     this.name = name;
+        //     this.arr = ['哥哥', '妹妹', '父母'];
+
+        //     this.age = age;
+        // }
+        // inPrototype(Box, Desk); //通过这里实现继承
+        // var desk = new Desk('Lee', 100);
+        // this.age = 100
+        // desk.arr.push('姐姐');
+        // alert(desk.arr);
+        // alert(desk.run()); //只共享了方法
+        // var desk2 = new Desk('Jack', 200);
+        // alert(desk2.arr); //引用问题解决
+
+
+
+        // function fn() {
+        //     console.log(this);
+        // }
+        // fn.call([1, 2, 3]); //[1, 2, 3]     直接调用了函数
+        // fn.apply({
+        //     a: 1
+        // }); //Object {a: 1}        直接调用了函数
+        // fn.bind([4, 5, 6]); //没log ，因为bind只是绑定，并未直接调用函数
+        // var f = fn.bind([4, 5, 6]); //返回新函数
+        // f(); //[4, 5, 6]
+
+
+
+        //私有 作用域
+        function si(a) {
+            for (var i = 0; i <a;i++) {
+                return
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
