@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="a"><a></a></div>
+
+    <script>
+        //confirm
+        // if (confirm('哈皮,选择')) {
+        //     alert('你点的确定');
+        // } else {
+        //     alert('你点的取消');
+        //      }
+
+        //输入提示框  prompt(text,defaultInput) 
+
+        //prompt('输入222内容',5534)
+
+
+
+        // open('http://www.baidu.com');
+
+        // var leftX = (typeof screenLeft == 'number') ? screenLeft : screenX;
+        // var topY = (typeof screenTop == 'number') ? screenTop : screenY;
+
+        // alert(leftX);
+        // alert(topY);
+
+
+        // var width = window.innerWidth; //这里要加 window，因为 IE 会无效
+        // var height = window.innerHeight;
+        // if (typeof width != 'number') { //如果是 IE，就使用 document
+        //     if (document.compatMode == 'CSS1Compat') {
+        //         width = document.documentElement.clientWidth;
+        //         height = document.documentElement.clientHeight;
+        //     } else {
+        //         width = document.body.clientWidth; //非标准模式使用 body
+        //         height = document.body.clientHeight;
+        //     }
+        // }
+
+
+        // alert(width);
+        // alert(height);
+
+        //setTimeout 设置好多毫秒后运行
+        //   setTimeout("alert('在座的各位都是垃圾')",3000);
+
+        // function run() {
+        //     alert('在做的各位都是垃圾');
+        // }
+
+        // setTimeout(run,5000);
+
+
+
+        //    var x= setTimeout(function run () {
+        //         alert('11111111111');
+        //     },3000);
+
+        //   //  alert(x);
+        //     clearTimeout(x);
+
+
+        //定时器  递归
+
+
+        // var sum=0;
+        // var max =5;
+        // function set() {
+        //     sum++;
+        //     document.getElementById('a').innerHTML+=sum;
+        //     if(sum==max){
+        //         alert('gameover');
+        //     }else{
+        //         setTimeout(set,1000);
+        //     }
+        // }
+        // setTimeout(set,1000);
+
+
+
+
+        //alert(window.location);
+
+
+        // location.hash='#66';
+        // alert(location.hash);
+
+        // alert(location.port);
+        // alert(location.hostname);
+
+        //alert(window.navogator)
+
+        // alert(navigator.appName)
+
+        // document.write('浏览器名称：' + navigator.appName+'</br>');
+        // document.write('浏览器版本：' + navigator.appVersion+'</br>');
+        // document.write('浏览器用户代理字符串：' + navigator.userAgent+'</br>');
+        // document.write('浏览器所在的系统：' + navigator.platform+'</br>');
+
+        // for (var i = 0; i <= navigator.plugins.length; i++) {
+        //     document.write(navigator.plugins[i].name + '<br/>');
+        // }
+
+        // function hasPlugin(name) {
+        //     var name = name.toLowerCase();
+        //     for (var i = 0; i < navigator.plugins.length; i++) {
+        //         if (navigator.plugins[i].name.toLowerCase().indexOf(name) > -1) {
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
+        // alert(hasPlugin('Shockwave Flash')); //检测 Flash 是否存在
+        // alert(hasPlugin('java')) //检测 Java 是否存在
+
+
+        // function hasFlash() {
+        //     var result = hasPlugin('Flash');
+        //     if (!result) {
+        //         result = hasIEPlugin('ShockwaveFlash.ShockwaveFlash');
+        //     }
+        //     return result;
+        // };
+        // //检测 Flash
+        // alert(hasFlash());
+
+
+        // for (var i = 0; i < navigator.mimeTypes.length; i++) {
+        //     if (navigator.mimeTypes[i].enabledPlugin != null) {
+        //         document.write('<dl>');
+        //         document.write('<dd>类型名称：' + navigator.mimeTypes[i].type + '</dd>');
+        //         document.write('<dd>类型引用：' + navigator.mimeTypes[i].enabledPlugin.name +
+        //             '</dd>');
+        //         document.write('<dd>类型描述：' + navigator.mimeTypes[i].description + '</dd>');
+        //         document.write('<dd>类型后缀：' + navigator.mimeTypes[i].suffixes + '</dd>');
+        //         document.write('</dl>')
+        //     }
+        // }
+
+
+        // //BOM 章节的一段程序
+        // var width = window.innerWidth; //如果是非 IE 浏览器
+        // if (typeof width != 'number') { //如果是 IE，就使用 document
+        //     if (document.compatMode == 'CSS1Compat') {
+        //         width = document.documentElement.clientWidth;
+        //     } else {
+        //         width = document.body.clientWidth; //非标准模式使用 body
+        //     }
+        // }
+        // alert(width);
+
+        // document.write(navigator.userAgent);
+//浏览器检测
+
+            // var client =function () {
+
+            //     var engine ={
+            //         ie : false,
+            //         firfox:false,
+            //         chrme: false,
+            //         opera: false,
+            //         khtml :false,   
+
+            //         var:0
+            //     };
+                    
+                
+
+
+            //     var ua =navigator.userAgent;
+
+            //         if(window.opera){
+            //             engine.opera=ture;
+            //             engine.ver=window.opera.version();
+                        
+            //         } 
+
+
+                 
+
+
+
+
+
+            //         return {
+            //         engine:engine
+            //     };
+
+            //  }();
+
+             
+        
+     
+		
+
+
+
+
+ getBrowser: function();
+
+            getBrowser: function() {  // 获取浏览器名
+					  var rMsie = /(msie\s|trident\/7)([\w\.]+)/;  
+					  var rTrident = /(trident)\/([\w.]+)/;  
+					  var rEdge = /(edge)\/([\w.]+)/;//IE
+					  
+					  var rFirefox = /(firefox)\/([\w.]+)/;  //火狐
+					  var rOpera = /(opera).+version\/([\w.]+)/;  //旧Opera
+					  var rNewOpera = /(opr)\/(.+)/;  //新Opera 基于谷歌
+					  var rChrome = /(chrome)\/([\w.]+)/; //谷歌 
+					  var rUC = /(ubrowser)\/([\w.]+)/;//UC
+					  var rMaxthon = /(maxthon)\/([\w.]+)/;//遨游
+					  var r2345 =  /(2345explorer)\/([\w.]+)/;//2345
+					  var rQQ =  /(qqbrowser)\/([\w.]+)/;//QQ
+					  //var rMetasr =  /(metasr)\/([\w.]+)/;//搜狗
+					  var rSafari = /version\/([\w.]+).*(safari)/;
+					  
+					  var ua = navigator.userAgent.toLowerCase();  
+ 
+					  var matchBS, matchBS2;  
+					  
+					  //IE 低版
+					  matchBS = rMsie.exec(ua);  
+					  if (matchBS != null) {  
+						  matchBS2 = rTrident.exec(ua);  
+						  if (matchBS2 != null) {  
+							  switch (matchBS2[2]) {  
+							  case "4.0":  
+								  return {  
+									  browser:  
+									  "Microsoft IE",  
+									  version: "IE: 8"  //内核版本号
+								  };  
+								  break;  
+							  case "5.0":  
+								  return {  
+									  browser:  
+									  "Microsoft IE",  
+									  version: "IE: 9"  
+								  };  
+								  break;  
+							  case "6.0":  
+								  return {  
+									  browser:  
+									  "Microsoft IE",  
+									  version: "IE: 10"  
+								  };  
+								  break;  
+							  case "7.0":  
+								  return {  
+									  browser:  
+									  "Microsoft IE",  
+									  version: "IE: 11"  
+								  };  
+								  break;  
+							  default:  
+								  return {  
+									  browser:  
+									  "Microsoft IE",  
+									  version: "Undefined"  
+								  };  
+							  }  
+						  } else {  
+							  return {  
+								  browser: "Microsoft IE",  
+								  version: "IE:"+matchBS[2] || "0"  
+							  };  
+						  }  
+					  }  
+					  //IE最新版
+					   matchBS = rEdge.exec(ua);  	 				   
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "Microsoft Edge",  
+							  version: "Edge/"+matchBS[2] || "0"  
+						  };  
+					  }  
+                                          //UC浏览器					  
+					  matchBS = rUC.exec(ua);                         		   
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "UC",  
+							  version: "ubrowser/"+matchBS[2] || "0"  
+						  };  
+					  }  
+					  //火狐浏览器
+					  matchBS = rFirefox.exec(ua);  
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "火狐",  
+							  version: "Firefox/"+matchBS[2] || "0"  
+						  };  
+					  }  
+                                          //Oper浏览器					 
+					 matchBS = rOpera.exec(ua);  
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "Opera",  
+							  version: "Opera/"+matchBS[2] || "0"  
+						  };  
+					  }  
+					  //遨游
+					   matchBS = rMaxthon.exec(ua);  	 				   
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "遨游",  
+							  version: "Maxthon/"+matchBS[2] || "0"  
+						  };  
+					  }  
+                                          //2345浏览器					  
+ 					  matchBS = r2345.exec(ua);  	 				   
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "2345",  
+							  version: "2345explorer/ "+matchBS[2] || "0"  
+						  };  
+					  }  
+                                          //QQ浏览器					  
+					  matchBS = rQQ.exec(ua);  	 				   
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  return {  
+							  browser: "QQ",  
+							  version: "qqbrowser/"+matchBS[2] || "0"  
+						  };  
+					  }  
+					  //Safari（苹果）浏览器
+					  matchBS = rSafari.exec(ua);  
+					  if ((matchBS != null) && (!(window.attachEvent)) && (!(window.chrome)) && (!(window.opera))) {  
+						  return {  
+							  browser: "Safari",  
+							  version: "Safari(win版)/"+matchBS[1] || "0"  
+						  };  
+					  }  
+					  //谷歌浏览器
+					   matchBS = rChrome.exec(ua);  
+					  if ((matchBS != null) && (!(window.attachEvent))) {  
+						  matchBS2 = rNewOpera.exec(ua);  
+						  if (matchBS2 == null) {  
+							  return {  
+								  browser: "谷歌",  
+								  version: "Chrome/"+matchBS[2] || "0"  
+							  };  
+						  } else {  
+							  return {  
+								  browser: "Opera",  
+								  version: "opr/"+matchBS2[2] || "0"  
+							  };  
+						  }  
+					  }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
