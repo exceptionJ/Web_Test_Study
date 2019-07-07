@@ -38,6 +38,23 @@
 // }
 
 
-window.onload =function () {
-    
+// window.onload =function () {
+//     var box=document.getElementById('list');
+//     //alert(box.attributes[0]); //返回节点对象[object Attr]
+//     alert(box.attributes[0].nodeName);
+//     alert(box.attributes[0].nodeType);
+//     alert(box.attributes[0].nodeValue);
+
+//     alert(box.attributes[1].nodeName);
+//     alert(box.attributes[1].nodeType);
+//     alert(box.attributes[1].nodeValue);
+// }
+
+
+window.onload =function fn() {
+    var box =document.getElementById('list');
+    var tj =document.createElement('p');
+    box.appendChild(tj);
+    //var c=document.createTextNode('我是剃头猪')
+     tj.appendChild(document.createTextNode('我是剃头猪'));
 }
