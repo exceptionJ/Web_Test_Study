@@ -133,55 +133,61 @@ contains(b,a)
 
 
 
-var a =123;
-var b = a;
-b++;
-console.log( a+ " | " + b );    //123 | 124
-function box( n ){
-   n++;
-   console.log( a );//123
-}
-box(a);
-console.log( a );//123
+// var a =123;
+// var b = a;
+// b++;
+// console.log( a+ " | " + b );    //123 | 124
+// function box( n ){
+//    n++;
+//    console.log( a );//123
+// }
+// box(a);
+// console.log( a );//123
 
 
-var oa = {name:123}
-var ob = oa;
-ob.name++
-console.log( oa);   //124
-console.log( ob );  //124
+// var oa = {name:123}
+// var ob = oa;
+// ob.name++
+// console.log( oa);   //124
+// console.log( ob );  //124
 
 
-function setName(obj){
-    obj.name = "apple";
-}
-var fruit = {};
-setName(fruit);
-console.log(fruit.name);    //apple   fruit对象被改变了
+// function setName(obj){
+//     obj.name = "apple";
+// }
+// var fruit = {};
+// setName(fruit);
+// console.log(fruit.name);    //apple   fruit对象被改变了
 
 
-function setName2(obj){
-    obj.name = "apple";
-    obj = {};
-    obj.name = "dog"  //这里的赋值,是对原fruit2 没有操作到的
-}
-var fruit2 = {};
-setName2(fruit2);
-console.log(fruit2.name);   
+// function setName2(obj){
+//     obj.name = "apple";
+//     obj = {};
+//     obj.name = "dog"  //这里的赋值,是对原fruit2 没有操作到的
+// }
+// var fruit2 = {};
+// setName2(fruit2);
+// console.log(fruit2.name);   
 
 
 
-function someFun (num, obj1, obj2) {
-    num *= 20;
-    obj1.name = "李四";
-    obj2 = 123;
-}
-let num = 10;
-let person1 = {name: "张三"};
-let person2 = {age: 24};
-someFun(num, person1, person2);
-console.log(num);  //10
-console.log(person1);   //{name: "李四"}
-console.log(person2);   //{age: 24}
+// function someFun (num, obj1, obj2) {
+//     num *= 20;
+//     obj1.name = "李四";
+//     obj2 = 123;
+// }
+// let num = 10;
+// let person1 = {name: "张三"};
+// let person2 = {age: 24};
+// someFun(num, person1, person2);
+// console.log(num);  //10
+// console.log(person1);   //{name: "李四"}
+// console.log(person2);   //{age: 24}
 
 
+var obj = new Object();
+obj.name = "Nicholas";
+obj = new Object();
+obj.name = "Greg";
+
+alert(obj.name);
