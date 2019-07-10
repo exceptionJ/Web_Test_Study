@@ -20,8 +20,12 @@
 
 
     <script>
-
-
+         
+        try {                   //尝试着执行 try 包含的代码
+            window.worinima();   //不存在的方法
+        } catch (e) {           //如果有错误，执行 catch，e 是异常对象
+            alert('发生错误啦，错误信息为：' + e); //直接打印调用 toString()方法
+        }
     </script>
 </body>
 
