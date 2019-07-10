@@ -83,12 +83,13 @@
             if (obj.addEventLisenner) {
                 obj.addEventLisenner(type, fn)
             }
-        } else if (ovj.attachEvent) {
+        }else if(ovj.attachEvent){
             ovj.attachEvent('on' + type, fn)
-        }
+        };
 
         addEvent()
-        // 
+        
+
     </script>
 
 </body>
