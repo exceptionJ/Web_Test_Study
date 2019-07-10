@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件绑定深入</title>
+</head>
+<style>
+    .dv1 {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <div class="dv1">
+        测试Div
+    </div>
+
+
+    <script>
+        // window.addEventListener('load',function () { 
+        //     alert('事件1');
+        //  },false);
+        //  window.addEventListener('load',function () {  
+        //     alert('事件2')
+        // },false);
+        // // 事件切换
+        // var point = document.getElementsByTagName('div')[0];
+        // point.addEventListener('click',toRed, false);
+
+        // //point.addEventListener('click', toBack(), false);
+
+        // function toRed() {
+        //     this.style.backgroundColor = 'red';
+        //     this.style.height='300px';
+        //     this.style.width='300px';
+        //     this.removeEventListener('click', toRed, false);
+        //     this.addEventListener('click', toBack, false);
+        // }
+
+        // function toBack() {
+        //     this.style.height='100PX';
+        //     this.style.width='100px';
+        //     this.style.backgroundColor = 'pink'
+        //     this.removeEventListener('click', toBack, false);
+        //     this.addEventListener('click', toRed, false);
+        // }
+        // //事件切换结束
+
+        //IE处理
+        // 事件切换
+        //     var point = document.getElementsByTagName('div')[0];
+        //     point.attachEvent('onclick', toRed);
+
+        //     //point.addEventListener('click', toBack(), false);
+
+        //     function toRed() {
+        //         var _this=window.event.srcElement;
+        //         _this.style.backgroundColor = 'red';
+        //         _this.style.height = '300px';
+        //         _this.style.width = '300px';
+        //         _this.detachEvent('onclick', toRed);
+        //         _this.attachEvent('onclick', toBack);
+        //     }
+
+        //     function toBack() {
+        //         var _this=window.event.srcElement;
+        //         _this.style.height = '100PX';
+        //         _this.style.width = '100px';
+        //         _this.style.backgroundColor = 'pink'
+        //         _this.detachEvent('onclick', toBack);
+        //         _this.attachEvent('onclick', toRed);
+        //     }
+        //     //事件切换结束
+
+        //添加事件兼容代码
+
+        function addEvent(obj, type, fn) {
+            if (obj.addEventLisenner) {
+                obj.addEventLisenner(type, fn)
+            }
+        } else if (ovj.attachEvent) {
+            ovj.attachEvent('on' + type, fn)
+        }
+
+        addEvent()
+        // 
+    </script>
+
+</body>
+
+</html>
