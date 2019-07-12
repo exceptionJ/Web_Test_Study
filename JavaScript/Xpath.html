@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Xpath</title>
+</head>
+
+<body>
+    <div>测试div</div>
+
+
+    <script>
+        //首先，我们需要跨浏览器获取 XML DOM
+        function getXMLDOM(xmlStr) {
+            var xmlDom = null;
+            if (typeof window.DOMParser != 'undefined') { //W3C
+                xmlDom = (new DOMParser()).parseFromString(xmlStr, 'text/xml');
+                var errors = xmlDom.getElementsByTagName('parsererror');
+                if (errors.length > 0) {
+                    throw new Error('XML 解析错误：' + errors[0].firstChild.nodeValue);
+                }
+            } else if (typeof window.ActiveXObject != 'undefined') { //IE
+                var version = [
+                    'MSXML2.DOMDocument.6.0',
+                    'MSXML2.DOMDocument.3.0',
+                    'MSXML2.DOMDocument'
+                ];
+                for (var i = 0; i < version.length; i++) {
+                    try {
+                        xmlDom = newActiveXObject(version[i]);
+                    } catch (e) {
+                        //跳过
+                    }
+                }
+                xmlDom.loadXML(xmlStr);
+                if (xmlDom.parseError != 0) {
+                    throw new Error('XML 解析错误：' + xmlDom.parseError.reason);
+                }
+            } else {
+                throw new Error('您所使用的系统或浏览器不支持 XML DOM！');
+            }
+            return xmlDom;
+        }
+        //其次，我们还必须跨浏览器序列化 XML
+        function serializeXML(xmlDom) {
+            var xml = '';
+            if (typeof XMLSerializer != 'undefined') {
+                xml = (new XMLSerializer()).serializeToString(xmlDom);
+            } else if (typeof xmlDom.xml != 'undefined') {
+                xml = xmlDom.xml;
+            } else {
+                throw new Error('无法解析 XML！');
+            }
+            return xml;
+        }
+
+
+
+        function selectSingleNode(xmlDom, xpath ) {
+            var node = null;
+            if (typeof xmlDom.evaluate != 'undefined') {
+                var patten = /\[(\d+)\]/g;
+                var flag = xpath.match(patten);
+                var num = 0;
+                if (flag !== null) {
+                    num = parseInt(RegExp.$1) + 1;
+                    xpath = xpath.replace(patten, '[' + num + ']');
+                }
+                var result = xmlDom.evaluate(xpath, xmlDom, null,
+                    XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+                if (result !== null) {
+                    node = result.singleNodeValue;
+                }
+            } else if (typeof xmlDom.selectSingleNode != 'undefined') {
+                node = xmlDom.selectSingleNode(xpath);
+            }
+            return node;
+        }
+
+
+         
+        // 跨浏览器获取xml对象
+        var xmlStr = "<root><user id='5'></user><user id='6'></user></root>";
+        var xmlDom = getXMLDOM(xmlStr);
+
+        var node=selectSingleNode(xmlDom,'root/user');
+        alert(node.nodeValue);
+    </script>
+</body>
+
+</html>
