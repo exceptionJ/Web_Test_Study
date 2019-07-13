@@ -122,5 +122,16 @@ window.onload = function () {
     // for(var i=0;i<10;i++){
     //     alert(outer());
     // }
+    //var ppdiv = document.getElementById('sc3');
+    var pp = document.getElementsByTagName('p')[1];
+
+    pp.onclick = function () {
+        pp.innerHTML = time();
+
+    }
+
+    function time() {
+        return new Date();
+    }
 
 }
