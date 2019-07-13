@@ -122,16 +122,46 @@ window.onload = function () {
     // for(var i=0;i<10;i++){
     //     alert(outer());
     // }
-    //var ppdiv = document.getElementById('sc3');
-    var pp = document.getElementsByTagName('p')[1];
+    var ppdiv = document.getElementById('sc3');
+    var pp = ppdiv.getElementsByTagName('p')[0];
 
     pp.onclick = function () {
         pp.innerHTML = time();
+        pp.style.backgroundColor = 'red'
 
     }
 
     function time() {
         return new Date();
     }
+
+
+    var div1 = document.getElementsByClassName('sc001')[0];
+    var a = div1.onmouseover = function () {
+        div1.innerHTML = '百变小可爱';
+    }
+    div1.onmouseout = function () {
+        div1.innerHTML = 'hhehh'
+
+    }
+//定时器显示时间
+    var myVar = setInterval(function () {
+        myTimer()
+    }, 1000);
+
+    function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("demo").innerHTML = t;
+    }
+
+    function myStopFunction() {
+        clearInterval(myVar);
+    }
+//问题2
+
+
+
+
 
 }
