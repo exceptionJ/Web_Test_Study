@@ -1,4 +1,4 @@
-div{
+.sc001{
     height: 100px;
     width: 100px;
     background-color: #cc3334;
@@ -6,4 +6,7 @@ div{
 #sc{
     width: 100%;
     background-color: #cccc; 
+}
+p{
+    background-color:blue;
 }

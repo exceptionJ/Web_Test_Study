@@ -89,29 +89,38 @@ window.onload = function () {
     //     alert(all);
 
 
-    function outerFunction() {
-        var counter = 0;
+    // function outerFunction() {
+    //     var counter = 0;
 
-        function innerFunction() {
-            return counter += 1;
-        }
-        return innerFunction;
-        /*
-         注意 typeof innerFunction 是：function；而typeof innerFunction（）是number；
-        */
-    }
-    var add = outerFunction();
+    //     function innerFunction() {
+    //         return counter += 1;
+    //     }
+    //     return innerFunction;
+    //     /*
+    //      注意 typeof innerFunction 是：function；而typeof innerFunction（）是number；
+    //     */
+    // }
+    // var add = outerFunction();
 
-    /* 
-    调用 outerFunction()返回的是内部函数innerFucntion,那么调用几次add()将调用几次
-    内部函数inner Function，内部函数公用了counter，所以能够计数,所以说闭包就是将内部嵌套函数变成外部可调用的。
-    */
+    // /* 
+    // 调用 outerFunction()返回的是内部函数innerFucntion,那么调用几次add()将调用几次
+    // 内部函数inner Function，内部函数公用了counter，所以能够计数,所以说闭包就是将内部嵌套函数变成外部可调用的。
+    // */
 
-    alert(add());
-    alert(add());alert(add());alert(add());alert(add());
-    
+    // alert(add());
+    // alert(add());alert(add());alert(add());alert(add());
 
+    // //改写为简单闭包样子;
+    // var outer = (function () {
+    //     var count = 0;
+    //     return function () {
+    //         return count += 1;
+    //     }
 
+    // })();
 
+    // for(var i=0;i<10;i++){
+    //     alert(outer());
+    // }
 
 }
