@@ -39,8 +39,22 @@
     </div>
     <p>我是div下面的哈皮2号</p>
     <p id="demo"></p>
+    <script >
+       var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStopFunction() {
+    alert('111');
+    clearInterval(myVar);
+}
+    </script>
     <button onclick="myStopFunction()">停止</button>
-    <script src="" async defer></script>
+    <!-- <script src="" async defer></script> -->
 </body>
 
 </html>

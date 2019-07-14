@@ -145,20 +145,40 @@ window.onload = function () {
 
     }
 //定时器显示时间
-    var myVar = setInterval(function () {
-        myTimer()
-    }, 1000);
+    // var myVar = setInterval(myTimer, 1000);
 
-    function myTimer() {
-        var d = new Date();
-        var t = d.toLocaleTimeString();
-        document.getElementById("demo").innerHTML = t;
-    }
+    // function myTimer() {
+    //     var d = new Date();
+    //     var t = d.toLocaleTimeString();
+    //     document.getElementById("demo").innerHTML = t;
+    // }
 
-    function myStopFunction() {
-        clearInterval(myVar);
-    }
+    // function myStopFunction() {
+    //     alert('111');
+    //     clearInterval(myVar);
+    // }
+
+
+
+    // function setInterval(a,b){
+    //     b 秒后 我就执行一次   a()
+    // }
 //问题2
+
+// function Sum (){
+//     this.z = 18
+// }
+
+// var box = new Sum();  //{ z :18 }
+
+// function sum2(){
+//     return this.z
+// }
+
+// var all=sum2.call(box);
+
+//alert(all); //18
+
 
 
 
