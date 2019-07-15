@@ -6,7 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+#div1{
+    width: 200px;
+    height: 200px;
+    background-color: red; 
+    opacity: 0.3;
+    filter:alpha(opacity=30);
+    
+    
+    
+}
+</style>
 <body>
     
+    <div id='div1'>
+
+    </div>
+
+    <script>
+
+
+     var alpha=30;  
+     var timer=null;
+
+    var oDiv=document.getElementById('div1');
+    function run(myTaget) {
+        clearInterval(timer);
+       timer= setInterval(function(){
+            var speed=0;
+            if(alpha<myTaget){
+                speed=1;
+            }else{
+                speed=-1;
+            }
+            if(myTaget==alpha){
+              clearInterval(timer);
+            }else{
+                alpha+=speed;
+                oDiv.style.opacity=alpha/100;
+            }
+        },30);
+    }
+    oDiv.onmouseover=function(){
+        run(100)
+    }
+    oDiv.onmouseout=function(){
+        run(30)
+    }
+    </script>
 </body>
 </html>
