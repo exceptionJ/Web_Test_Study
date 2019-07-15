@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #oDIV {
+        height: 200px;
+        width: 200px;
+        background-color: pink;
+        position: absolute;
+
+    }
+</style>
+
+<body>
+    <div id="oDIV">
+        RUNing Man
+    </div>
+</body>
+<script>
+    var oDIV = document.getElementById('oDIV');
+    var tinmer;
+    var speed = 10;
+
+    function run() {  
+        var w = document.documentElement.clientWidth
+        // console.log(w);
+        var dvw = oDIV.clientWidth;
+        //console.log(dvw);
+
+        clearInterval(tinmer);
+        tinmer = setInterval(function () {
+            if (oDIV.offsetLeft >= w - dvw) {
+                clearInterval(tinmer);
+            } else {
+                oDIV.style.left = oDIV.offsetLeft + speed + 'px'
+                //  console.log(oDIV.offsetLeft);
+            }
+
+        }, 30)
+        //console.log(tinmer);
+    }
+    oDIV.onclick = function () {
+        //alert('1');
+        run();
+    }
+</script>
+
+</html>

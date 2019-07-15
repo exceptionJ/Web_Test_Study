@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<form action="">
+    <input id='btn1' type="button" value='替换按钮'>
+</form>
+
+
+<!-- 需求
+    一个按钮,点一下弹1,再点弹2.  1和2交替弹 -->
+
+<!-- 
+    <form action="">
+        <input id='btn1' type="button" value='交替按钮'>
+    </form>
+
+
+
+    <script>
+        var btn1 = document.getElementById('btn1');
+
+        var flag = true;
+        btn1.onclick = function () {
+
+            
+            flag=!flag ?alert('1'):alert('2');
+            // if (flag) {
+            //     alert('1')
+            //    // flag = false;
+            //     console.log(flag);
+
+            // } else {
+            //     alert('2')
+            //   //  flag = true;
+            //
+        } -->
+<script>
+    //有一个数组,有5项.每一项都是数字
+
+    // var arr=[[1,2,3],[2,4],[576,45,56],[8,0,453],[2,45,953]];
+    //每一位都加1
+    var arr = [433, 53, 7, 56, 3]
+    //var  arr2     ; 
+
+    var body = document.getElementsByTagName('body')[0];
+    //console.log(p);
+    // var pp = body.appendChild(p)
+    for (var i = 0; i < arr.length; i++) {
+
+        var p = document.createElement('p');
+        var pp = body.appendChild(p)
+
+        pp.innerHTML = arr[i]
+
+        if (i == arr.length - 1) {
+            p.setAttribute('class', 'ppp');
+
+        }
+        //console.log(body);
+        //arr[i]}
+
+
+
+    }
+
+    // console.log(arr);
+
+    // arr.push(3);
+    // console.log(arr);
+    // arr.shift();
+    // console.log(arr);
+
+    var person = {
+        name: "狗逼",
+        age: 88,
+    }
+    var i;
+    for (i in person) {
+        console.log(person[i]);
+    }
+
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        // alert('11')
+        var ppp = document.getElementsByClassName('ppp')[0];
+        ppp.innerHTML = person.name
+    }
+</script>
+
+</html>
