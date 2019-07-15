@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function person(name,age) {
+        //     return{
+        //         name:name,
+        //         age:age,
+        //         sayName:function(){
+        //             console.log('tell me  why');
+        //         }
+
+        //     }
+        //   }
+        //  var p1=person('张三','12')
+        //   p1.sayName();
+
+        //构造函数,更优雅的构造函数
+        // function CreatPerson(name,age) {  
+        //     this.name=name;
+        //     this.age=age;
+        //     this.run=function(){
+        //        console.log(this.name+this.age+"run~~~~~~~~~~"); 
+        //     }
+        // }
+        // var p1=new CreatPerson('张三',12);
+        // p1.run();
+
+        // var p2=new CreatPerson('李四',32);
+        // p2.run();
+
+        // console.log(p1.constructor===p2.constructor); 
+
+        //为了不浪费内存空间,我们可以把共享的属性或者方法写进原型中
+        function Person(name, age) {
+
+            this.name = name;
+            this.age = age;
+        }
+        // //console.log(Person.prototype);
+        Person.prototype.type = '是个人';
+        console.log(Person.prototype);
+
+        Person.prototype.run = function () {
+
+              return  this.type + this.name + this.age + "run~~~~~~~~~~~"
+                 }
+
+                // Person.prototype={
+                //     constructor:Person,
+                //     type:"是个人",
+                //     run:function(){
+                //         this.type+ this.name+this.age+"run~~~~~~~~~~~"
+                //     }
+                // }
+                // Person.prototype = {
+                //     run:function(){
+                //       return this.type+ this.name+this.age+"run~~~~~~~~~~~"
+                //     }
+                // }
+                var p1 = new Person('李四', 23);
+
+                console.log(p1.run());
+    </script>
+</body>
+
+</html>
