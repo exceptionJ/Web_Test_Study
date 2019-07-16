@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    background-image: url(16.jpg);
+    background-repeat: no-repeat;
+}
+
+a:link,
+a:visited {
+    color: white;
+    display: inline-block;
+    line-height: 32px;
+    margin-right: 13px;
+    font-size: 13px;
+    font-family: arial;
+}
+
+.top_div_big {
+    width: 1349px;
+    height: 32px;
+    /* opacity: 0.5; */
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.top_div_a {
+    float: left;
+
+
+
+}
+
+.top_div_b {
+    float: right;
+
+}
+#dv3{
+    position: relative;
+}
+.box{
+    /* height: 100px; */
+    width: 70px;
+    background-color: #fff;
+    font-size: 13px;
+    line-height: 25px;
+    position: absolute;
+    right: 50px;
+    display: none;
+   
+
+}
+.box p{
+    border: 1px solid gray;
+}
+
+
+.logo_div_img {
+    height: 150px;
+    width: 1349PX;
+
+}
+
+.logo_img {
+    display: block;
+    width: 270px;
+    height: 129px;
+    margin: 0 auto;
+}
+
+.logo_div_serch_all {
+
+    height: 104px;
+    width: 1349PX;
+}
+
+.logo_div_serch {
+
+    /* display: block;
+    margin: 0 auto; */
+    text-align: center;
+    position: relative;
+
+}
+
+.logo_div_submit {
+    text-align: center;
+    float: left;
+
+}
+
+#dw {
+    margin: 0 auto;
+}
+
+#a {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 9px;
+    height: 20px;
+    width: 480PX;
+    padding-right: 40px;
+    font-family: arial;
+}
+
+#b {
+    height: 40px;
+    width: 104PX;
+    border: 0px;
+    line-height: 40px;
+    font-weight: 400px;
+    font-family: arial;
+}
+
+i {
+    position: absolute;
+    left: 850px;
+    top: 2px;
+}
+
+#dv2 {
+    position: relative;
+    height: 600px;
+    width: 1349px;
+}
+
+.xxk_div_big {
+    border: 1px solid gray;
+    width: 780px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.img_last {
+    height: 400px;
+    /* width: 800px; */
+}
+
+.img_last img {
+    height: 460px;
+    width: 780px;
+
+}
+
+#c {
+    height: 40px;
+    width: 100px;
+    font-weight: 800;
+}
+
+#d {
+    height: 40px;
+    width: 100px;
+    font-weight: 800;
+}
+
+.img_last2 img {
+    height: 460px;
+    width: 780px;
+    display: none;
+
+}
+
+.btn2 {
+    background-color: whitesmoke;
+    border-bottom: 1px solid gray;
+}
+.di{
+width: 1349px;
+text-align: center;
+}
+.didi{
+    color:rgb(255, 255, 255);
+    font-size: 13px;
+}
