@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>五星评分</title>
+    <style>
+        li {
+            list-style-type: none;
+            background-image: url(../img/kongxing.png);
+            /* ../img/micon.png */
+            height: 20px;
+            width: 20px;
+            background-repeat: no-repeat;
+
+            float: left;
+
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <li><img src="./" alt=""></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+    <div id="dv1">
+        <ul>
+
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <P></P>
     </div>
-    <P>一般</P>
+
 </body>
+<script>
+    window.onload = function () {
+            var odiv = document.getElementById('dv1');
+            var oli = odiv.getElementsByTagName('li');
+            //alert(oli);
+            var op = document.getElementsByTagName('p');
+            op[0].innerHTML
+
+            opArr = ['一般', '可以', '将就', '较好', '完美'];
+
+
+
+            var i = 0;
+
+
+            for (i = 0; i < oli.length; i++) {
+
+                oli[i].index = i;
+
+                oli[i].onmouseover = function () {
+
+                    oli[i]
+                    for (var j = 0; j <= this.index; j++) {
+                        oli[j].style.backgroundImage = "url(../img/micon.png)"
+                        op[0].innerHTML=opArr[(this.index)];
+                    }
+
+                    // this.style.backgroundImage = "url(../img/micon.png)"
+
+                }
+                oli[i].onmouseout = function () {
+                    for (var t = 0; t < oli.length; t++) {
+
+                        oli[t].style.backgroundImage = "url(../img/kongxing.png)"
+
+                        op[0].innerHTML='';
+
+                    }
+
+
+                }
+
+            }
+
+         
+
+    }
+</script>
+
 </html>
