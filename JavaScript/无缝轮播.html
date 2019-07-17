@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        ul {
+            /* width: 1600px; */
+            position: absolute;
+            left: 0px;
+
+
+        }
+
+        li {
+            height: 200px;
+            width: 400px;
+            float: left;
+            list-style-type: none;
+        }
+
+        ul img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #lt {
+            position: relative;
+            /* border: 1px solid red; */
+
+            height: 200px;
+            width: 800px;
+            overflow: hidden;
+            margin: 0 auto
+        }
+
+
+        #a1 {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            z-index: 100;
+
+        }
+
+        #a2 {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <!-- 伦图 -->
+    <div id="lt">
+        <!-- 按钮 -->
+
+        <a id='a1' href="javascript:void(0);"><img src="../img/icon.png" alt=""></a>
+        <a id='a2' href="javascript:void(0);"><img src="../img/icon1.png" alt=""></a>
+
+        <ul>
+            <li><a href="javascript:void(0);"><img src="../img/201.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/274.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/418.jpg" alt=""></a></li>
+            <li><a href="javascript:void(0);"><img src="../img/473.jpg" alt=""></a></li>
+
+        </ul>
+    </div>
+
+
+
+</body>
+<script>
+    window.onload = function () {
+
+        var oul = document.getElementById('lt').getElementsByTagName('ul')[0];
+
+        var oli = document.getElementsByTagName('li');
+
+
+
+
+        oul.innerHTML += oul.innerHTML;
+        oul.style.width = oli[0].offsetWidth * oli.length + 'px';
+
+        var speed = 5;
+        var timer = null;
+
+        function run() {
+
+
+            oul.style.left = oul.offsetLeft - speed + 'px'
+
+            if (oul.offsetLeft < -oul.offsetWidth / 2) {
+                oul.style.left = '0px';
+            }
+        }
+
+        function run2() {
+
+            oul.style.left = oul.offsetLeft + speed + 'px'
+
+            if (oul.offsetLeft> 0) {
+               oul.style.left=-oul.offsetWidth/2+'px';
+            }
+        }
+
+        var aaaa = document.getElementById('a1');
+        var bbbb = document.getElementById('a2');
+
+
+        aaaa.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(run, 30)
+
+        }
+        bbbb.onclick = function () {
+            clearInterval(timer);
+            timer= setInterval(run2, 30);
+        }
+
+
+    }
+</script>
+
+</html>
