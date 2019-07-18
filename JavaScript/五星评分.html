@@ -37,49 +37,49 @@
 </body>
 <script>
     window.onload = function () {
-            var odiv = document.getElementById('dv1');
-            var oli = odiv.getElementsByTagName('li');
-            //alert(oli);
-            var op = document.getElementsByTagName('p');
-            op[0].innerHTML
+        var odiv = document.getElementById('dv1');
+        var oli = odiv.getElementsByTagName('li');
+        //alert(oli);
+        var op = document.getElementsByTagName('p');
+        op[0].innerHTML
 
-            opArr = ['一般', '可以', '将就', '较好', '完美'];
-
-
-
-            var i = 0;
+        opArr = ['一般', '可以', '将就', '较好', '完美'];
 
 
-            for (i = 0; i < oli.length; i++) {
 
-                oli[i].index = i;
+        var i = 0;
 
-                oli[i].onmouseover = function () {
 
-                    oli[i]
-                    for (var j = 0; j <= this.index; j++) {
-                        oli[j].style.backgroundImage = "url(../img/micon.png)"
-                        op[0].innerHTML=opArr[(this.index)];
-                    }
+        for (i = 0; i < oli.length; i++) {
 
-                    // this.style.backgroundImage = "url(../img/micon.png)"
+            oli[i].index = i;
+
+            oli[i].onmouseover = function () {
+
+
+                for (var j = 0; j <= this.index; j++) {
+                    oli[j].style.backgroundImage = "url(../img/micon.png)"
+                    op[0].innerHTML = opArr[(this.index)];
+                }
+
+                // this.style.backgroundImage = "url(../img/micon.png)"
+
+            }
+            oli[i].onmouseout = function () {
+                for (var t = 0; t < oli.length; t++) {
+
+                    oli[t].style.backgroundImage = "url(../img/kongxing.png)"
+
+                    op[0].innerHTML = '';
 
                 }
-                oli[i].onmouseout = function () {
-                    for (var t = 0; t < oli.length; t++) {
 
-                        oli[t].style.backgroundImage = "url(../img/kongxing.png)"
-
-                        op[0].innerHTML='';
-
-                    }
-
-
-                }
 
             }
 
-         
+        }
+
+
 
     }
 </script>

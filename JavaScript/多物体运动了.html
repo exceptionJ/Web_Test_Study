@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多物体运动</title>
+    <style>
+        div {
+            height: 50px;
+            width: 100px;
+            background-color: red;
+            margin-top: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+<script>
+    //单个物体匀速运动
+
+    // window.onload = function () {
+    //     var oDiv = document.getElementById('div1');
+    //     oDiv.onmouseover = function () {
+    //         stMove(500);
+    //     }
+
+    //     var timer = null;
+
+    //     function stMove(iTargat) {
+    //         clearInterval(timer);
+    //         timer = setInterval(function () {
+    //             var speed = 0;
+    //             if (oDiv.offsetWidth < iTargat) {
+    //                 speed = 5;
+    //             } else {
+    //                 speed = -5;
+    //             }
+    //             if (iTargat-oDiv.offsetWidth<=7) {
+    //                 clearInterval(timer);
+    //                 oDiv.style.width=iTargat;
+    //             } else {
+    //                 oDiv.style.width = oDiv.offsetWidth + speed + 'px';
+    //             }
+    //         }, 30);
+
+
+    //     }
+    // }
+    //---------------------------------------------------------------------
+
+    //缓冲运动
+
+    // window.onload=function(){
+
+    //     var oDiv=document.getElementById('div1');
+    //     oDiv.onmouseover=function(){
+    //         stMove(800);
+    //     }
+    //     var timer=null;
+    //     function stMove(iTarget){
+
+    //         clearInterval(timer);
+    //         timer=setInterval(function () { 
+    //             var speed=0;
+    //             speed=(iTarget-oDiv.offsetLeft)/25;
+    //             if(speed>0){
+    //                 Math.ceil(speed);
+    //             }else{
+    //                 Math.floor(speed);
+    //             }
+
+    //             if(oDiv.style.left==oDiv.offsetLeft){
+    //                 clearInterval(timer);
+    //             }else{
+    //                 oDiv.style.left=oDiv.offsetLeft+speed+'px'
+    //             }
+
+
+    //          },30);
+    //     }
+
+    // }
+    window.onload = function () {
+        var oDiv = document.getElementsByTagName('div');
+
+        for (var i = 0; i < oDiv.length; i++) {
+            oDiv[i].timer = null;
+            oDiv[i].onmouseover = function () {
+
+                stMove(this, 800);
+            }
+            oDiv[i].onmouseout = function () {
+                // alert('1');
+                stMove(this, 100);
+            }
+        }
+ 
+        // ------------------
+        // 被调用的运动函数
+        function stMove(obj, iTarget) {
+            clearInterval(obj.timer)
+            obj.timer = setInterval(function () {
+                var speed = 0;
+                var w =  obj.offsetWidth;
+                speed = (iTarget - w) / 30;
+                if (speed > 0) {
+                    Math.ceil(speed);
+                } else {
+                    Math.floor(speed);
+                }
+                if (w == iTarget) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.width = w + speed + 'px';
+                }
+
+
+            }, 30);
+
+        }
+
+    }
+</script>
+
+</html>
