@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>offset的bug</title>
+    <style>
+    div{
+        width: 100px;
+        height: 50px;
+        background-color: chartreuse;
+        border: 10px solid red;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+
+<script>
+var oDiv=document.getElementById('div1');
+oDiv.onmouseover=function(){
+    setInterval(function(){
+        oDiv.style.width=oDiv.offsetWidth+20+'px'
+    },30);
+
+}
+
+//封装一个获取style属性的函数
+//obj是指要获取哪个dom对象
+//arrt是指要取dom对象的哪个属性,注意要加引号,例如'width'
+function getStyle(obj,attr) { 
+    if(obj.currentStyle){
+        return obj.currentStyle[attr];
+    }else{
+        return getComputedStyle(obj,false)[attr]
+    }
+ }
+console.log(getStyle(oDiv,'border'));
+
+</script>
+</html>
