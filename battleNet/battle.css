@@ -1,0 +1,322 @@
+* {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    
+    font-size: 宋体;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#mengban {
+    /* background-color: rgba(255, 255, 255, 0.1);
+    height: 800px;
+    position: absolute;
+     */
+
+
+}
+
+a {
+    opacity: 0.7;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+body {
+    min-width: 1000px;
+    background-color: rgb(219, 219, 219);
+
+}
+
+.main-bg {
+
+    height: 550px;
+
+    background-image: url(./img/layout/bg-top.jpg)
+}
+
+.top-out {
+
+    background-color: rgba(255, 255, 255, 0.1);
+    line-height: 60px;
+    height: 59px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-logo a img {
+
+    width: 120px;
+    height: 59px;
+    /* background-image: url(./img/layout/bnet-default-cn.png); */
+    /* border: 1px solid red; */
+
+}
+
+
+.top-left {
+
+
+    float: left;
+}
+
+.top-right {
+
+    float: right;
+}
+
+.top-l {
+    font-weight: 400;
+    font-size: 19px;
+    float: left;
+    padding-left: 20px;
+
+}
+
+.top-r {
+    font-weight: 400;
+    font-size: 18px;
+    float: right;
+    padding-right: 20px;
+}
+
+
+/* -------------------------------------------------------- */
+/* 菜单定位 */
+/* 游戏caidan */
+
+.youxi-list-div {
+    position: absolute;
+    /* border: 1px solid red; */
+    top: 60px;
+    left: 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: none;
+
+}
+
+.youxi-list-div>div {
+    color: rgba(255, 255, 255, 0.8);
+    height: 200px;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+
+
+    width: 100px;
+}
+
+.youxi-list-div>div>img {
+    height: 100px;
+    width: 100px;
+
+}
+
+/* 店子竞技菜单 */
+.dianzijingji {}
+
+/* 电子竞技的ul */
+.dianzijingji-list {}
+
+.dianzijingji-list>li {
+    display: none;
+}
+
+/* ========== */
+/* 店子账户 */
+.wodezhanghu {}
+
+.wodezhanghu>li {
+    display: none;
+}
+
+/* ------------------------------------- */
+
+.mid-logo {
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.youxi-app-logo {
+    position: absolute;
+    width: 250px;
+    height: 256px;
+    right: 30px;
+    top: 200px;
+    overflow: hidden;
+
+}
+
+.youxi-app-logo>img {}
+
+
+.mid-text {
+    position: absolute;
+    top: 250px;
+    left: 30px;
+}
+
+#mid-text2 {
+    font-size: 28px;
+    display: block;
+    width: 644px;
+    height: 79px;
+    line-height: 45px;
+}
+
+#mid-text2-span {
+    font-size: 14px;
+    border: 1px solid gainsboro;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    bottom: 7px;
+}
+
+#mid-text-btn {
+    position: absolute;
+    top: 120px;
+    background-color: rgb(0, 141, 197);
+    width: 120px;
+    height: 18px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    line-height: 18px;
+    margin: 5px 0;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+#mid-text-login {
+    position: absolute;
+    top: 132px;
+    left: 150px;
+    color: rgb(0, 141, 197);
+
+}
+
+/* game展示 -----------------------------------------*/
+.zhongkong {
+    height: 400px;
+    background-image: url(./img/layout/bg-middle.jpg);
+    background-repeat: no-repeat;
+    /* width: 100%;
+    height: 150%; */
+    border-bottom: 5px solid gray;
+
+
+}
+
+.game-zs-big {
+    position: absolute;
+    top: 480px;
+    left: 40px;
+
+}
+
+.game-zs-big>a {
+    height: 394px;
+    width: 164px;
+    float: left;
+    /* border: 1px solid red; */
+    opacity: 1;
+    position: relative;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.game-zsdv {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 400;
+    width: 164px;
+    text-align: center;
+    line-height: 50px;
+
+
+}
+
+/* 结束 */
+.end {
+    height: 400px;
+    opacity: 1;
+    background-color: rgb(3, 3, 3);
+}
+
+.end-logo {
+    opacity: 1;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.end-txt1 {
+    width: 450px;
+    margin: 20px  auto;
+    
+   
+   
+}
+
+.end-txt1>a {
+    display: block;
+    font-size: 17px;
+    font-weight: 400;
+    float: left;
+    margin: 0 5px;
+}
+
+.end-txt2 {
+    padding-top: 20px;
+    clear: both;
+    width: 600px;
+    margin: 3px auto;
+    font-size: 11px;
+}
+
+.end-txt3 {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 13px;
+}
+
+.end-txt4 {
+    padding-top: 10px;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 11px;
+}
+
+.end-txt5 {
+    width: 600px;
+    margin: 0 auto;
+    font-size: 11px;
+}
+
+.end-txt6 {
+    color: grey;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 11px;
+}
+
+.end-dva {
+ width: 150px;
+ margin: 0 auto;
+}
+
+.end-dva img {
+    height: 26px;
+    width: 26px;
+}
+p{
+    color: grey;
+}
