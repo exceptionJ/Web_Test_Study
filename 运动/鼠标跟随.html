@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        div {
+            height: 10px;
+            width: 10px;
+            background-color: red;
+
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+</body>
+<script>
+    // document.onmousemove = function (ev) {
+    //     var oEvent = ev || event;
+    //     var oDiv = document.getElementById('div1');
+
+    //     var oScollTop = document.documentElement.scrollTop||document.body.scrollTop;
+    //     //获取滚动条到可视区的高度
+    //     var oScollLeft = document.documentElement.scrollLeft||document.body.scrollLeft;
+    //     //直接这样写,导致就是有滚动的时候,不会跟随,必须把滚动加上
+    //     oDiv.style.left = oEvent.clientX + oScollLeft + 'px'
+    //     oDiv.style.top = oEvent.clientY + oScollTop + 'px'
+    // }
+
+
+    window.onload = function () {
+        var i = 0;
+        var aDiv = document.getElementsByTagName('div');
+
+
+
+        document.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            var oScollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            //获取滚动条到可视区的高度,顺便兼容火狐,ie,chrome
+            var oScollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+
+
+            for (i = aDiv.length - 1; i > 0; i--) {
+                //console.log(aDiv);
+                aDiv[i].style.left = aDiv[i - 1].style.left;
+                aDiv[i].style.top = aDiv[i - 1].style.top;
+            }
+            aDiv[0].style.left = oEvent.clientX + oScollLeft + 'px';
+            aDiv[0].style.top = oEvent.clientY + oScollTop + 'px';
+        }
+
+    }
+</script>
+
+</html>
