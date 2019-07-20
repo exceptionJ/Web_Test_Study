@@ -272,9 +272,11 @@ body {
     font-weight: 400;
     float: left;
     margin: 0 5px;
+    text-align: center;
 }
 
 .end-txt2 {
+    text-align: center;
     padding-top: 20px;
     clear: both;
     width: 600px;
@@ -283,12 +285,14 @@ body {
 }
 
 .end-txt3 {
+    text-align: center;
     width: 600px;
     margin: 0 auto;
     font-size: 13px;
 }
 
 .end-txt4 {
+    text-align: center;
     padding-top: 10px;
     width: 600px;
     margin: 0 auto;
@@ -296,12 +300,14 @@ body {
 }
 
 .end-txt5 {
+    text-align: center;
     width: 600px;
     margin: 0 auto;
     font-size: 11px;
 }
 
 .end-txt6 {
+    text-align: center;
     color: grey;
     width: 600px;
     margin: 0 auto;
@@ -311,11 +317,13 @@ body {
 .end-dva {
  width: 150px;
  margin: 0 auto;
+
 }
 
 .end-dva img {
     height: 26px;
     width: 26px;
+    
 }
 p{
     color: grey;

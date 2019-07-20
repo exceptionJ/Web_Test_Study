@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+</head>
+<body>
+    <form action="">
+        email:<input type="email" name="" id=""><br>
+        <!-- 只能输入email.否则会不能提交,自动进行判断@ -->
+        密码: <input type="password" name="" id=""><br>
+        <!-- 默认输入的密码是星号,不会显示出来 -->
+        电话: <input type="tel" name="" id=""><br>
+        <!-- 不能验证中国电话,本质可以是弹出移动端的数字键盘,可以去移动端打开试试 -->
+        网址: <input type="url" name="" id=""><br>
+        <!-- 自动判断是否是网址,而且是加入了http://的网址 -->
+        数量: <input type="number" max="9"name="" id=""><br>
+        <!-- 只能输入数字且包含小数点,而且后面还提供了一个滑动按钮改变数字大小,
+        有max和min属性可以控制数字范围 -->
+        搜索框: <input type="search" name="" id=""><br>
+        <!-- 当搜索框输入的时候,框最后人性化的提供来删除的按钮--火狐无效  -->
+        范围: <input type="range" name="" id=""><br>
+        <!-- 一个提供有样式的滑动取值范围,有max和min -->
+        颜色选择: <input type="color" name="" id=""><br>
+        <!-- 选择颜色的 -->
+        时间: <input type="time" name="" id=""><br>
+        日期: <input type="date" name="" id=""><br>
+        <!-- 日期时间也是直接提供了,还提供了日期时间一起的属性
+        可用用datetime-local.如果直接用datetime只有苹果的safri支持; -->
+        日期时间: <input type="datetime-local" name="" id=""><br>
+        月份: <input type="month" name="" id=""><br>
+        星期: <input type="week" name="" id=""><br>
+    </form>
+</body>
+</html>
