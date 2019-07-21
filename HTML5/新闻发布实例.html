@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新闻发布实例</title>
+    <style>
+        .tabs {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        li {
+            font-size: 30px;
+            border-bottom: 1px dashed grey;
+
+
+        }
+
+        .nr {
+            padding: 15px;
+            width: 370px;
+            height: 400px;
+            border: 1px solid gray;
+            clear: both;
+            overflow: scroll;
+
+
+        }
+
+        a {
+            opacity: 0.9;
+            height: 50px;
+            text-align: center;
+            display: block;
+            width: 99px;
+            line-height: 50px;
+            float: left;
+            background-color: rgb(39, 175, 175);
+            margin-right: 2px;
+            text-decoration: none;
+            list-style-type: none;
+            font-size: 18px;
+            color: rgb(37, 32, 32);
+
+            /* border: 1px solid black; */
+        }
+
+        a:hover {
+            opacity: 0.99;
+        }
+
+        .tab-gl,
+        .tab-gw,
+        .tab-yl,
+        .tab-hk {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="=tabs">
+        <div class=tab>
+            <a href="javascipt(0):" class="gl">国内新闻</a>
+            <a href="javascipt(0):" class="gw">国外新闻</a>
+            <a href="javascipt(0):" class="yl">娱乐新闻</a>
+            <a href="javascipt(0):" class="hk">黑客新闻</a>
+        </div>
+
+
+        <div class="tab-gl nr" style="display: block">
+            <ol>
+                <li>11111111111</li>
+                <li>111111111111111</li>
+                <li>111111111111111</li>
+                <li>111111</li>
+                <li>11111111111111</li>
+            </ol>
+        </div>
+
+        <div class="tab-gw nr">
+            <ol>
+                <li>222222222222</li>
+                <li>222222222222</li>
+                <li>222222222222</li>
+                <li>22222222222222222</li>
+                <li>2222222222222222222222</li>
+            </ol>
+        </div>
+
+        <div class="tab-yl nr">
+            <ol>
+                <li>3333333333</li>
+                <li>3333333333333333</li>
+                <li>3333</li>
+                <li>333333333333333333</li>
+                <li>333</li>
+            </ol>
+        </div>
+
+        <div class="tab-hk nr">
+            <ol>
+                <li>44</li>
+                <li>444444444444444444444444444</li>
+                <li>44444444444444444444444</li>
+                <li>4444444444</li>
+                <li>444444444444444444444444444444444</li>
+            </ol>
+        </div>
+
+    </div>
+</body>
+<script>
+    window.onload = function () {
+        var aDiv = document.querySelectorAll('.nr');
+        var aa = document.querySelectorAll('a');
+        for (var i = 0; i < aa.length; i++) { 
+           aa[i].index=i;  
+            aa[i].onclick = function () {
+                
+                for (var j = 0; j < aDiv.length; j++) {
+                    aDiv[j].style.display = 'none';
+
+                }
+                aDiv[this.index].style.display = 'block';
+            }
+           
+         
+        }
+
+
+    }
+</script>
+
+</html>
