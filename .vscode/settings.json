@@ -1,3 +1,10 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "Web_Test_Study"
+    "liveServer.settings.multiRootWorkspaceName": "Web_Test_Study",
+    "cSpell.words": [
+        "clcss"
+    ],
+    "cSpell.ignoreWords": [
+        "margin",
+        "to"
+    ]
 }
