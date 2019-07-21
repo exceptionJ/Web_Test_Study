@@ -1,0 +1,20 @@
+<input type="text" id="userName"><br>
+<input type="button" value="设置数据" id="setData">
+<input type="button" value="获取数据" id="getData">
+<input type="button" value="删除数据" id="removeData">
+<script>
+    document.querySelector("#setData").onclick = function () {
+        var name = document.querySelector("#userName").value;
+        /*使用localStorage存储数据*/
+        window.localStorage.setItem("userName", name);
+    }
+    /*获取数据*/
+    document.querySelector("#getData").onclick = function () {
+        var name = window.localStorage.getItem("userName");
+        alert(name);
+    }
+    /*清除数据*/
+    document.querySelector("#removeData").onclick = function () {
+        window.localStorage.removeItem("userName");
+    }
+</script>

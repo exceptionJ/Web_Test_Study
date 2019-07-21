@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+<div>
+    <img id='img'src="../img/440.jpg" alt=""style="width: 600px; height: 400px;">
+    <input type="button" value='magic'name="" id="">
+</div>
+
+
+
+</body>
+<script>
+    window.onload = function () {
+        var btn=document.getElementsByTagName('input')[0];
+        btn.onclick = function () {
+           var oDiv =document.getElementsByTagName('div')[0];
+            /*能力测试*/
+            if (oDiv.requestFullScreen) {
+                document.getElementById("img").requestFullScreen();
+            } else if (oDiv.webkitRequestFullScreen) {
+                document.getElementById("img").webkitRequestFullScreen();
+            } else if (oDiv.mozRequestFullScreen) {
+                document.getElementById("img").mozRequestFullScreen();
+            }
+        }
+
+    }
+</script>
+
+</html>
