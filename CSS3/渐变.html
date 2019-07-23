@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>渐变</title>
+    <style>
+        div {
+            height: 200px;
+            width: 400px;
+            border: 1px solid red;
+        }
+
+        .a {
+            background-image: linear-gradient(30deg, red, blue)
+        }
+
+        .b {
+            background-image: linear-gradient(to right,
+                    yellow 0%,
+                    red 33%,
+                    green 66%,
+                    blue 100%);
+        }
+        .c{
+            background-image: radial-gradient(400px at center,red,green,yellow,red,green,#ccc)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+</body>
+
+</html>

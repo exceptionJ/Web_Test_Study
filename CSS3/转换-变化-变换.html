@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        margin: 100px 10px;
+        background-color: tomato;
+        float: left;
+        transition: 3s;
+    }
+    .a:hover{
+        /* width: 200px;
+        height: 129px; */
+        transform: scale(0.1,0.1);
+        background-color: aqua;
+    }
+    .b:hover{
+        transform: translate(200%,200%);
+
+    }
+    .c:hover{
+        transform: rotate(45deg) translate(200%,200%);
+    
+        
+    }
+    .d:hover{
+        transform: skew(30deg);
+    }
+
+    .e:hover{
+        /* transform-origin: left; */
+        transform: rotate(130deg) translate(200%,200%);
+    }
+    </style>
+</head>
+<body>
+    <div class="a">缩放</div>
+    <div class="b">位移</div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e">jihe</div>
+</body>
+</html>
