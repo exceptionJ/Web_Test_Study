@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>安卓机器人</title>
+    <style>
+        .all{
+           height: 450px;
+            width: 400px;
+            margin: 100px auto;
+            background-color: rgba(255,128,128,0.3)
+        }
+        .head{
+            height: 100px;
+            width: 200px;
+            border-radius: 100px 100px 0 0;
+            background-color: #008040;
+            margin: 0 auto;
+            position: relative;
+        }
+        .head::after{
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #fff; 
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .head::before{
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #fff; 
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            right:50px;
+        }
+
+       
+        .bodys{
+            width: 200px;
+            height: 200px;
+            background-color: #008040;
+            margin: 0 auto;
+            margin-top: 5px;
+            position: relative;
+        }
+        .bodys::before{
+            content: '';
+            width: 20px;
+            height: 150px;
+            background-color: #008040;
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            left: -30px;
+
+        }
+
+        .bodys::after{
+            content: '';
+            width: 20px;
+            height: 150px;
+            background-color: #008040;
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            right:-30px;
+
+        }
+        .foot{
+            width: 200px;
+            margin: 0 auto;
+            position: relative;
+            
+        }
+        .foot::after{
+            content: '';
+            width: 20px;
+            height: 100px;
+            background-color: #008040;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+        }
+        .foot::before{
+            content: '';
+            width: 20px;
+            height: 100px;
+            background-color: #008040;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            top: 0;
+            right:40px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+            头
+        </div>
+        <div class="bodys">
+            胸
+        </div>
+        <div class="foot">
+            脚
+        </div>
+    </div>
+</body>
+
+</html>

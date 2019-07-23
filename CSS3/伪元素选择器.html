@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素选择器</title>
+    <style>
+    div[class='wei']{
+        height: 400px;
+        width: 200px;
+        background-color:#ccc;
+        position: relative;
+    }
+    div::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 20px;
+        width: 20px;
+        background-color: red;
+    }
+    div::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: blue
+    }
+    </style>
+</head>
+<body>
+    <div class="wei"></div>
+</body>
+</html>

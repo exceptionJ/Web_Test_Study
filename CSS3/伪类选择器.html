@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div[class*='fu'] {
+            height: 500px;
+            width: 190px;
+            background-color: tomato;
+            margin: 10px;
+            border: 3px solid #408080;
+            float: left;
+        }
+
+
+        div[class*='aa'] {
+            background-color: #00ff00;
+            height: 30px;
+            width: 300px;
+            margin: 10px;
+        }
+
+        div:first-child{
+            background-color: #800080;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="father fu">
+        <div class="red  a aa"></div>
+        <div class="blue a  "></div>
+        <div class="black a"></div>
+        <div class="red a "></div>
+        <div class="aaared a"></div>
+        <div class="red  a aa"></div>
+        <div class="blue a  "></div>
+        <div class="black a"></div>
+    </div>
+
+    <div class="brother fu">
+        <div class="red  a aa"></div>
+        <div class="blue a  "></div>
+        <div class="black a"></div>
+        <div class="red a "></div>
+        <div class="aaared a"></div>
+        <div class="red  a aa"></div>
+        <div class="blue a  "></div>
+        <div class="black a"></div>
+    </div>
+</body>
+
+</html>

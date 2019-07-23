@@ -16,8 +16,7 @@
             "sourceMaps": true,
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
-            "userDataDir": "${tmpdir}",
-            "port": 9222,
+         
             
             
         }
