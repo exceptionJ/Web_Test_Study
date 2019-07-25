@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jQueryVersin/jquery-1.12.4.js"></script>
+    <script>
+  $(document).ready(function () {
+        $('#btn1').click(function () { 
+            $('.abc').css('border','1px solid yellow') 
+         })
+
+         $('#btn2').click(function(){
+             $('.abc').append('啊啊啊').append('bbb').css('fontSize','50px')
+         })
+
+         $('#btn2').css('border','9px solid black' )
+              
+  }); 
+  
+  
+    </script>
+</head>
+<body>
+    <input type="button" id="btn2">
+    <input type="button" value="click" id="btn1">
+    <div class="abc c" id="d1" style="background-color: aqua ;width: 200px;height: 200px; "></div>
+</body>
+</html>

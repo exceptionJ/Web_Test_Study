@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伸缩盒子</title>
+    <style>
+    .container{
+        height: 500px;
+        width: 1000px;
+        border: 1px solid red;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .x{
+        
+        height: 200px;
+        width: 200px;
+       
+    }
+    .a{
+        background-color: aqua;
+        /* float: left; */
+    }
+    .b{
+        background-color: brown;
+        /* float: right; */
+    }
+    .c{
+        background-color: yellow;
+        /* margin: 0 auto; */
+    }
+    .d{
+        background-color: #008040;
+        /* float: right; */
+    }
+    /* .e{
+        background-color: #008040;
+        
+    }
+    .f{
+        background-color: #008040;
+        
+    } */
+    </style>
+</head>
+<body>
+    
+</body>
+<div class="container">
+    <div class="a x"></div>
+    <div class="b x"></div>
+    <div class="c x"></div>
+    <div class="d x"></div>
+    <!-- <div class="e x"></div>
+    <div class="f x"></div> -->
+</div>
+</html>
