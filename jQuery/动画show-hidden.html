@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>动画</title>
-    <script src="../jQueryVersin/jquery-1.12.4.js"></script>
+    <script src="../jQueryVersion/jquery-1.12.4.js"></script>
     <script>
         $(function () {
             $('.btn1').click(function () {
                 $('.dv').show('5000', function () {
-                    
-                        $('.dv').hide('5000');
-                   
+
+                    $('.dv').hide('5000');
+
                 });
             })
 
+            $('.btn4').click(function(){
+                $('.dv').animate()
+            })
+
         });
+
+        
     </script>
     <style>
         .dv {
@@ -33,6 +39,7 @@
 
     <input class='btn1' type="button" value="11111">
     <input class='btn2' type="button" value="22222">
+    <input class='btn3' type="button" value="33333333">
     <div class="dv"> </div>
 </body>
 
