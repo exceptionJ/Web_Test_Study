@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隔行变色</title>
+   <script src="../jQueryVersion/jquery-1.12.4.js"></script>
+   <style>
+   div{
+       height: 30px;
+       width: 1030px;
+        background-color: black;
+        margin: 5px;
+   }
+   </style>
+   <script>
+       $(document).ready(function () {
+           $('div:odd').css('backgroundColor','darkgreen');
+           $('div:even').css('backgroundColor','yellow');
+       });
+   </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>
