@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -7,7 +8,7 @@
         * {
             margin: 0;
             padding: 0;
-        }      
+        }
 
         ul {
             list-style: none;
@@ -18,20 +19,21 @@
             height: 30px;
             margin: 100px auto 0;
             padding-left: 10px;
-            background-color: pink;
+            background-color: rgb(55, 121, 121);
         }
 
         .wrap li {
-            background-color: yellowgreen;
+           background-color: rgb(182, 18, 64)
         }
 
-        .wrap > ul > li {
+        .wrap>ul>li {
             float: left;
             margin-right: 10px;
             position: relative;
         }
 
         .wrap a {
+            
             display: block;
             height: 30px;
             width: 100px;
@@ -49,58 +51,46 @@
     </style>
     <script src="../jQueryVersion/jquery-1.12.4.js"></script>
     <script>
-        //入口函数
-        $(document).ready(function () {
-            //需求：鼠标放入一级li中，让他里面的ul显示。移开隐藏。
-            var jqli = $(".wrap>ul>li");
-
-            //绑定事件
-            jqli.mouseenter(function () {
-                //这个位置用到了this.
-                // console.log(this);  //打印结果是js中的dom对象。注意：jquery对象绑定的事件中，this指js中的dom对象。【重要】
-
-                //让this中的ul显示出来。
-//                原生 js 的做法是：this.children[1].style.display = "block";
-                //把js的dom对象包装为jquery对象，然后用jquery方法操作
-                $(this).children("ul").show();
-            });
-
-            //绑定事件：鼠标移开时，隐藏下拉菜单
-            jqli.mouseleave(function () {
-                $(this).children("ul").hide();
-            });
-        });
+    $(function () {
+        $('.wrap>ul>li').mouseenter(function () { 
+            $(this).find('ul').slideDown(200);
+        }).mouseleave(function () { 
+            $(this).find('ul').slideUp(200);
+         });
+    });
     </script>
-
 </head>
+
 <body>
-<div class="wrap">
-    <ul>
-        <li>
-            <a href="javascript:void(0);">一级菜单1</a>
-            <ul>
-                <li><a href="javascript:void(0);">二级菜单1</a></li>
-                <li><a href="javascript:void(0);">二级菜单2</a></li>
-                <li><a href="javascript:void(0);">二级菜单3</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0);">一级菜单1</a>
-            <ul>
-                <li><a href="javascript:void(0);">二级菜单1</a></li>
-                <li><a href="javascript:void(0);">二级菜单2</a></li>
-                <li><a href="javascript:void(0);">二级菜单3</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0);">一级菜单1</a>
-            <ul>
-                <li><a href="javascript:void(0);">二级菜单1</a></li>
-                <li><a href="javascript:void(0);">二级菜单2</a></li>
-                <li><a href="javascript:void(0);">二级菜单3</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">一级菜单1</a>
+                <ul class="ul">
+                    <li><a href="javascript:void(0);">二级菜单11</a></li>
+                    <li><a href="javascript:void(0);">二级菜单12</a></li>
+                    <li><a href="javascript:void(0);">二级菜单13</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单2</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单21</a></li>
+                    <li><a href="javascript:void(0);">二级菜单22</a></li>
+                    <li><a href="javascript:void(0);">二级菜单23</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">一级菜单3</a>
+                <ul>
+                    <li><a href="javascript:void(0);">二级菜单31</a></li>
+                    <li><a href="javascript:void(0);">二级菜单32</a></li>
+                    <li><a href="javascript:void(0);">二级菜单33</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
 </body>
+
 </html>
