@@ -1,0 +1,173 @@
+1.输入html:5，然后按tab键或enter键，效果如下：
+
+复制代码
+1
+<!-- 输入html或者html:5生成页面模板 -->
+2
+<!DOCTYPE html>
+3 <html lang="en">
+4
+
+<head>
+    5
+    <meta charset="UTF-8">
+    6
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    7
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    8 <title>Document</title>
+    9 </head>
+10
+
+<body>
+    11
+    12 </body>
+13
+
+</html>
+复制代码
+2.输入link:css引入css样式文件，输入script:src引入js
+
+1
+<!-- 输入link:css引入样式 -->
+2
+<link rel="stylesheet" href="">
+3
+<!-- 输入script:src引入js -->
+4 <script src=""></script>
+3.输入标签名自动补齐
+
+1
+<!-- 输入标签名 h1 按tab键或Enter键自动补齐 -->
+2 <h1>HTML快捷输入练习</h1>
+3
+<!-- {}可输入标签内的文本 如输入：h2{填充文本} -->
+4 <h2>填充文本</h2>
+4.随机文本的输入
+
+复制代码
+1
+<!-- Lorem自动输入一段随机文本(默认30个单词)，Lorem10 输入10个单词，Lorem*5 输入5遍随机文本 -->
+2 Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum doloremque accusantium est, expedita tenetur minus
+nostrum perspiciatis. Repudiandae voluptatum mollitia corrupti adipisci pariatur accusantium praesentium quas, quisquam
+tempore debitis?
+3
+<!-- Lorem10 的结果-->
+4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolorem.
+5
+<!-- Lorem10*10 的结果-->
+6 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, debitis.
+7 Sit accusamus nisi mollitia doloremque cumque praesentium quod velit vitae.
+8 Quisquam qui ipsam beatae eaque non voluptatibus obcaecati voluptate exercitationem.
+复制代码
+5.使用"#"输入id，"."输入class，"[]"输入属性
+
+1
+<!-- div#main.content 输入id、class -->
+2 <div id="main" class="content"></div>
+3 <div id="foot" class="foot" data="结束"></div>
+4
+<!-- div[alt=到底了]{结束} 添加属性及包裹文本 -->
+5 <div alt="到底了">结束</div>
+6.使用">"输入嵌套标签，"+" 输入并列的兄弟标签，"^"上级元素
+
+复制代码
+1
+<!-- div>div#imgs{put some imgs here} 标签的嵌套-->
+2 <div>
+    3 <div id="imgs">put some imgs here</div>
+    4 </div>
+5
+6
+<!-- div#left{I am left}+div#right{I am right} 并列标签 -->
+7 <div id="left">I am left</div>
+8 <div id="right">I am right</div>
+9
+10
+<!-- 看网上资料说^上级元素,没懂是什么意思，试了几个体会一下 -->
+11
+<!-- div#div1>p^div#div2 把div1提出成一行和div2同级 -->
+12 <div id="div1">
+    13 <p></p>
+    14 </div>
+15 <div id="div2"></div>
+16
+<!-- div>div#div1>p^div#div2 -->
+17 <div>
+    18 <div id="div1">
+        19 <p></p>
+        20 </div>
+    21 <div id="div2"></div>
+    22 </div>
+23
+24
+<!-- div>p>img^div>ul>li -->
+25 <div>
+    26 <p><img src="" alt=""></p>
+    27 <div>
+        28 <ul>
+            29 <li></li>
+            30 </ul>
+        31 </div>
+    32 </div>
+33
+<!-- div>div>div^div -->
+34 <div>
+    35 <div>
+        36 <div></div>
+        37 </div>
+    38 <div></div>
+    39 </div>
+40
+<!-- div>div^div -->
+41 <div>
+    42 <div></div>
+    43 </div>
+44 <div></div>
+复制代码
+7.使用"{}"对标签分组及使用"*"生成多个相同的标签
+
+复制代码
+1
+<!-- (div#list1>ul>li*2)+(div#list1>ul>li*2) 使用括号分组标签 *生成多个标签-->
+2 <div id="list1">
+    3 <ul>
+        4 <li></li>
+        5 <li></li>
+        6 </ul>
+    7 </div>
+8 <div id="list1">
+    9 <ul>
+        10 <li></li>
+        11 <li></li>
+        12 </ul>
+    13 </div>
+复制代码
+8.自增符号$
+
+复制代码
+1
+<!-- $ 自增符号 -->
+2
+<!-- ul>li*3>img[src=./imgs/$.jpg][alt={img $}] -->
+3 <ul>
+    4 <li><img src="./imgs/1.jpg" alt="img 1"></li>
+    5 <li><img src="./imgs/2.jpg" alt="img 2"></li>
+    6 <li><img src="./imgs/3.jpg" alt="img 3"></li>
+    7 </ul>
+8
+9
+<!-- ul>li*3>img[src=./imgs/$$$.jpg][alt={img $$$}] -->
+10 <ul>
+    11 <li><img src="./imgs/001.jpg" alt="img 001"></li>
+    12 <li><img src="./imgs/002.jpg" alt="img 002"></li>
+    13 <li><img src="./imgs/003.jpg" alt="img 003"></li>
+    14 </ul>
+15
+16
+<!-- ul>li*3>img[src=./imgs/$$@4.jpg][alt={img $$@4}] -->
+17 <ul>
+    18 <li><img src="./imgs/04.jpg" alt="img 04"></li>
+    19 <li><img src="./imgs/05.jpg" alt="img 05"></li>
+    20 <li><img src="./imgs/06.jpg" alt="img 06"></li>
+    21 </ul>

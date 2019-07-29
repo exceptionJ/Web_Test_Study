@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+    <style>
+        div {
+
+            width: 300px;
+            height: 500px;
+            background-color: #f0f0f0;
+            position: absolute;
+            top: 50px;
+            left: 20%;
+
+        }
+
+        ul {}
+
+        li {
+
+            background-color: #c0c0c0;
+            font-weight: 400;
+            border: 1px solid #408080;
+        }
+    </style>
+    <script src="../jQueryVersion/jquery-1.12.4.js"></script>
+    <script>
+        // window.onload = function () {
+        //     var xhr = new XMLHttpRequest();
+
+        //     xhr.open('GET', './request.php');
+        //     xhr.send();
+        //     xhr.onreadystatechange = function () {
+
+        //         // console.log(this.readyState);
+
+        //         if(this.readyState==4){
+        //             // console.log(this.responseText); 
+        //         }
+        //     }
+        //     var btn1 = document.getElementById('btn1');
+
+        //     btn1.onclick = function () {
+        //         var ul = document.getElementById('ul1');
+        //         ul.innerHTML('4322343');
+        //     }
+        // }
+
+
+        $(document).ready(function () {
+
+
+            $('#btn1').click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:5500/Ajax/request.php",
+                    data: "",
+                    dataType: "json",
+                    success: function (response) {
+                        $('response').appendTo('ul');
+                    }
+                });
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="all">
+
+        <input id="btn1" type="button" value="显示当前时间">
+
+        <ul id="ul1">
+
+        </ul>
+
+    </div>
+</body>
+
+</html>
