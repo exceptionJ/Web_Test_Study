@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f9f9f9;
+    height: 4000px;
+}
+
+/* 头部开始 */
+.header {
+    height: 100px;
+    background-color: #ffffff;
+    line-height: 100px;
+
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.header ul {}
+
+.header li {
+    float: left;
+    padding: 0 20px;
+
+}
+
+.header li a {
+    color: #333;
+}
+
+.header li a:hover {
+    color: #3399ff;
+}
+
+/* 头部结束 */
+
+/* banner  开始*/
+.banner {
+    height: 620px;
+    background-image: url(../images/banner.png);
+    background-position: center top;
+}
+
+/* 我们的服务 */
+.servers{
+    /* background-color:#ff8080; */
+    width: 1055px;
+    height: 700px;
+    margin: 70px auto 0;
+    
+}
+.sever-header{
+    border-top:1px solid #333;
+    margin-bottom: 50px
+     
+}
+.sever-header h2{
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    width: 170px;
+    height: 45px;
+    /* margin-top: -20px; */
+    margin: -20px auto 28px;
+
+}
+.servers p{
+    width: 850px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin: 0 auto;
+    line-height: 25px;
+
+}
+.sever-body{
+   
+   
+    
+}
+.sever-body .dv{
+    /* background-color: yellowgreen; */
+    width: 310px;
+    float: left;
+    border: 1px solid #979494;
+    background-color: #ffffff
+   
+    /* border-top: 1px solid white; */
+}
+.one{
+    
+}
+.two{
+   
+    margin: 0 45px;
+}
+.three{
+  
+    float: right;
+}
+/* 第一个server-body */
+.dv img {
+    width: 248px;
+    height: 130px;
+    margin: 40px auto;
+    display: block;
+     
+    
+}
+.dv h3{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.one p,.two p,.three p{
+    width: 230px;
+    text-align: center;
+}
+.button{
+    display: block;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    color: #ff9900;
+    border: 1px solid  #ff9900;
+    margin: 40px auto;
+    text-align: center;
+    line-height: 35px;
+}
+.button:hover{
+   background-color: #ff9900;
+   color: white;
+}
