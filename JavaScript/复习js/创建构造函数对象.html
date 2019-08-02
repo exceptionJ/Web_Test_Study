@@ -16,20 +16,45 @@
 </head>
 <body>
     <script>
-        function Cat(name,age) {
-            this.name=name;
-            this.age=age;
-            this.eat=function(){
-              return  '猫吃鱼';
-            }
+      //构造函数的创建 自定义的对象
+      //   function Cat(name,age) {
+      //       this.name=name;
+      //       this.age=age;
+      //       this.eat=function(){
+      //         return  '猫吃鱼';
+      //       }
+      // }
+      //   var c1=new Cat('tom',4);
+      //   console.log(c1.name+'---'+c1.age+'---'+c1.eat());
+
+      //   var c2=new Cat('lucy',5);
+      //   console.log(c2.name+'---'+c2.age+'---'+c2.eat());
+
+       //利用构造函数创建对象
+
+      //  var p=new Object();
+      //  p.name='zhangsan';
+      //  p.age=13;
+      //  p.run=function(){
+      //       console.log('run!~!~~~~');         
+      //    }
+
+
+      // console.log(p.name);
+
+
+      //字面量的方式创建对象
+      var p={
+        "name":"赵世杰",
+        "age":"132",
+        "run":function(){
+          console.log("run@!~~~~~");
+        }
+
       }
-        var c1=new Cat('tom',4);
-        console.log(c1.name+'---'+c1.age+'---'+c1.eat());
+      p.name="dddd"
+      console.log(p.name+p.age+p.run());
 
-        var c2=new Cat('lucy',5);
-        console.log(c2.name+'---'+c2.age+'---'+c2.eat());
-
-        console.log(Date()); Math.random();
         </script>
 </body>
 </html>
