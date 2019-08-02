@@ -21,6 +21,9 @@ body {
     height: 100px;
     background-color: #ffffff;
     line-height: 100px;
+    font-size: 18px;
+    font-family: 微软雅黑;
+
 
 }
 
@@ -60,33 +63,39 @@ body {
 .banner {
     height: 620px;
     background-image: url(../images/banner.png);
+    background-repeat: no-repeat;
     background-position: center top;
 }
 
 /* 我们的服务 */
-.servers{
+.servers {
     /* background-color:#ff8080; */
+    
     width: 1055px;
     height: 700px;
     margin: 70px auto 0;
-    
-}
-.sever-header{
-    border-top:1px solid #333;
-    margin-bottom: 50px
-     
-}
-.sever-header h2{
-    text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    width: 170px;
-    height: 45px;
-    /* margin-top: -20px; */
-    margin: -20px auto 28px;
 
 }
-.servers p{
+
+.sever-header {
+    width: 100%;
+    margin-bottom: 50px
+}
+
+.sever-header h2 {
+    width: 990px;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+    text-align: center;
+
+}
+
+.sever-header h2 img {
+    width: 170px;
+    margin: -20px auto 28px;
+}
+
+.servers p {
     width: 850px;
     text-align: center;
     font-size: 14px;
@@ -95,61 +104,221 @@ body {
     line-height: 25px;
 
 }
-.sever-body{
-   
-   
-    
-}
-.sever-body .dv{
+
+.sever-body {}
+
+.sever-body .dv {
     /* background-color: yellowgreen; */
-    width: 310px;
+    width: 319px;
     float: left;
     border: 1px solid #979494;
     background-color: #ffffff
-   
-    /* border-top: 1px solid white; */
+        /* border-top: 1px solid white; */
 }
-.one{
-    
-}
-.two{
-   
+
+.one {}
+
+.two {
+
     margin: 0 45px;
 }
-.three{
-  
+
+.three {
+
     float: right;
 }
+
 /* 第一个server-body */
 .dv img {
     width: 248px;
     height: 130px;
     margin: 40px auto;
     display: block;
-     
-    
+
+
 }
-.dv h3{
+
+.dv h3 {
     text-align: center;
     margin: 20px auto;
 }
 
-.one p,.two p,.three p{
+.one p,
+.two p,
+.three p {
     width: 230px;
     text-align: center;
 }
-.button{
+
+.button {
     display: block;
     width: 150px;
     height: 35px;
     border-radius: 5px;
     color: #ff9900;
-    border: 1px solid  #ff9900;
+    border: 1px solid #ff9900;
     margin: 40px auto;
     text-align: center;
     line-height: 35px;
 }
-.button:hover{
-   background-color: #ff9900;
-   color: white;
+
+.button:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+/* 经典开始 */
+.jindian {
+    height: 380px;
+    margin: 50px auto;
+    /* border-bottom: 1px solid #ccc; */
+    background-color: #ffffff;
+}
+
+.jindian h2 {
+    width: 950px;
+    border-bottom: 1px solid #ccc;
+
+    height: 44px;
+    margin: 0 auto;
+}
+
+.jindian h2 img {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    margin-left: -80px
+}
+
+.jindian ul {
+    width: 1055px;
+    margin: 0 auto;
+}
+
+.jindian li {
+    margin: 60px 15px 0;
+    float: left;
+    width: 320px;
+    height: 212px;
+    background-color: #3399ff;
+    position: relative;
+
+}
+
+.jindian .one {
+    background-image: url(../images/jd1.png);
+
+}
+
+.jindian .two {
+
+    background-image: url(../images/jdd2.png);
+    /* margin-left: 20px; */
+
+
+}
+
+.jindian .three {
+    /* float: right; */
+    background-image: url(../images/jd3.png);
+
+}
+
+.jindian p {
+    width: 320px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+
+}
+
+/* 金典结束 */
+/* 合作媒体开始 */
+.hezuomeiti {
+    margin-top: 50px;
+    clear: both;
+
+}
+
+.hezuomeiti h2 {
+
+    border-top: 1px solid #ccc;
+    width: 990px;
+    text-align: center;
+    margin: 0 auto
+}
+
+.hezuomeiti h2 img {
+    width: 160px;
+    height: 45px;
+    margin: -20px auto 30px;
+}
+
+.hezuomeiti ul {
+    width: 1110px;
+    margin: 0 auto 150px;
+
+
+
+}
+
+.hezuomeiti ul li {
+    border-bottom: 1px dashed #ccc;
+    border-left: 1px dashed #ccc;
+    background-image: url(../images/foott1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 220px;
+    height: 80px;
+    float: left;
+
+    /* background-color: yellow; */
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* 页脚开始 */
+.footer {
+    padding-top: 50px;
+    color: #ccc;
+    background-color: black;
+    /* width: 650px; */
+    height: 171px;
+    font-size: 14px;
+    margin: 0 auto;
+
+}
+.footer .p1 {
+ width: 620px;
+ margin: 0 auto 40px;
+}
+.footer .p1  a{
+    padding:0 10px;
+   
+}
+.footer .p2 {
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+.footer .xian{
+    height: 1px;
+    width: 1055px;
+    border-top: 1px solid #ccc;
+    margin:  0 auto;
 }

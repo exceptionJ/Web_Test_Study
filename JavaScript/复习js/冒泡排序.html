@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+//    var arr=[10,21,22,44,55];
+//    //反转数组
+//     for(var i=0;i<arr.length/2;i++){
+//         var temp=arr[i];
+//         arr[i]=arr[arr.length-1-i];
+//         arr[arr.length-1-i]=temp;
+//     }
+//     console.log(arr);
+
+
+// function add(x,y) {
+//     sum=x+y;
+//     return sum;
+//   }
+// console.log(add(10,20));
+
+//fn()  这里的fn()会报错
+//应为这样写就是变量的接受函数,变量提升只会提升变量名.
+//而函数提升是提升整个函数,所以只能写在下面
+// var fn=function(){
+//   console.log('hehe');
+// }
+// fn();
+
+
+//练习冒泡排序
+
+var arr=[4,5,8,3,34,5,7,87,234,6,678,546,345,34,523,54]
+
+
+//for 循环,外层控制第几次循环
+
+for(var i =0 ;i<arr.length-1;i++){
+    // 内层循环控制么每次减少一次
+    for(var j=0; j<arr.length-1-i;j++){
+        if(arr[j]>arr[j+1]){
+          var temp=arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+    }
+        }
+         
+  console.log(arr);
+}
+   </script>
+</body>
+</html>

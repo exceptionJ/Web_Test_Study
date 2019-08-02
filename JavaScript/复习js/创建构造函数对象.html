@@ -1,0 +1,35 @@
+<!--
+@author [Die_or_busy]
+@email [nullths@mail.com]
+@create date 2019-08-02 00:24:23
+@modify date 2019-08-02 00:24:23
+@desc [description]
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Cat(name,age) {
+            this.name=name;
+            this.age=age;
+            this.eat=function(){
+              return  '猫吃鱼';
+            }
+      }
+        var c1=new Cat('tom',4);
+        console.log(c1.name+'---'+c1.age+'---'+c1.eat());
+
+        var c2=new Cat('lucy',5);
+        console.log(c2.name+'---'+c2.age+'---'+c2.eat());
+
+        console.log(Date()); Math.random();
+        </script>
+</body>
+</html>
