@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>var_Change</title>
+</head>
+
+<body>
+    <script>
+        // (function () { 
+        //     console.log('good');
+        //  })();
+
+
+        //通过自调用函数产生一个随机数对象,在自调用函数外面,调用该随机数对象方法产生随机数
+        (function (window) {
+            window.Random = new Random();
+            //产生随机数的构造函数
+            function Random() {
+
+            }
+            //给构造函数原型中添加随机数方法
+            Random.prototype.getRandom = function (min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+        })(window);
+
+
+        //    实例化随机数对象
+        // var rm = new Random();
+        // var oRm = rm.getRandom(10, 200);
+        console.log(window.Random.getRandom(10, 200));
+    </script>
+</body>
+
+</html>

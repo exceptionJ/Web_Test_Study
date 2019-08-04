@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机小方块</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 600px;
+            background-color: tomato;
+            position: relative;
+            /* border: 10px solid #267935; */
+            box-sizing: border-box;
+            margin: 0 auto
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map"></div>
+
+    <script>
+        //1.创建随机数对象
+        (function (window) {
+            window.Random = new Random();
+
+            function Random() {
+
+            };
+            Random.prototype.getRandom = function (min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            };
+            //把局部对象暴露给window顶级对象
+
+        })(window);
+        // 测试输出
+        // console.log(window.Random.getRandom(10,50));
+
+        //创建小方块对象
+        (function (window) {
+            //获取map地图对象
+            var oMap = document.querySelector('.map');
+            // console.log(oMap);
+
+
+
+            //实物构造函数.就是小方块
+            function Food(width, height, color) {
+                this.width = width || 20; //宽
+                this.height = height || 20; //高
+
+                //坐标x,坐标y,初始值
+                this.x = 0;
+                this.y = 0;
+
+                this.color = color;
+
+                this.element = document.createElement('div');
+            }
+
+
+            //初始化小方块的显示效果和位置-显示地图上
+            Food.prototype.init = function () {
+                //设置小方块的 样式
+                var div = this.element;
+                div.style.position = 'absolute';
+                div.style.width = this.width + 'px';
+                div.style.height = this.width + 'px';
+                div.style.backgroundColor = this.color;
+
+                // 把小方块加入到map中去
+                oMap.appendChild(div);
+                this.render(oMap);
+            }
+
+            //产生随机位置
+            Food.prototype.render = function (oMap) {
+                //v随机产生横纵坐标.一个构造函数的原型的方法可以互相调用上边有调用   
+                var x = Random.getRandom(0, oMap.offsetWidth / this.width) * this.width;
+
+                var y = Random.getRandom(0, oMap.offsetHeight / this.height) * this.height;
+
+                this.x = x;
+                this.y = y;
+
+                var div = this.element;
+                div.style.left = this.x + 'px';
+                div.style.top = this.y + 'px';
+
+            }
+
+            //实例化对象
+
+            var fd = new Food(20, 20, 'green');
+
+            fd.init(oMap);
+
+            var fd2= new Food(20,20,'yellow')
+            fd2.init(oMap);
+
+        })(window);
+    </script>
+</body>
+
+</html>

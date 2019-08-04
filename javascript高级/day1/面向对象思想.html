@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象思想</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input id='btn' type="button" value="change">
+    <div id="dv"> </div>
+
+    <script>
+        window.onload = function () {
+            //面向过程的做法
+            // var oBtn=document.getElementById('btn');
+            // oBtn.onclick=function(){
+            //     document.getElementsByTagName('div')[0].style.backgroundColor='red'
+            // }
+
+            //面向对象的做法
+                //先写构造函数存对象
+            function ChangeColor(btn, div, json) {
+                this.oBtn = oBtn;
+                this.oDiv = oDiv;
+                this.json = json;
+            }
+                
+            ChangeColor.prototype.change=function(){
+                var that=this;
+                this.oBtn.onclick=function(){
+                    for(var key in that.json){
+                        that.oDiv.style[key]=that.json[key];
+                    }
+                }
+            }
+
+            //实力化对象
+            var json={"width":"500px","height":"500px","backgroundColor": "pink"}
+            var oBtn=document.getElementById('btn');
+            var oDiv=document.getElementById('dv');
+            var change1=new ChangeColor(oBtn,oDiv,json);
+            change1.change();
+        }
+    </script>
+</body>
+
+</html>

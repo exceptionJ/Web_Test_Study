@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的原型写法</title>
+</head>
+
+<body>
+    <script>
+        function Student(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        // Student.prototype.height = '188';
+        // Student.prototype.weight = '66kg';
+        // Student.prototype.eat = function () {
+        //     console.log('吃狗屎');
+        // }
+        // Student.prototype.study = function () {
+        //     console.log("好好学习");
+        // }
+        //通过字面量的方式添加原型
+        Student.prototype={
+            constractor:Student,
+            height:114,
+            weight:'44kg',
+            eat:function(){
+                console.log(this.name+this.age+this.sex+'吃狗屎');
+            },
+            study:function () {
+                console.log('好好学习');
+              }
+
+        }
+
+        // 实例对象,并且初始化
+        var st1 = new Student('李四', 88, '男');
+        st1.eat();
+        st1.study();
+        console.log(Student);
+        console.log(st1);
+    </script>
+</body>
+
+</html>

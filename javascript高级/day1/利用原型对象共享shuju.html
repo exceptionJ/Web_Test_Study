@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>n利用原型对象共享数据</title>
+</head>
+<body>
+    <script>
+        function Student(name,age,sex) {  
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+        }
+        Student.prototype.height='188';
+        Student.prototype.weight='66kg';
+        Student.prototype.eat=function(){
+                console.log('吃狗屎');
+        }
+        Student.prototype.study=function(){
+            console.log("好好学习");
+        }
+
+        // 实例对象,并且初始化
+        var st1=new Student('张三',33,'男');
+        st1.eat();
+        st1.study();
+        </script>
+</body>
+</html>
