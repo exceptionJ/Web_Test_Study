@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />
+                    </th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>红烧肉</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>西红柿鸡蛋</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>油炸榴莲</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>清蒸助教</td>
+                    <td>田老师</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="../common.js"></script>
+    <script>
+        window.onload = function () {
+            // //思路
+            // 首先获取第一个复选框,一个勾选,下面的子选框就全选中,第一个没有选中,就都取消选中,意思就是看第一个复选框的checked是否为选中状态,然后循环遍历下面的自选框,给他们加上checked或者删除
+            //1首先是获取到第一个元素j_cbAll
+            // 由于封装的conmmon.js这个,可以使用my$()来获取
+            var oInput = my$('j_cbAll')
+            //获取子元素
+            var oInput2 = my$('j_tb').getElementsByTagName('input');
+
+            oInput.onclick = function () {
+                for (var i = 0; i < oInput2.length; i++) {
+                    oInput2[i].checked = this.checked;
+
+                } //循环,让所有的子元素都等于父元素的状态
+            }
+            for (var i = 0; i < oInput2.length; i++) {
+                oInput2[i].onclick = function () {
+                    var flag = true;//默认都被选中
+                    //某个选框的点击事件又循环搜索其他选框选中没有
+                    for (var i = 0; i < oInput2.length; i++) {
+                        if (!oInput2[i].checked){
+                            //没选中就进来
+                              flag=false;
+                              break;  
+                        } 
+                     
+                    }
+                    oInput.checked=flag;
+                }
+
+            }
+
+
+
+
+
+
+            // if (this.checked == true) {
+            //         for (var i = 0; i < oInput2.length; i++) {
+            //             oInput2[i].checked = true;
+            //         }
+            //     } else if (this.checked == false) {
+            //         for (var i = 0; i < oInput2.length; i++) {
+            //             oInput2[i].checked = false;
+            //         }
+
+            //     }
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>随机产生一个颜色</title>
+    <style>
+        div {
+            width: 800px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="dv"></div>
+    <input id='btn' type="button" value="随机产生颜色">
+    <script>
+        //随机产生一个十六进制的颜色值
+        //封装成一个函数
+        console.log(parseInt(Math.random() * 5));
+
+        function getColor() {
+            var str = "#";
+            //一个十六进制的值的数组
+            var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+            for (var i = 0; i < 6; i++) {
+                //产生的每个随机数都是一个索引,根据索引找到数组中对应的值,拼接到一起
+                var num = parseInt(Math.random() * 16);
+                str += arr[num];
+            }
+            return str;
+        }
+        //页面记载的事件
+        window.onload = function () {
+            var btn=document.getElementById('btn');
+            btn.onclick=function(){
+                var strvalue= getColor();
+                document.getElementById("dv").style.backgroundColor = strvalue;
+                this.value=strvalue;
+            }
+            //在文档中通过id属性的值查找这个元素(标签).设置该标签的背景颜色
+            
+        };
+        //console.log(getColor());
+    </script>
+
+</body>
+
+</html>

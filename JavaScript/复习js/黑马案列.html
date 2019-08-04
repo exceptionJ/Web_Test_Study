@@ -1,0 +1,149 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-03 08:47:50
+ * @LastEditTime: 2019-08-03 08:47:50
+ * @LastEditors: your name
+ -->
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-03 08:47:50
+ * @LastEditTime: 2019-08-03 10:39:07
+ * @LastEditors: Please set LastEditors
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑马案列</title>
+    <style>
+        div {
+            width: 100px;
+            height: 120px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ##案例
+    1.点击按钮弹出对话框
+    2.点击按钮修改超链接的地址和热点文字
+    3.点击(每个)图片弹出对话框
+    4.点击图片设置自身宽和高
+    5.点击按钮修改每个图片的title属性
+    6.点击按钮显示哈哈(排他功能)
+    7.点击按钮显示和隐藏div
+    8.显示和隐藏二维码
+    9.点击按钮修改所有p标签内容
+    10.点击按钮修改所有文本框内容
+    11.点击按钮切换图片
+    12.点击超链接停止跳转页面
+    13.点击小图显示大图
+    14.美女相册
+    15.点击按钮选中性别和兴趣
+    16.给文本框赋值，获取文本框的值
+    17.点击按钮禁用文本框
+    18.搜索文本框
+    19.检测用户名是否是3-6位，密码是否是6-8位，如果不满足要求高亮显示文本框
+    20.设置下拉框中的选中项
+    21.全选反选
+    22.开关灯
+    23.点击按钮变色
+    24.图片切换二维码案例
+    25当前输入的文本框高亮显示
+    26.点击按钮改变div的大小和位置
+    27.列表隔行变色、高亮显示
+    28.京东商品展示
+    29.tab选项卡切换
+------------------------------------------------------------------ -->
+
+    <!--案例1 
+        <input id='btn' type="button" value="弹出按钮">
+    <script>
+        window.onload=function(){
+            var oBtn=document.getElementById('btn');
+            oBtn.onclick=function(){
+                alert('');
+            }
+        }   </script>-->
+
+    <!-- 案列2 点击按钮修改超链接的地址和热点文字-->
+    <!-- <input type="button" value="修改连接地址文字"id='btn'>
+        <a id='aa'href="http://www.baidu.com">百度</a>
+        <script>
+            document.getElementById('btn').onclick=function(){
+                document.getElementById('aa').href='http://www.taobao.com';
+                document.getElementById('aa').innerText='淘宝';
+               
+
+            };
+        </script> -->
+    <!-- 排他思想 -->
+
+    <!-- <input type="button" value="点我怀孕"id='btn'>
+        <input type="button" value="点我怀孕"id='btn2'>
+        <input type="button" value="点我怀孕"id='btn3'>
+        <input type="button" value="点我怀孕"id='btn4'>
+        <input type="button" value="点我怀孕"id='btn5'>
+
+        <script>
+            window.onload=function(){
+              var aBtn=  document.getElementsByTagName('input');
+                for(var i=0;i<aBtn.length;i++){
+                    aBtn[i].onclick=function(){
+                       for(var j=0;j<aBtn.length;j++){
+                            aBtn[j].value='点我怀孕'
+                       }//end for
+                       this.value='我怀孕啦~~~'
+                    }//endfor
+                    
+                  
+                }
+               
+            }
+        
+        </script> -->
+
+    <!-- 案列13 点击小图显示大图 -->
+
+    <!-- <img id='tp1'src="./images/3-small.jpg" alt="">
+        <a href="./images/2.jpg"><img src="./images/2-small.jpg" alt=""></a>
+
+        <script>
+            var img=document.getElementById('tp1');
+            img.onclick=function(){
+                this.src='./images/3.jpg'
+            }
+        </script> -->
+    <!-- 26案例点击按钮显示和隐藏div -->
+    <input type="button" value="显示">
+    <div id="dv1"></div>
+
+    <script>
+        
+        window.onload = function () {
+            var oDiv = document.getElementById('dv1');
+            var oBtn = document.getElementsByTagName('input')[0];
+          
+            oBtn.onclick = function () {
+                // alert(oBtn);
+                if (oBtn.value == '显示') {
+                    oDiv.style.display = 'none'
+                    this.value = '影藏';
+                } else {
+                    oDiv.style.display = 'block'
+                    this.value = '显示';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

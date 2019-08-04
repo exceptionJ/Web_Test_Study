@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态添加li</title>
+</head>
+
+<body>
+    <input id='btn' type="button" value="add">
+    <div id='dv' style="height: 400px;width: 200px;border:1px solid red;">
+
+    </div>
+    <script>
+
+window.onload=function(){
+  
+    // var arr=[213,213,124,45,756,345,234,456,87,324,645657,'243sdf','斯蒂芬']
+    // document.getElementById('btn').onclick=function(){
+    //     var str="<ul>";
+    //     for(var i=0 ;i<arr.length;i++){
+    //         str+="<li>"+arr[i]+"</li>";
+
+    //     }
+    //     str+="</ul>"
+    //     document.getElementById('dv').innerHTML=str
+
+    // }
+    var arr=[213,213,124,45,756,345,234,456,87,324,645657,'243sdf','斯蒂芬']
+
+    document.getElementById('btn').onclick=function(){
+
+        var uul=document.createElement('ul')
+
+        document.getElementById('dv').appendChild(uul)
+
+        for(var i=0 ;i<arr.length;i++){
+          var lli= document.createElement('li');
+            lli.innerHTML=arr[i];
+            uul.appendChild(lli);
+        }
+       
+        
+
+    }
+}
+    </script>
+</body>
+
+</html>
