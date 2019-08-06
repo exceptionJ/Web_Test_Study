@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind复制-改变this</title>
+</head>
+
+<body>
+    <script>
+        function ShowRandom() {
+            this.number = parseInt(Math.random() * 100 + 1);
+        }
+        ShowRandom.prototype.show1 = function () {
+            window.setInterval(this.show2.bind(this),500);
+        }
+        ShowRandom.prototype.show2 = function () {
+            console.log(this.number);
+        }
+
+        var ss = new ShowRandom();
+        // ss.show2();
+        ss.show1();
+    </script>
+</body>
+
+</html>

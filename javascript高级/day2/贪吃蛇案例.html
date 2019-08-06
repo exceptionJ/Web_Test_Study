@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机小方块</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 400px;
+            background-color: rgba(245, 139, 121,.2);
+            position: relative;
+            /* border: 10px solid #267935; */
+            box-sizing: border-box;
+            margin: 0 auto;
+            
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 贪吃蛇地图 -->
+    <div class="map"></div>
+
+    <script>
+        //自调用函数, 贪吃蛇食物对象
+        (function () {
+            //创建一个空数组来哦保存食物.后期要删除每次被吃的食物,也要删除这里面的
+            var elements = [];
+
+            //创建食物构造函数 (||后面就是默认值)
+            function Food(x, y, width, height,) {
+                // 横纵坐标
+                this.x = x || 0;
+                this.y = y || 0;
+
+                // 宽高
+                this.width = width || 20;
+                this.height = height || 20;
+                //背景颜色
+                // this.color = color || 'yellow';
+            }
+
+            //为食物对象原型添加食物的方法.有一个参数,因为食物要显示到map上去.map参数
+            //食物的初始化方法
+            Food.prototype.init = function (map) {
+                // 每次创建对象先删除一次,保证只出现一次食物
+                remove();
+                //创建div,食物的模型
+                var div = document.createElement('div');
+                //把div加入到map地图上去
+                map.appendChild(div);
+                //初始化食物div的样式
+                // var strvalue= getColor();
+                div.style.width = this.width + 'px';
+                div.style.height = this.height + 'px';
+                div.style.backgroundColor= getColor();
+                div.style.borderRadius = '50%';
+
+                //注意初始化,要给 div加上绝对定位属性
+                div.style.position = 'absolute';
+
+                //创建好后还有给食物来个随机坐标.保证.初始化是食物是随机在左面生成的
+                //其实就是随机给食物的xy坐标
+                this.x = (Math.random() * (map.offsetWidth / this.width) * this.width);
+                this.y = (Math.random() * (map.offsetHeight / this.height) * this.height);
+
+                div.style.left = this.x + 'px';
+                div.style.top = this.y + 'px';
+
+                // 把这个初始化的食物添加到数组里面去
+                elements.push(div);
+            }
+
+            //添加一个删除食物的私有函数
+            function remove() {
+                for (var i = 0; i < elements.length; i++) {
+                    var ele = elements[i];
+                    //找到循环出来的每一个元素的父级元素对象
+                    //再删除自己的子集元素对象.这是在删除地图上的节点对象
+                    ele.parentNode.removeChild(ele);
+                    //这一步是删除自己数组中存放的数据
+                    elements.splice(i, 1);
+                }
+            }
+
+            function getColor() {
+                var str = "#";
+                //一个十六进制的值的数组
+                var arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+                for (var i = 0; i < 6; i++) {
+                    //产生的每个随机数都是一个索引,根据索引找到数组中对应的值,拼接到一起
+                    var num = parseInt(Math.random() * 16);
+                    str += arr[num];
+                }
+                return str;
+            }
+
+            window.Food = Food;
+        }());
+
+        // 自调用函数---小蛇对象
+        (function () {
+            //创建一个空数组存放小蛇的圣体;
+            var elements=[];
+            //创建小蛇构造函数 
+            function Snake(width,height,direction) {
+                //蛇的宽高
+                this.width=width||20;
+                this.height=height||20;
+                //蛇的身体
+                this.body=[
+                    {x:3,y:2,color:'white'},
+                    {x:2,y:2,color:'yellow'},
+                    {x:1,y:2,color:'yellow'}
+                ];
+                //方向
+                this.direction=direction||'right'
+                
+            }
+            // 为蛇原型添加初始化方法
+
+            Snake.prototype.init=function(map){
+                //创建蛇之前要删除原先的蛇,不然一直自增
+                // remove();
+
+                //循环遍历创建蛇div
+                for(var i;i<this.body.length;i++){
+                    //这个身体数组中的每一个元素都是对象.获取对象
+                    var oBody=this.body[i];
+                    //创建div
+                    var div=document.createElement('div');
+                    //添加到map中
+                    map.appendChild('div');
+                    //设置div的样式.也就是蛇的样式
+                    div.style.position='absolute';
+                    div.style.width=this.width+'px';
+                    div.style.height=this.height+'px';
+                    div.style.borderRadius="10%";
+
+                    //设置出现的坐标
+                    div.style.left=oBody.x*this.width+'px'
+                    div.style.top=oBody.y*this.height+'px'
+                    //蛇的颜色
+                    div.style.backgroundColor = oBody.color;
+                    //方向暂时不定
+                    //把div添加到elements数组中去,为了删除
+                    elements.push(div);
+                };
+            };
+            //为原型添加小蛇动起来方法
+            window.Snake=Snake;
+        }());
+
+
+        
+        var map = document.querySelector('.map');
+        //食物测试代码
+        var food = new Food();
+        food.init(map);
+
+        //小蛇测试代码
+        var snake=new Snake();
+        snake.init(map);
+    </script>
+</body>
+
+</html>

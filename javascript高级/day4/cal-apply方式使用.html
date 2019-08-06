@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>call-apply</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            console.log('f1的this+++++' + this); //[object Window]
+        }
+        f1();
+
+        f1.call(); //[object Window]
+        f1.apply(); //[object Window]
+
+        function Person() {
+            this.sleep = function () {
+                console.log('我要睡觉');
+            }
+        }
+
+        Person.prototype.eat = function () {
+            console.log('吃饭');
+        }
+
+        function Student(name, sex) {
+            this.name = name;
+            this.sex = sex;
+        }
+
+        var stu = new Student('张三', '男');
+        var p = new Person();
+        
+       // p.sleep();
+       // p.eat();
+        //stu想要使用p的方法,就可以下面这样写
+        p.sleep.call(stu);
+        p.eat.call(stu);
+      //  stu.sleep();
+
+    </script>
+</body>
+
+</html>

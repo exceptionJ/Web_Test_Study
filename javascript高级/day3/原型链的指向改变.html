@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型链的指向改变问题-以及原型继承</title>
+</head>
+
+<body>
+    <script>
+        function Person(name) {
+            this.name = name;
+        }
+        Person.prototype.eat = function () {
+            console.log('吃饭');
+        }
+        
+        function Students(age) {
+            this.age = age;
+        }
+
+         Students.prototype=new Person('四');
+
+        Students.prototype.sleep = function () {
+            console.log('睡觉');
+        }
+
+      
+
+
+
+       var p = new Person('张三');
+       // p.eat();
+       // p.sleep()
+      //  console.dir(p);
+        var s = new Students('李四');
+         s.name;
+         s.eat();
+         s.sleep();
+
+
+
+
+        // //js中通过原型来实现继承
+
+        // function Person(name, age, sex) {
+        //     this.name = name;
+        //     this.sex = sex;
+        //     this.age = age;
+        // }
+        // Person.prototype.eat = function () {
+        //     console.log("人可以吃东西");
+        // };
+        // Person.prototype.sleep = function () {
+        //     console.log("人在睡觉");
+        // };
+        // Person.prototype.play = function () {
+        //     console.log("生活就是不一样的玩法而已");
+        // };
+
+
+        // function Student(score) {
+        //     this.score = score;
+        // }
+
+
+        // //==========改变学生的原型的指向即可==========>学生和人已经发生关系================
+        // Student.prototype = new Person("小明", 10, "男");
+
+
+        // Student.prototype.study = function () {
+        //     console.log("学习很累很累的哦.");
+        // };
+
+        // //相同的代码太多,造成了代码的冗余(重复的代码)
+
+        // var stu = new Student(100);
+        // console.log(stu.name);
+        // console.log(stu.age);
+        // console.log(stu.sex);
+        // stu.eat();
+        // stu.play();
+        // stu.sleep();
+        // console.log("下面的是学生对象中自己有的");
+        // console.log(stu.score);
+        // stu.study();
+    </script>
+</body>
+
+</html>

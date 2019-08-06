@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>借用构造函数继承</title>
+</head>
+<body>
+    <script>
+    function Person (name,age,sex) { 
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+
+     }
+     Person.prototype.sleep=function(){
+         console.log('睡懒觉');
+     }
+
+
+     function Student(name,age,sex,num){
+
+        //借用person的属性,this代表谁借用.这里的this就是当前构造函数的实例对象
+         Person.call(this,name,age,sex);
+         this.num=num;
+     }
+     Student.prototype.study=function(){
+         console.log('爱学习');
+     }
+
+     // 学生想要继承人类的方法和属性
+     var stu=new Student('张三',13,'男','x001');
+     console.log(stu.name+'========'+stu.age+'========'+stu.sex+'========'+stu.num);
+    //  stu.sleep();
+
+
+    </script>
+</body>
+</html>
