@@ -1,0 +1,238 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff2') format('woff2'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+        url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 18px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont-bag {
+    font-family: "iconfont" !important;
+    font-size: 25px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    background-color:#f9f9f9;
+}
+/* 顶部位置开始 */
+.header {
+    background-color: #2f2f2f;
+    width:100%;
+    font-size: 14px;
+    height: 45px;
+    /* position: fixed; */
+    
+   
+}
+
+.header ul {
+    width: 1000px;
+    height: 45px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    /* text-align: center; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header ul li {
+    /* width: 110px; */
+    /* float: left; */
+    line-height: 45px;
+    padding: 0 10px;
+
+
+}
+
+.header ul a {
+    color: #fdfdfd;
+    opacity: .9;
+    transition: .5s;
+  
+}
+.header ul a:hover{
+    opacity: .65;
+    text-decoration: none;
+}
+/* 顶部导航结束 */
+
+/* 底部位置开始 */
+
+.footer{
+    color: #888;
+    font-size: 12px;
+   
+    /* height: 607px; */
+    background-color: #f1f1f1;
+    
+}
+.footer .inner{
+    width: 1000px;
+    margin: 0 auto;
+    /* background-color: yellow; */
+    overflow: hidden;
+}
+.miaoshu ul{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    
+}
+.miaoshu li{
+    font-size: 12px;
+    color: #888;
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+
+
+.xuanxiang div{
+    height: 300px;
+    width: 190px;
+    /* background-color: violet; */
+    float: left;
+    margin: 25px 0;
+    margin-right: 10px
+}
+
+.xuanxiang li{
+    line-height: 25px;
+    font-size: 12px;
+    color: #555;
+}
+.xuangou{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.xuangou a{
+    color:#0970c7;
+}
+.copy{
+    padding: 10px 0;
+}
+.copy2{
+    padding-bottom: 25px;
+}
+.copy2 a{
+    color: #888;
+}
+/* 底部位置结束 */
