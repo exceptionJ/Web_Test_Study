@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            /* border-radius: 50%; */
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv"></div>
+    <script src="./js/jquery-2.2.4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dv').mousedown(function (e) {
+                // console.log(e.clientX);
+                //获取当前点击的x.y对于div的距离
+                // console.log($(this).offset().left);
+                var x = e.clientX - $(this).offset().left;
+                var y = e.clientY - $(this).offset().top;
+                console.log(x + '====' + y);
+
+                //鼠标移入时间写在鼠标按下事件之中;
+                $(document).mousemove(function (e) {
+                    // values: e.clientX, e.clientY, e.pageX, e.pageY
+                    var newX = e.clientX - x;
+                    var newY = e.clientY - y;
+
+                    $('#dv').css('left',newX);
+                    $('#dv').css('top', newY);
+
+                });
+
+
+            });
+
+            document.mouseup(function () {
+                document.onmousemove=null;
+            });
+        });
+
+        // window.onload = function () {
+        //     var oDiv = document.getElementById('dv');
+
+        //     oDiv.onmousedown = function (e) {
+        //         e.cancelBubble=true;
+        //         //获取当前点击的x.y对于div的距离
+
+        //         var x = e.clientX - this.offsetLeft;
+        //         var y = e.clientY - this.offsetTop;
+        //         // console.log(x+'===='+y);
+
+        //         //鼠标移入时间写在鼠标按下事件之中;
+        //         oDiv.onmousemove = function (e) {
+        //             e.cancelBubble=true;
+        //             var newX = e.clientX - x;
+
+        //             var newY = e.clientY - y;
+        //             console.log(newX + '====' + newY);
+
+        //             oDiv.style.left = newX + 'px';
+        //             oDiv.style.top = newY + 'px';
+
+        //         };
+
+
+        //     };
+
+        //     oDiv.onmouseup = function () {
+        //         document.onmousemove = null;
+        //     };
+
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="./js/index.js"></script>
+    <title>tagsDesk</title>
+</head>
+
+<body>
+
+        <div style="float:right;" id="hub_iframe"></div>
+
+        <script type="text/javascript" color="100,10,2" opacity='0.8' zIndex="-2" count="100" src="./js/canvas-nest.js"></script>
+        <!-- 可以设置蜘蛛丝的长度，条数，速度，颜色 -->
+    
+        <script type="text/javascript">
+            function async_load() {
+    
+                i.scrolling = "no";
+                i.frameborder = "0";
+                i.border = "0";
+                i.setAttribute("frameborder", "0", 0);
+                i.width = "100px";
+                i.height = "20px";
+                document.getElementById("hub_iframe").appendChild(i);
+            }
+    
+            if (window.addEventListener) {
+                window.addEventListener("load", async_load, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", async_load);
+            } else {
+                window.onload = async_load;
+            }
+        </script>
+    
+
+    <div class="map">
+        <!-- <img src="./images/bg1.jpg" alt=""> -->
+        <!-- 桌面的背景map -->
+        <!-- 顶部nav -->
+        <div class="top_nav">
+            <div class="yuandian">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 底部nav -->
+        <div class="bottom_nav">
+            <a href="javascript:void(0);"><img src="./images/tb (5).png" alt=""></a>
+            <a id='m' href="javascript:void(0);"><img src="./images/tb (6).png" alt=""></a>
+            <a id='f' href="javascript:void(0);"><img src="./images/tb (7).png" alt=""></a>
+            <a id='hl' href="javascript:void(0);"><img src="./images/tb (8).png" alt=""></a>
+            <a id='cs'href="javascript:void(0);"><img src="./images/tb (9).png" alt=""></a>
+            <a id='js'href="javascript:void(0);"><img src="./images/tb (10).png" alt=""></a>
+            <a id='re' href="javascript:void(0);"><img src="./images/tb (11).png" alt=""></a>
+        </div>
+        <!-- 拖拽时钟 -->
+        <div class="clock"></div>
+
+        <!-- muscic_iframe -->
+        <div class="ifra">
+            <iframe src="#" name="muscic_ifra"></iframe>
+        </div>
+        <!-- html_js_css_iframe -->
+        <div class="ifra2">
+            <iframe src="" name="ifra2"></iframe>
+        </div>
+
+
+        <!-- 挂机中 -->
+        <div class="gjz">
+            <h1>~~~挂机中~~~</h1>
+            <h2>👀休息眼睛👀</h2>
+        </div>
+
+        <!-- 简历模块 -->
+        <div class="resume">
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <span><img src="./images/gban.png" alt=""></span>
+        </div>
+        <!-- 蒙版 -->
+        <div class="zhezhao"></div>
+
+    
+
+    </div>
+
+</body>
+
+</html>

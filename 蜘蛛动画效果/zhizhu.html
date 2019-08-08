@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div style="float:right;" id="hub_iframe"></div>
+
+    <script type="text/javascript" color="255,123,222" opacity='0.8' zIndex="-2" count="100" src="canvas-nest.js"></script>
+    <!-- 可以设置蜘蛛丝的长度，条数，速度，颜色 -->
+
+    <script type="text/javascript">
+        function async_load() {
+
+            i.scrolling = "no";
+            i.frameborder = "0";
+            i.border = "0";
+            i.setAttribute("frameborder", "0", 0);
+            i.width = "100px";
+            i.height = "20px";
+            document.getElementById("hub_iframe").appendChild(i);
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener("load", async_load, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onload", async_load);
+        } else {
+            window.onload = async_load;
+        }
+    </script>
+
+</body>
+
+</html>

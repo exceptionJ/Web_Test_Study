@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style type="text/css">
+        img {
+            width: 100px;
+            position: absolute;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <img src="../img/Snowflake.png" alt="" />
+    <img src="xn.png" alt="" />
+    <img src="xn.png" alt="" />
+    <img src="xn.png" alt="" />
+    <img src="xn.png" alt="" />
+    <img src="xn.png" alt="" />
 </body>
+<script>
+    // 获取事件相关元素
+    var aImg = document.getElementsByTagName('img');
+
+    for (var i = 0; i < aImg.length; i++) {
+        drag(aImg[i]);
+    }
+
+    function drag(obj) {
+        // 给图片添加按下事件
+        obj.onmousedown = function (e) {
+            e = e || event;
+            // 标准下取消图片默认行为
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            // ie浏览器下取消默认行为
+            e.rentrnValue && (e.returnValue = false);
+            // 给图片添加全局捕获
+            obj.setCapture && obj.setCapture();
+
+            // 获取到鼠标点击是鼠标在图片的固定位置
+            var disX = e.clientX - obj.offsetLeft;
+            var disY = e.clientY - obj.offsetTop;
+            // 给文档添加鼠鼠标移动事件
+            document.onmousemove = function (e) {
+                e = e || event;
+                // 获取到垂直方向滚动的距离
+                var scrollT = document.documentElement.scrollTop || document.body.scrollTop; //兼容处理
+                var x = e.clientX - disX;
+                var y = e.clientY + scrollT - disY;
+                // 设置图片移动范围
+                x = x < 0 ? 0 : x;
+                x = x > pos().l - obj.offsetWidth ? pos().l - obj.offsetWidth : x;
+                y = y < 0 ? 0 : y;
+                y = y > pos().t - obj.offsetHeight ? pos().t - obj.offsetHeight : y;
+                // 给图片设施偏移
+                obj.style.left = x + 'px';
+                obj.style.top = y + 'px';
+            }
+
+            // 给文档添加鼠标弹起事件
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                // 释放图片
+                obj.releaseCapture && obj.releaseCapture();
+            }
+
+        }
+        // 获取当前可视范围的函数
+        function pos() {
+            return {
+                l: document.documentElement.clientWidth,
+                t: document.documentElement.clientHeight
+            }
+        }
+    }
+</script>
+
 </html>

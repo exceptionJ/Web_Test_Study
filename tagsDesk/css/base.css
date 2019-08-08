@@ -1,0 +1,192 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 背景样式 */
+html,
+body {
+    overflow: hidden;
+}
+
+/* 背景地图样式 */
+
+.map {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+
+}
+
+.map img {
+    display: block;
+    outline: none;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* 顶部nav样式 */
+.top_nav {
+    width: 100%;
+    height: 5%;
+    background-color: rgb(19, 18, 18);
+    /* background-color: rgba(255, 255, 255, .5); */
+    /* border-radius: 10%; */
+    position: absolute;
+    top: 0;
+    box-shadow: 0px 2px 10px 3px wheat;
+    
+}
+
+/* 底部nav样式 */
+.bottom_nav {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    height: 10%;
+    background-color: rgba(68, 68, 68, .4);
+    /* background-color: rgba(255, 255, 255, .5); */
+    border-radius: 10%;
+    position: absolute;
+    bottom: 13px;
+    left: 25%;
+    box-shadow: 0px 10px 30px 10px wheat;
+}
+
+.bottom_nav a{
+    overflow: hidden;
+}
+.bottom_nav a img {
+   
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+    transition: .5s;
+}
+.bottom_nav a img:hover{   
+    width:100px;
+    height: 100px;
+}
+
+/* 时钟拖拽 */
+.clock {
+    
+   height: 52px;
+    width: 70px;
+    /* border-radius: 50%; */
+    background-color:#408080;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    text-align: center;
+    cursor: pointer;
+    color:#fff;
+
+}
