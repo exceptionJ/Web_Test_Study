@@ -16,22 +16,6 @@ iframe{
     text-align: center;
     display: none;
 }
-/* 顶部小圆点 */
-.yuandian ul{
-    width: 150px;
-    margin: 5px auto;
-   overflow: hidden;
-    
-}
-.yuandian ul li{
-    float: left;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    margin: 0 10px;
-    background-color: tomato;
-    
-}
 
 
 
@@ -104,3 +88,71 @@ iframe{
     background-color: rgba(0, 0, 0, .5);
     display: none;
 }
+
+/* 轮播图 */
+.continuous{
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    position: absolute;
+    top:25%;
+    left: 50%;
+    margin-left: -400px;
+    
+     /* display: none; */
+    
+}
+.continuous ul{
+    /* overflow: auto; */
+    position: absolute;
+    /* display: none; */
+    
+      
+}
+.continuous ul li{
+    height: 300px;
+    width: 200px;
+    float: left;
+    /* display: none; */
+}
+.continuous ul img{
+    width: 100%;
+    height: 100%;
+    /* display: none */
+}
+.continuous a:nth-child(1){
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    width: 30px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, .5);
+    line-height: 60px;
+    text-align: center;
+    color:red;
+    position: absolute;
+    top:130px;
+    z-index: 30;
+    text-decoration: none;
+    /* display: none; */
+}
+.continuous a:nth-child(2){
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    width: 30px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, .5);
+    line-height: 60px;
+    text-align: center;
+    color:red;
+    position: absolute;
+    top:130px;
+    right: 0;
+    z-index: 30;
+    /* display: none; */
+    text-decoration: none;
+}
+

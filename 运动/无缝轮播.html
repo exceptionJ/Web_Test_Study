@@ -90,11 +90,7 @@
     window.onload = function () {
 
         var oul = document.getElementById('lt').getElementsByTagName('ul')[0];
-
         var oli = document.getElementsByTagName('li');
-
-
-
 
         oul.innerHTML += oul.innerHTML;
         oul.style.width = oli[0].offsetWidth * oli.length + 'px';
@@ -103,19 +99,14 @@
         var timer = null;
 
         function run() {
-
-
             oul.style.left = oul.offsetLeft - speed + 'px'
-
             if (oul.offsetLeft < -oul.offsetWidth / 2) {
                 oul.style.left = '0px';
             }
         }
 
         function run2() {
-
             oul.style.left = oul.offsetLeft + speed + 'px'
-
             if (oul.offsetLeft> 0) {
                oul.style.left=-oul.offsetWidth/2+'px';
             }

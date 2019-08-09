@@ -114,6 +114,7 @@ body {
 /* 背景地图样式 */
 
 .map {
+    background-color: rgba(2, 2, 2, 0.8);
     width: 100%;
     height: 100%;
     top: 0;
@@ -122,36 +123,65 @@ body {
 
 }
 
-.map img {
+/* .map img {
     display: block;
     outline: none;
     border: 0;
     height: 100%;
     width: 100%;
-}
+} */
 
 /* 顶部nav样式 */
 .top_nav {
+    line-height: 30px;
     width: 100%;
-    height: 5%;
-    background-color: rgb(19, 18, 18);
+    height: 30px;
+    background-color: rgba(19, 18, 18, .3);
     /* background-color: rgba(255, 255, 255, .5); */
     /* border-radius: 10%; */
     position: absolute;
     top: 0;
     box-shadow: 0px 2px 10px 3px wheat;
-    
+
+}
+
+/* 顶部NAV小圆点 */
+.yuandian ul {
+    width: 100px;
+    margin: 5px auto;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #408080;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.yuandian ul li {
+    float: left;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    /* margin: 0 10px; */
+    background-color: rgb(109, 215, 241);
+
+}
+
+/* 顶部标签 */
+.top_nav a {
+    color: white;
 }
 
 /* 底部nav样式 */
 .bottom_nav {
-   
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 50%;
     height: 10%;
-    background-color: rgba(68, 68, 68, .4);
+    background-color: rgba(233, 229, 10, 0.3);
     /* background-color: rgba(255, 255, 255, .5); */
     border-radius: 10%;
     position: absolute;
@@ -160,33 +190,47 @@ body {
     box-shadow: 0px 10px 30px 10px wheat;
 }
 
-.bottom_nav a{
+
+.bottom_nav a {
     overflow: hidden;
 }
+
 .bottom_nav a img {
-   
-    width:50px;
+
+    width: 50px;
     height: 50px;
     cursor: pointer;
     transition: .5s;
 }
-.bottom_nav a img:hover{   
-    width:100px;
+
+.bottom_nav a img:hover {
+    width: 100px;
     height: 100px;
 }
 
+
+
+
+
 /* 时钟拖拽 */
 .clock {
-    
-   height: 52px;
+    /* background: url(../images/szbg.png) no-repeat center;
+    background-size: 100%; */
+    height: 60px;
     width: 70px;
-    /* border-radius: 50%; */
-    background-color:#408080;
+    border-radius: 50%;
+    background-color: tomato;
+    border: 20px dashed #408080;
+    
+    outline: 10px solid yellow;
+    
     position: absolute;
     top: 20%;
     right: 10%;
+    padding-top: 10px;
     text-align: center;
     cursor: pointer;
-    color:#fff;
+    color: #fff;
+    
 
 }

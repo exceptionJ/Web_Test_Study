@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: your name
+ * @Date: j
+ * @LastEditTime: 
+ * @LastEditors: Please set LastEditors
+ */
 $(document).ready(function () {
 
     // 显示时钟格式化并加入到桌面操作
@@ -103,14 +110,14 @@ $(document).ready(function () {
     var mflag = false;
 
     $('#m').on('click', function () {
-        
+
 
         if (mflag) {
 
             $('iframe').fadeOut().attr('src', '')
             mflag = false;
         } else {
-            
+
             $('iframe').fadeIn().attr('src', 'https://www.lori.tw/so/')
             mflag = true;
         }
@@ -119,7 +126,7 @@ $(document).ready(function () {
     // hl的点击事件
 
     document.getElementById('hl').onclick = function () {
-        
+
         var ifra2 = document.getElementsByClassName('ifra2')[0].getElementsByTagName('iframe')[0];
         // console.log(ifra2);
 
@@ -128,7 +135,7 @@ $(document).ready(function () {
             ifra2.style.display = 'none';
             mflag = false;
         } else {
-            
+
             // console.log('111');
             ifra2.src = 'http://validator.w3.org/'
             ifra2.style.display = 'block';
@@ -143,7 +150,7 @@ $(document).ready(function () {
     // cs的点击事件
 
     document.getElementById('cs').onclick = function () {
-        
+
         var ifra2 = document.getElementsByClassName('ifra2')[0].getElementsByTagName('iframe')[0];
         // console.log(ifra2);
 
@@ -165,7 +172,7 @@ $(document).ready(function () {
     // js的点击事件
 
     document.getElementById('js').onclick = function () {
-       
+
         var ifra2 = document.getElementsByClassName('ifra2')[0].getElementsByTagName('iframe')[0];
         // console.log(ifra2);
 
@@ -277,7 +284,7 @@ $(document).ready(function () {
     var zhezhao = document.getElementsByClassName('zhezhao')[0];
 
     var gban = document.getElementsByClassName('resume')[0].getElementsByTagName('img')[0];
-    console.log(gban);
+    // console.log(gban);
 
     var kaiguan = true;
     // zhezhao.style.display=block;
@@ -358,3 +365,68 @@ $(document).ready(function () {
 
     })
 })
+
+
+
+//轮播图代码
+
+$(function () {
+    var uul = document.getElementById('lbul');
+    var uli = uul.getElementsByTagName('li');
+
+
+    var alf = document.getElementById('co_lf');
+    var ari = document.getElementById('co_ri');
+    // console.log(alf);
+
+    alf.onclick = function () {
+
+        clearInterval(timer);
+        timer = setInterval(run, 30)
+    }
+    ari.onclick = function () {
+
+        clearInterval(timer);
+        timer = setInterval(run2, 30);
+    }
+    uul.innerHTML += uul.innerHTML;
+    uul.style.width = uli[0].offsetWidth * uli.length + 'px';
+    var speed = 2 ;
+    
+    var timer = null;
+    //轮播动画
+    function run() {
+        uul.style.left = uul.offsetLeft - speed + 'px'
+        if (uul.offsetLeft < -uul.offsetWidth / 2) {
+            uul.style.left = '0px';
+        }
+    }
+
+    function run2() {
+        uul.style.left = uul.offsetLeft + speed + 'px'
+        if (uul.offsetLeft > 0) {
+            uul.style.left = -uul.offsetWidth / 2 + 'px';
+        }
+    }
+});
+
+
+$(function () {
+    var wflb=document.getElementById('wflb');
+    // console.log(wflb);
+    var continuous=document.getElementsByClassName('continuous')[0];
+    var wuFlag=true;
+    wflb.onclick=function(){
+        // console.log(wflb);
+        if(wuFlag){
+            continuous.style.display='block';
+            wuFlag=false;
+            
+        }else{
+            continuous.style.display='none';
+            wuFlag=true;
+        }
+        
+
+    }
+});

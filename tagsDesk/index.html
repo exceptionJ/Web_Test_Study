@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-07 14:36:30
+ * @LastEditTime: 2019-08-09 00:27:12
+ * @LastEditors: Please set LastEditors
+ -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +24,9 @@
 
         <div style="float:right;" id="hub_iframe"></div>
 
-        <script type="text/javascript" color="100,10,2" opacity='0.8' zIndex="-2" count="100" src="./js/canvas-nest.js"></script>
+        <script type="text/javascript" color="100,10,2" opacity='0.8' zIndex="-999" count="100" src="./js/canvas-nest.js"></script>
         <!-- 可以设置蜘蛛丝的长度，条数，速度，颜色 -->
-    
+<!--     
         <script type="text/javascript">
             function async_load() {
     
@@ -39,7 +46,7 @@
             } else {
                 window.onload = async_load;
             }
-        </script>
+        </script> -->
     
 
     <div class="map">
@@ -47,6 +54,9 @@
         <!-- 桌面的背景map -->
         <!-- 顶部nav -->
         <div class="top_nav">
+            <!-- 无缝轮播 -->
+            <a id='wflb' href="javascript:void(0);">无缝轮播</a>|
+                <!-- 中间原点换色; -->
             <div class="yuandian">
                 <ul>
                     <li></li>
@@ -54,6 +64,9 @@
                     <li></li>
                 </ul>
             </div>
+
+            
+
         </div>
 
         <!-- 底部nav -->
@@ -96,7 +109,23 @@
         <!-- 蒙版 -->
         <div class="zhezhao"></div>
 
-    
+        <!-- 轮播图 -->
+        <div class="continuous">
+                <a id='co_lf'href="javascript:void(0);">〈 </a>
+                <a id='co_ri'href="javascript:void(0);">〉</a>
+            <ul id="lbul">
+                <li><img src="./images/sonimg/son (1).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (2).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (3).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (4).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (5).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (6).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (7).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (8).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (9).jpg" alt=""></li>
+                <li><img src="./images/sonimg/son (10).jpg" alt=""></li>                            
+            </ul>
+        </div>
 
     </div>
 
