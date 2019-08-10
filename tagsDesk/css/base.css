@@ -151,7 +151,7 @@ body {
     margin: 5px auto;
     overflow: hidden;
     border-radius: 5px;
-    background-color: #408080;
+    background-color: rgba(0,0, 0, .2);
     display: flex;
     justify-content: space-between;
 
@@ -163,10 +163,33 @@ body {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    /* margin: 0 10px; */
+    margin: 2px 2px;
     background-color: rgb(109, 215, 241);
+    opacity: .8;
+   transition: .5s;
+   cursor: pointer;
+   box-shadow: 0px 0px 1px 2px white;
 
 }
+.yuandian ul li:nth-child(1){
+    background: #002c4a;
+}
+.yuandian ul li:nth-child(2){
+    background: #35ac03;
+}
+.yuandian ul li:nth-child(3){
+    background: #ac0908;
+}
+.yuandian ul li:nth-child(4){
+    background: #18bbff;
+}
+
+.yuandian ul li:hover{
+    opacity: 1;
+    transform: scale(.5);
+    box-shadow: 0px 0px 5px 4px rgb(109, 215, 241);
+}
+
 
 /* 顶部标签 */
 .top_nav a {
@@ -187,7 +210,7 @@ body {
     position: absolute;
     bottom: 13px;
     left: 25%;
-    box-shadow: 0px 10px 30px 10px wheat;
+    box-shadow: 0px 0px 10px 10px wheat;
 }
 
 
@@ -204,8 +227,11 @@ body {
 }
 
 .bottom_nav a img:hover {
-    width: 100px;
-    height: 100px;
+     width: 100px;
+    height: 100px; 
+   
+    transform:rotate(360deg);
+    
 }
 
 

@@ -1,15 +1,28 @@
-iframe{
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+iframe {
     height: 50%;
     width: 50%;
     position: absolute;
-   top:20%;
-   left: 50%;
-   transform: translate(-50%,0);
-   display: none;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
 
 }
 
-.gjz{
+.gjz {
     line-height: 200px;
     font-size: 80px;
     color: #ccc;
@@ -20,67 +33,74 @@ iframe{
 
 
 /* 简历模版 */
-.resume{
+.resume {
     width: 600px;
     height: 400px;
     /* background-color: yellow; */
     position: absolute;
     left: 50%;
-    top:50%;
+    top: 50%;
     margin-left: -300px;
     margin-top: -200px;
     overflow: hidden;
     display: none;
-    
+
 }
-.resume div{
+
+.resume div {
     position: absolute;
     float: left;
     margin: 1px;
     z-index: 20;
-      
+
 }
-.resume div:nth-child(1){
-    background-color:#e65b5b;
+
+.resume div:nth-child(1) {
+    background-color: #e65b5b;
     left: 300px;
     height: 198px;
     width: 0px;
 
 }
-.resume div:nth-child(2){
-    background-color:#0cac89;
-    top:200px;
+
+.resume div:nth-child(2) {
+    background-color: #0cac89;
+    top: 200px;
     height: 0px;
     width: 298px;
 
-    
+
 }
-.resume div:nth-child(3){
-    background-color:#0879ad;
+
+.resume div:nth-child(3) {
+    background-color: #0879ad;
     left: 300px;
-    top:200px;
+    top: 200px;
     height: 198px;
     width: 0px;
-    
+
 }
-.resume div:nth-child(4){
-    background-color:#db19db;
-    top:0;
+
+.resume div:nth-child(4) {
+    background-color: #db19db;
+    top: 0;
     left: 0;
     height: 0px;
     width: 298px;
 }
-.resume span img{
+
+.resume span img {
     position: absolute;
-    top:173px;
-    left:273px;
+    top: 173px;
+    left: 273px;
     height: 50px;
     width: 50px;
     z-index: 25;
     cursor: pointer;
 }
+
 /* 遮罩 */
-.zhezhao{
+.zhezhao {
     position: absolute;
     z-index: 15;
     width: 100%;
@@ -90,39 +110,41 @@ iframe{
 }
 
 /* 轮播图 */
-.continuous{
+.continuous {
     width: 800px;
     height: 300px;
     margin: 0 auto;
     overflow: hidden;
-    
+
     position: absolute;
-    top:25%;
+    top: 25%;
     left: 50%;
     margin-left: -400px;
     
-     /* display: none; */
-    
+    z-index: 40;
+
 }
-.continuous ul{
+
+.continuous ul {
     /* overflow: auto; */
     position: absolute;
     /* display: none; */
-    
-      
 }
-.continuous ul li{
+
+.continuous ul li {
     height: 300px;
     width: 200px;
     float: left;
     /* display: none; */
 }
-.continuous ul img{
+
+.continuous ul img {
     width: 100%;
     height: 100%;
     /* display: none */
 }
-.continuous a:nth-child(1){
+
+.continuous a:nth-child(1) {
     display: block;
     font-size: 30px;
     font-weight: 600;
@@ -131,14 +153,15 @@ iframe{
     background-color: rgba(0, 0, 0, .5);
     line-height: 60px;
     text-align: center;
-    color:red;
+    color: red;
     position: absolute;
-    top:130px;
+    top: 130px;
     z-index: 30;
     text-decoration: none;
     /* display: none; */
 }
-.continuous a:nth-child(2){
+
+.continuous a:nth-child(2) {
     display: block;
     font-size: 30px;
     font-weight: 600;
@@ -147,12 +170,85 @@ iframe{
     background-color: rgba(0, 0, 0, .5);
     line-height: 60px;
     text-align: center;
-    color:red;
+    color: red;
     position: absolute;
-    top:130px;
+    top: 130px;
     right: 0;
     z-index: 30;
     /* display: none; */
     text-decoration: none;
 }
 
+/* 轮播结束 */
+
+/* 分屏开始 */
+
+.fullscreen {
+   
+    height: 450px;
+    width: 400px;
+    /* background-color: yellow; */
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    display: flex;
+    justify-content: first space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    float: left;
+
+}
+
+
+.f_two,
+.f_three {
+    /* position: absolute; */
+    display: none;
+}
+
+
+.fullscreen div {
+
+    width: 24%;
+    height: 24%;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+
+.fullscreen div a:hover {
+    /* transform: translate(50%); */
+    transform: scale(1.2)
+    
+}
+
+
+.fullscreen div a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+    text-decoration: none;
+    
+}
+
+
+.fullscreen div img {
+    width: 70px;
+    height: 70px;
+}
+
+
+.fullscreen div span {
+    /* position: absolute; */
+    display: block;
+    width: 100%;
+    height: 17%;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 10%;
+    padding: 2px 5px;
+    color: #ccc;
+    text-align: center;
+    font-size: 14px;
+}

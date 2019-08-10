@@ -389,10 +389,11 @@ $(function () {
         clearInterval(timer);
         timer = setInterval(run2, 30);
     }
+    console.log(uli[0]);
     uul.innerHTML += uul.innerHTML;
     uul.style.width = uli[0].offsetWidth * uli.length + 'px';
-    var speed = 2 ;
-    
+    var speed = 2;
+
     var timer = null;
     //轮播动画
     function run() {
@@ -412,21 +413,121 @@ $(function () {
 
 
 $(function () {
-    var wflb=document.getElementById('wflb');
+    f
+    var wflb = document.getElementById('wflb');
     // console.log(wflb);
-    var continuous=document.getElementsByClassName('continuous')[0];
-    var wuFlag=true;
-    wflb.onclick=function(){
+    var continuous = document.getElementsByClassName('continuous')[0];
+    continuous.style.display = 'none';
+    var wuFlag = true;
+    wflb.onclick = function () {
         // console.log(wflb);
-        if(wuFlag){
-            continuous.style.display='block';
-            wuFlag=false;
-            
-        }else{
-            continuous.style.display='none';
-            wuFlag=true;
+        if (wuFlag) {
+          
+            continuous.style.display = 'block';
+            wuFlag = false;
+
+        } else {
+            continuous.style.display = 'none';
+            wuFlag = true;
         }
-        
+
 
     }
+});
+
+//主页滚动事件添加
+$(function () {
+
+    // $(document).scroll(function (e) { 
+    //    console.log(e);
+    //     $('fullscreen').animate({top:'100%',opacity:".1"},fast,500)
+    // });
+
+
+    var lbpLength = $(".lbp").size();
+    var index = 0;
+    $(document).on("mousewheel DOMMouseScroll", function (e) {
+        var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||
+            (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));
+
+        if (delta != 0) {
+            //  滑动一次index++;
+            index++;
+            if (index == lbpLength) {
+                index = 0;
+            }
+            //首先要获取lbp的对象数组,并且把所有对象block
+            $.each($('.lbp'), function (indexInArray, valueOfElement) {
+                $(valueOfElement).css('display', 'none');
+                if (index == indexInArray) {
+
+
+                    $(valueOfElement).css('display', 'flex');
+                    $(valueOfElement).animate({
+                        'opacity': '0',
+                        'left': '80%'
+                    },'fast');
+                   
+                    $(this).animate({
+                        'opacity': "1",
+                        'left': '10%'
+                    }, 'slow');
+
+                }
+
+            });
+
+        }
+
+
+
+        // if (delta < 0) {
+        //     i++
+        //     if(i == lbNum){
+        //         i = 0
+        //     }
+
+        //      //隐藏全部
+        //     $(".lb").each(function(i,e){
+        //         $(e).css("display","none");
+        //     })
+        //     console.log(i)
+
+        //     //显示滚动到的那一页
+        //     $(".lb").eq(i).css("display","block");
+
+        // $('.f_one').animate({
+        //     left: '800px',
+        //     opacity: "0"  
+        // }, 'slow').hide(1000);
+        // $('.f_two').show(1000);
+
+
+
+        // }else{
+        //     i--
+        //     if(i == -1){
+        //        i = lbNum-1;
+        //     }
+
+        //      //隐藏全部
+        //     $(".lb").each(function(i,e){
+        //         $(e).css("display","none");
+        //     })
+        //     console.log(i)
+
+        //     //显示滚动到的那一页
+        //     $(".lb").eq(i).css("display","block");
+        //     $(".lb").eq(i).css("opacity",0);
+        //     $(".lb").eq(i).animate({"opacity":1},3000)
+        // }
+
+
+
+
+    });
+
+
+
+
 });
