@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-07 14:36:30
- * @LastEditTime: 2019-08-11 01:17:34
+ * @LastEditTime: 2019-08-11 15:55:03
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -19,18 +20,17 @@
     <script src="./js/index.js"></script>
     <title>tagsDesk</title>
     <style>
-         
-            #container {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-            }
-            /* #output {
+        #container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* #output {
                 width: 100%;
                 height: 100%;
             } */
-         
-            </style>
+    </style>
 </head>
 
 <body>
@@ -40,41 +40,44 @@
     </script> -->
     <!-- 蛛丝背景 end-->
 
-   
+
 
     <div class="map">
 
-         <!-- 动态背景 -->
-    <div id="container">
+        <!-- 动态背景 -->
+        <div id="container">
             <div id="output"></div>
         </div>
-       
-    <script type="text/javascript" zIndex="-99999" src="./js/vector.js"></script>
-    <script>
-        $(function () {
-            // 初始化 传入dom id
-            var victor = new Victor("container", "output");
-            var theme = [
-                ["#002c4a", "#005584"],
-                ["#35ac03", "#3f4303"],
-                ["#ac0908", "#cd5726"],
-                ["#18bbff", "#00486b"]
-            ]
-            $(".yuandian li").each(function (index, val) {
-                var color = theme[index];
-                $(this).mouseover(function () {
-                    victor(color).set();
-                })
+
+        <script type="text/javascript" zIndex="-99999" src="./js/vector.js"></script>
+        <script>
+            $(function () {
+                // 初始化 传入dom id
+                var victor = new Victor("container", "output");
+                var theme = [
+                    ["#002c4a", "#005584"],
+                    ["#35ac03", "#3f4303"],
+                    ["#ac0908", "#cd5726"],
+                    ["#18bbff", "#00486b"]
+                ]
+                $(".yuandian li").each(function (index, val) {
+                    var color = theme[index];
+                    $(this).mouseover(function () {
+                        victor(color).set();
+                    })
+                });
             });
-        });
-    </script>
-   <!-- 动态背景结束 -->
+        </script>
+        <!-- 动态背景结束 -->
         <!-- <img src="./images/bg1.jpg" alt=""> -->
         <!-- 桌面的背景map -->
+
+
         <!-- 顶部nav -->
         <div class="top_nav">
             <!-- 无缝轮播 -->
-            <a id='wflb' href="javascript:void(0);">无缝轮播</a>|
+            <a id='wflb' href="javascript:void(0);">无缝轮播</a>&nbsp;|
+            <a id='cdqh' href="javascript:void(0);">桌面菜单切换(滚轮可实现)</a>&nbsp;|
             <!-- 中间原点换色; -->
             <div class="yuandian ">
                 <ul>
@@ -101,6 +104,11 @@
         <!-- 拖拽时钟 -->
         <div class="clock"></div>
 
+        <!-- 个人简介 -->
+        <div class="grjl">
+            <a href="./my.html"></a>
+        </div>
+
         <!-- muscic_iframe -->
         <div class="ifra">
             <iframe src="#" name="muscic_ifra"></iframe>
@@ -117,7 +125,7 @@
             <h2>👀休息眼睛👀</h2>
         </div>
 
-        <!-- 简历模块 -->
+        <!-- web简历模块 -->
         <div class="resume">
             <div>1</div>
             <div>1</div>
@@ -125,7 +133,8 @@
             <div>1</div>
             <span><img src="./images/gban.png" alt=""></span>
         </div>
-        <!-- 蒙版 -->
+
+        <!-- 灰色蒙版 -->
         <div class="zhezhao"></div>
 
         <!-- 轮播图 -->

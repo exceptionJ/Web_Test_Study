@@ -151,7 +151,7 @@ body {
     margin: 5px auto;
     overflow: hidden;
     border-radius: 5px;
-    background-color: rgba(0,0, 0, .2);
+    background-color: rgba(0, 0, 0, .2);
     display: flex;
     justify-content: space-between;
 
@@ -166,25 +166,29 @@ body {
     margin: 2px 2px;
     background-color: rgb(109, 215, 241);
     opacity: .8;
-   transition: .5s;
-   cursor: pointer;
-   box-shadow: 0px 0px 1px 2px white;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 2px white;
 
 }
-.yuandian ul li:nth-child(1){
+
+.yuandian ul li:nth-child(1) {
     background: #002c4a;
 }
-.yuandian ul li:nth-child(2){
+
+.yuandian ul li:nth-child(2) {
     background: #35ac03;
 }
-.yuandian ul li:nth-child(3){
+
+.yuandian ul li:nth-child(3) {
     background: #ac0908;
 }
-.yuandian ul li:nth-child(4){
+
+.yuandian ul li:nth-child(4) {
     background: #18bbff;
 }
 
-.yuandian ul li:hover{
+.yuandian ul li:hover {
     opacity: 1;
     transform: scale(.5);
     box-shadow: 0px 0px 5px 4px rgb(109, 215, 241);
@@ -210,7 +214,7 @@ body {
     position: absolute;
     bottom: 13px;
     left: 25%;
-    box-shadow: 0px 0px 10px 10px wheat;
+    box-shadow: 0px 0px 10px 5px wheat;
 }
 
 
@@ -227,11 +231,11 @@ body {
 }
 
 .bottom_nav a img:hover {
-     width: 100px;
-    height: 100px; 
-   
-    transform:rotate(360deg);
-    
+    width: 100px;
+    height: 100px;
+
+    transform: rotate(360deg);
+
 }
 
 
@@ -247,9 +251,9 @@ body {
     border-radius: 50%;
     background-color: tomato;
     border: 20px dashed #408080;
-    
+
     outline: 10px solid yellow;
-    
+
     position: absolute;
     top: 20%;
     right: 10%;
@@ -257,6 +261,23 @@ body {
     text-align: center;
     cursor: pointer;
     color: #fff;
-    
+
+
+}
+
+/* 个人简历 */
+.grjl {
+
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.grjl a {
+    display: block;
+    width: 72px;
+    height: 72px;
+    background: url(../images/grjl.png) no-repeat center;
 
 }

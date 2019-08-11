@@ -6,7 +6,10 @@
  * @LastEditors: Please set LastEditors
  */
 $(document).ready(function () {
-
+    // 禁止右键菜单使用
+    $(document).on("contextmenu", function () {
+        return false;
+    });
     // 显示时钟格式化并加入到桌面操作
     function getDates(dt) {
         var str = ""; //存储时间的字符串
@@ -366,10 +369,6 @@ $(document).ready(function () {
     })
 })
 
-
-
-//轮播图代码
-
 $(function () {
     var uul = document.getElementById('lbul');
     var uli = uul.getElementsByTagName('li');
@@ -389,7 +388,7 @@ $(function () {
         clearInterval(timer);
         timer = setInterval(run2, 30);
     }
-    console.log(uli[0]);
+    // console.log(uli[0]);
     uul.innerHTML += uul.innerHTML;
     uul.style.width = uli[0].offsetWidth * uli.length + 'px';
     var speed = 2;
@@ -411,9 +410,7 @@ $(function () {
     }
 });
 
-
 $(function () {
-    f
     var wflb = document.getElementById('wflb');
     // console.log(wflb);
     var continuous = document.getElementsByClassName('continuous')[0];
@@ -422,7 +419,7 @@ $(function () {
     wflb.onclick = function () {
         // console.log(wflb);
         if (wuFlag) {
-          
+
             continuous.style.display = 'block';
             wuFlag = false;
 
@@ -438,95 +435,78 @@ $(function () {
 //主页滚动事件添加
 $(function () {
 
-    // $(document).scroll(function (e) { 
-    //    console.log(e);
-    //     $('fullscreen').animate({top:'100%',opacity:".1"},fast,500)
-    // });
 
-
+    //获取切换菜单的长度
     var lbpLength = $(".lbp").size();
+    //初始化菜单位置变量为0
     var index = 0;
+    //鼠标滚轮事件,并判断delta的值,只要不等于0,就会触发,如果要上滚和下滚应该拍段delta的值大于0或者小于0
     $(document).on("mousewheel DOMMouseScroll", function (e) {
         var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||
             (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));
-
         if (delta != 0) {
-            //  滑动一次index++;
-            index++;
-            if (index == lbpLength) {
-                index = 0;
-            }
-            //首先要获取lbp的对象数组,并且把所有对象block
-            $.each($('.lbp'), function (indexInArray, valueOfElement) {
-                $(valueOfElement).css('display', 'none');
-                if (index == indexInArray) {
-
-
-                    $(valueOfElement).css('display', 'flex');
-                    $(valueOfElement).animate({
-                        'opacity': '0',
-                        'left': '80%'
-                    },'fast');
-                   
-                    $(this).animate({
-                        'opacity': "1",
-                        'left': '10%'
-                    }, 'slow');
-
-                }
-
-            });
+            runLbp();
 
         }
+        //下面这种方式也可以,遍历数组进行判断
+        //首先要获取lbp的对象数组,并且把所有对象block
+        // $.each($('.lbp'), function (indexInArray, valueOfElement) {
+        //     $(valueOfElement).css('display', 'none');
+        //     if (index == indexInArray) {
 
 
+        //         $(valueOfElement).css('display', 'flex');
+        //         $(valueOfElement).animate({
+        //             'opacity': '0',
+        //             'left': '80%'
+        //         },'fast');
 
-        // if (delta < 0) {
-        //     i++
-        //     if(i == lbNum){
-        //         i = 0
+        //         $(this).animate({
+        //             'opacity': "1",
+        //             'left': '10%'
+        //         }, 'slow');
+
         //     }
 
-        //      //隐藏全部
-        //     $(".lb").each(function(i,e){
-        //         $(e).css("display","none");
-        //     })
-        //     console.log(i)
-
-        //     //显示滚动到的那一页
-        //     $(".lb").eq(i).css("display","block");
-
-        // $('.f_one').animate({
-        //     left: '800px',
-        //     opacity: "0"  
-        // }, 'slow').hide(1000);
-        // $('.f_two').show(1000);
-
-
-
-        // }else{
-        //     i--
-        //     if(i == -1){
-        //        i = lbNum-1;
-        //     }
-
-        //      //隐藏全部
-        //     $(".lb").each(function(i,e){
-        //         $(e).css("display","none");
-        //     })
-        //     console.log(i)
-
-        //     //显示滚动到的那一页
-        //     $(".lb").eq(i).css("display","block");
-        //     $(".lb").eq(i).css("opacity",0);
-        //     $(".lb").eq(i).animate({"opacity":1},3000)
-        // }
-
-
-
-
+        // });
     });
+    //封在一个函数内的lbp动画处理
+    function runLbp() {
+        //当前轮播移出
+        $(".lbp").eq(index).animate({
+            'left': '180%',
+            'opacity': 0
+        }, 'fast');
 
+        //当前轮播的下一个  移入
+        // 1.确定下一个的index,滑动一次index++;
+        index++;
+        if (index == lbpLength) {
+            index = 0;
+        }
+        //设置下一个的初始位置
+        $(".lbp").eq(index).css({
+            'display': 'flex',
+            'left': "-10%",
+            'opacity': '0'
+        })
+        //进入动画
+
+        $(".lbp").eq(index).animate({
+            'left': '10%',
+            'opacity': '1'
+        }, 'fast');
+
+    }
+
+
+
+    //获取点击切换按钮的对象
+    //切换按钮点击事件
+    $('#cdqh').click(function (e) {
+        e.preventDefault();
+        runLbp();
+    });
 
 
 

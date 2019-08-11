@@ -1,0 +1,16 @@
+body{
+    background-color: rgba(0, 0, 0, .8);
+    overflow: hidden;
+}
+.kiss_bg{
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    height: 100%;
+}
+.kiss_bg img{ 
+    width:100%;   
+}
+.kiss_bg p{ 
+   font-size:30px;  
+}

@@ -19,6 +19,7 @@ iframe {
     left: 50%;
     transform: translate(-50%, 0);
     display: none;
+    z-index: 100;
 
 }
 
@@ -120,7 +121,7 @@ iframe {
     top: 25%;
     left: 50%;
     margin-left: -400px;
-    
+
     z-index: 40;
 
 }
@@ -184,7 +185,7 @@ iframe {
 /* 分屏开始 */
 
 .fullscreen {
-   
+
     height: 450px;
     width: 400px;
     /* background-color: yellow; */
@@ -220,7 +221,6 @@ iframe {
 .fullscreen div a:hover {
     /* transform: translate(50%); */
     transform: scale(1.2)
-    
 }
 
 
@@ -230,7 +230,7 @@ iframe {
     height: 100%;
     transition: .2s;
     text-decoration: none;
-    
+
 }
 
 
