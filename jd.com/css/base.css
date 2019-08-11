@@ -1,0 +1,247 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-11 19:56:33
+ * @LastEditTime: 2019-08-12 00:10:56
+ * @LastEditors: Please set LastEditors
+ */
+/* 这里面只写公共样式 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 清除浮动类 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ====================================================================== */
+
+body{
+    height: 3000px;
+}
+/* 版心 */
+.w {
+    /* background-color: yellow; */
+    width: 1190px;
+    margin: auto;
+}
+
+/* 左浮动 */
+.fr {
+    /* background-color: teal; */
+    float: right;
+}
+
+/* 右浮动 */
+.fl {
+    /* background-color: tomato; */
+    float: left;
+}
+
+/* 字体图标引入 */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iconfont.woff2') format('woff2'),
+        url('../fonts/iconfont.woff') format('woff'),
+        url('../fonts/iconfont.ttf') format('truetype'),
+        url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* <span class="iconfont">&#x33;</span> */
+
+/* 顶部广告位置开始 */
+.J_event {
+
+    background-color: black;
+}
+
+.J_event a {
+    display: none;
+    height: 80px;
+    background: url(../images/);
+}
+
+/* 快捷导航栏制作 */
+.shortcut {
+    height: 30px;
+    background-color: #e3e4e5;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 30px;
+    /* color: #f10215; */
+    font-size: 12px;
+}
+
+/* 左浮动元素设置样式 */
+
+.shortcut_fl span {
+    color: #f10215;
+   
+}
+
+.fl_xiala {
+    width: 323px;
+    height: 440px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 30px;
+    z-index: -2;
+    display: none;
+    /* box-shadow: 1px 1px 2px #ccc; */
+}
+
+#shortcut_fl_a {
+    width: 58px;
+    height: 30px;
+}
+
+#shortcut_fl_a:hover {
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+
+.shortcut a {
+
+    color: #999;
+    text-decoration: none;
+}
+.shortcut a:hover{
+    color: #f10215;
+}
+/* 有浮动元素 */
+
+.shortcut_fr li {
+    float: left;
+    padding: 0 4px;
+}
+.shortcut_fr span{
+    font-size: 12px;
+}
