@@ -1,8 +1,8 @@
 <!--
- * @Description: jd.com study
- * @Author: j
- * @Date: 2019-07-31
- * @LastEditTime: 2019-08-12 00:01:58
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-31 18:59:32
+ * @LastEditTime: 2019-08-18 12:19:18
  * @LastEditors: Please set LastEditors
  -->
 <!DOCTYPE html>
@@ -13,15 +13,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入格式化文件,其实自己写也差不多,有些初始化也没有,比如input标签的outline -->
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入swiper4.为了测试一下4的功能写法,只有下面的发现模块用的swiper写,主图的轮播用的jq自己编写 -->
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <!-- 这是公共样式代码,主要就是页头页脚,这种各个页面都有的代码可以写在一起.方面调用 -->
     <link rel="stylesheet" href="./css/base.css">
+    <!-- 主页展示的css -->
+    <link rel="stylesheet" href="./css/index.css">
+
     <script src="./js/jquery-2.2.4.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <!-- 主页js代码 -->
     <script src="./js/index.js"></script>
+
+
     <title>JD</title>
 </head>
 
 <body>
+
     <!-- 顶部广告位置,留着打广告,站位 -->
     <div class="J_event">
         <a class="w" href="javascript:;">
@@ -32,12 +43,12 @@
 
     <!-- 快捷导航栏制作 -->
     <div class="shortcut">
-        <div class="w">
-
+        <div class="w clearfix">
+            <!-- 左浮动定位 -->
             <ul class="shortcut_fl fl">
                 <li id='shortcut_fl_a'>
                     <span class="iconfont">&#xe617;</span>
-                    <a href="">四川</a>
+                    <a href="javascipt:;">四川</a>
                 </li>
                 <li>
                     <ul class="fl_xiala">
@@ -95,50 +106,2060 @@
 
 
             </ul>
-
+            <!-- 右浮动 -->
             <ul class="shortcut_fr fr">
-                <li >
-                     <a href="javascipt:;">你好，请登录</a>
-                     <a href="javascipt:;" style="color: #f10215">免费注册</a>
+                <li>
+                    <a href="javascipt:;">你好，请登录</a>
+                    <a href="javascipt:;" style="color: #f10215">免费注册 </a>
+                    <span class="iconfont">&#xe63a;</span>
+                </li>
 
-                     <span class="iconfont">&#xe63a;</span>
-                    </li>
-                <li > 
+                <li>
                     <a href="javascipt:;">我的订单</a>
                     <span class="iconfont">&#xe63a;</span>
                 </li>
-                <li > 
-                    <a href="javascipt:;">我的京东</a>
-                    <span class="iconfont">&#xe733;</span>
+
+                <!-- 有下拉  我的jd-->
+                <li class="shortcut_fr_myjd shortcut_nav_xl">
+                    <a id='shortcut_nav_a' href="javascipt:;">我的京东
+                        <span class="iconfont">&#xe733;</span>
+                    </a>
+
+                    <span class="iconfont">&#xe63a;</span>
+                    <div class="shortcut_fr_myjd_nav">
+                        <div>
+                            <a href="javascipt:;"> 待处理订单</a>
+                            <a href="javascipt:;"> 返修退换货</a>
+                            <a href="javascipt:;"> 降价商品</a>
+                            <a href="javascipt:;"> 消息</a>
+                            <a href="javascipt:;"> 我的问答</a>
+                            <a href="javascipt:;"> 我的关注</a>
+                        </div>
+
+                        <div>
+                            <a href="javascipt:;"> 我的京豆</a>
+                            <a href="javascipt:;"> 我的白条</a>
+                            <a href="javascipt:;"> 我的优惠券</a>
+                            <a href="javascipt:;"> 我的理财</a>
+                        </div>
+                    </div>
                 </li>
-                <li > 
+
+
+                <li>
                     <a href="javascipt:;">京东会员</a>
                     <span class="iconfont">&#xe63a;</span>
                 </li>
-                <li > 
-                    <a href="javascipt:;"style="color: #f10215">企业采购</a>
-                    <span class="iconfont">&#xe733;</span>
+
+
+                <!-- 有下拉  企业采购-->
+                <li class="shortcut_fr_qycg">
+
+                    <a id='shortcut_nav_qycg' href="javascipt:;" style="color: #f10215">企业采购
+                        <span class="iconfont">&#xe733;</span>
+                    </a>
+
+                    <div class="shortcut_fr_qycg_nav">
+                        <ul>
+                            <li><a href="javascipt:;">企业购</a></li>
+                            <li><a href="javascipt:;">商用场景馆</a></li>
+                            <li><a href="javascipt:;">工业品</a></li>
+                            <li><a href="javascipt:;"> 礼品卡</a></li>
+                        </ul>
+
+                    </div>
+
                     <span class="iconfont">&#xe63a;</span>
                 </li>
-                <li > 
-                    <a href="javascipt:;">客户服务</a>
-                    <span class="iconfont">&#xe733;</span>
+
+
+
+                <!-- 有下拉  客户服务-->
+                <li class='shortcut_fr_khfw'>
+                    <a id='shortcut_nav_khfw' href="javascipt:;">客户服务
+                        <span class="iconfont">&#xe733;</span>
+                    </a>
+
                     <span class="iconfont">&#xe63a;</span>
+                    <div class="shortcut_fr_khfw_nav">
+                        <div class="shortcut_fr_khfw_nav_one">
+                            <h2>客户</h2>
+                            <ul class="clearfix">
+                                <li><a href="javascipt:;">帮助中心</a></li>
+                                <li><a href="javascipt:;">售后服务</a></li>
+                                <li><a href="javascipt:;">在线客服</a></li>
+                                <li><a href="javascipt:;">意见建议</a></li>
+                                <li><a href="javascipt:;">电话客服</a></li>
+                                <li><a href="javascipt:;">客服邮箱</a></li>
+                                <li><a href="javascipt:;">金融咨询</a></li>
+                                <li><a href="javascipt:;">全球售客服</a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="shortcut_fr_khfw_nav_two">
+                            <h2>商户</h2>
+                            <ul class="clearfix">
+                                <li><a href="javascipt:;">合作招商</a></li>
+                                <li><a href="javascipt:;">成长中心</a></li>
+                                <li><a href="javascipt:;">商家后台</a></li>
+                                <li><a href="javascipt:;">京麦工作台</a></li>
+                                <li><a href="javascipt:;">商家帮助</a></li>
+                                <li><a href="javascipt:;">规则平台</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
                 </li>
-                <li > 
-                    <a href="javascipt:;">网站导航</a>
-                    <span class="iconfont">&#xe733;</span>
+
+
+                <!-- 有下拉 网站导航-->
+                <li class="shortcut_fr_wzdh">
+                    <a id='shortcut_nav_wzdh' href="javascipt:;">网站导航
+                        <span class="iconfont">&#xe733;</span>
+                    </a>
+
                     <span class="iconfont">&#xe63a;</span>
+                    <div class="shortcut_fr_wzdh_nav">
+                        <div class="shortcut_fr_wzdh_nav_one">
+                            <h2>特色主题</h2>
+                            <ul class="clearfix">
+                                <li><a href="javascipt:;">京东试用</a></li>
+                                <li><a href="javascipt:;">京东金融</a></li>
+                                <li><a href="javascipt:;">全球售</a></li>
+                                <li><a href="javascipt:;">国际站</a></li>
+                                <li><a href="javascipt:;">京东会员</a></li>
+                                <li><a href="javascipt:;">京东预售</a></li>
+                                <li><a href="javascipt:;">买什么</a></li>
+                                <li><a href="javascipt:;">俄语站</a></li>
+                                <li><a href="javascipt:;">装机大师</a></li>
+                                <li><a href="javascipt:;">0元评测</a></li>
+                                <li><a href="javascipt:;">港澳售</a></li>
+                                <li><a href="javascipt:;">优惠券</a></li>
+                                <li><a href="javascipt:;">秒杀</a></li>
+                                <li><a href="javascipt:;">闪购</a></li>
+                                <li><a href="javascipt:;">印尼站</a></li>
+                                <li><a href="javascipt:;">京东金融科技</a></li>
+                                <li><a href="javascipt:;">陪伴计划</a></li>
+                                <li><a href="javascipt:;">出海招商</a></li>
+                                <li><a href="javascipt:;">拍拍二手</a></li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="shortcut_fr_wzdh_nav_one2">
+                            <h2>特色主题</h2>
+                            <ul class='clearfix'>
+                                <li><a href="javascipt:;">京东试用</a></li>
+                                <li><a href="javascipt:;">京东金融</a></li>
+                                <li><a href="javascipt:;">全球售</a></li>
+                                <li><a href="javascipt:;">国际站</a></li>
+                                <li><a href="javascipt:;">京东会员</a></li>
+                                <li><a href="javascipt:;">京东预售</a></li>
+                                <li><a href="javascipt:;">买什么</a></li>
+                                <li><a href="javascipt:;">俄语站</a></li>
+                                <li><a href="javascipt:;">装机大师</a></li>
+                                <li><a href="javascipt:;">0元评测</a></li>
+                                <li><a href="javascipt:;">港澳售</a></li>
+                                <li><a href="javascipt:;">优惠券</a></li>
+                                <li><a href="javascipt:;">秒杀</a></li>
+                                <li><a href="javascipt:;">闪购</a></li>
+                                <li><a href="javascipt:;">印尼站</a></li>
+
+                            </ul>
+                            <span></span>
+                        </div>
+
+                        <div class="shortcut_fr_wzdh_nav_one2">
+                            <h2>特色主题</h2>
+                            <ul class='clearfix'>
+                                <li><a href="javascipt:;">京东试用</a></li>
+                                <li><a href="javascipt:;">京东金融</a></li>
+                                <li><a href="javascipt:;">全球售</a></li>
+                                <li><a href="javascipt:;">国际站</a></li>
+                                <li><a href="javascipt:;">京东会员</a></li>
+                                <li><a href="javascipt:;">京东预售</a></li>
+                                <li><a href="javascipt:;">买什么</a></li>
+                                <li><a href="javascipt:;">俄语站</a></li>
+                                <li><a href="javascipt:;">装机大师</a></li>
+                                <li><a href="javascipt:;">0元评测</a></li>
+                                <li><a href="javascipt:;">港澳售</a></li>
+                                <li><a href="javascipt:;">优惠券</a></li>
+                                <li><a href="javascipt:;">秒杀</a></li>
+                                <li><a href="javascipt:;">闪购</a></li>
+                                <li><a href="javascipt:;">印尼站</a></li>
+
+                            </ul>
+                            <span></span>
+                        </div>
+
+                        <div class="shortcut_fr_wzdh_nav_one2">
+                            <h2>特色主题</h2>
+                            <ul class='clearfix'>
+                                <li><a href="javascipt:;">京东试用</a></li>
+                                <li><a href="javascipt:;">京东金融</a></li>
+                                <li><a href="javascipt:;">全球售</a></li>
+                                <li><a href="javascipt:;">国际站</a></li>
+                                <li><a href="javascipt:;">京东会员</a></li>
+                                <li><a href="javascipt:;">京东预售</a></li>
+                                <li><a href="javascipt:;">买什么</a></li>
+                                <li><a href="javascipt:;">俄语站</a></li>
+                                <li><a href="javascipt:;">装机大师</a></li>
+                                <li><a href="javascipt:;">0元评测</a></li>
+                                <li><a href="javascipt:;">港澳售</a></li>
+                                <li><a href="javascipt:;">优惠券</a></li>
+                                <li><a href="javascipt:;">秒杀</a></li>
+                                <li><a href="javascipt:;">闪购</a></li>
+                                <li><a href="javascipt:;">印尼站</a></li>
+
+                            </ul>
+                            <span></span>
+                        </div>
+
+
+                    </div>
                 </li>
-                <li > <a href="javascipt:;">手机京东</a></li>
-              
+
+
+                <!-- 有下拉 手机京东 -->
+                <li class="shortcut_fr_sjjd">
+                    <a id='shortcut_nav_sjjd' href="javascipt:;">手机京东</a>
+                    <a id='shortcut_nav_erweima' href="javascript:;"><img src="./images/erweima2.png" alt=""></a>
+                    <div class="shortcut_fr_sjjd_nav">
+                        <div class="shortcut_fr_sjjd_nav_one clearfix">
+                            <ul>
+                                <li class="shortcut_fr_sjjd_nav_one_innerOne">
+                                    <img src="./images/erweima.webp" alt="">
+                                </li>
+                                <li class="shortcut_fr_sjjd_nav_one_innerTwo">
+                                    <a href="javascirpt:;">手机京东</a>
+                                    <p>新人专享大礼包</p>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_01.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_03.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_05.png"
+                                            alt=""></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="shortcut_fr_sjjd_nav_one clearfix">
+                            <ul>
+                                <li class="shortcut_fr_sjjd_nav_one_innerOne">
+                                    <img src="./images/erweima.webp" alt="">
+                                </li>
+                                <li class="shortcut_fr_sjjd_nav_one_innerTwo">
+                                    <a href="javascirpt:;">手机京东</a>
+                                    <p>新人专享大礼包</p>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_01.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_03.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_05.png"
+                                            alt=""></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="shortcut_fr_sjjd_nav_one clearfix">
+                            <ul>
+                                <li class="shortcut_fr_sjjd_nav_one_innerOne">
+                                    <img src="./images/erweima.webp" alt="">
+                                </li>
+                                <li class="shortcut_fr_sjjd_nav_one_innerTwo">
+                                    <a href="javascirpt:;">手机京东</a>
+                                    <p>新人专享大礼包</p>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_01.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_03.gif"
+                                            alt=""></span>
+                                    <span class="shortcut_fr_sjjd_nav_bg"><img src="./images/sprite_os_05.png"
+                                            alt=""></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </li>
+
             </ul>
-            
+
 
         </div>
 
     </div>
     <!-- 快捷导航栏完成 -->
+
+    <!-- 移动显示快捷搜索框 -->
+    <div class="scoll_header">
+        <div class="w scoll_header_inner">
+
+            <!-- logo -->
+            <div class="scoll_header_logo">
+                <h1>
+                    <a href="javascipt:;" title="京东网">京东</a>
+                </h1>
+            </div>
+
+            <!-- 搜索框search -->
+            <div class="scoll_header_search">
+                <input type="text" name="" id="" placeholder="man  Think about it, choose what you love.....">
+                <span class="iconfont">&#xe611;</span>
+                <button></button>
+                <i class="iconfont">&#xeafe;</i>
+
+                <!-- 购物车  -->
+                <div class="search_myCar">
+                    <span class="iconfont">&#xe600;</span>
+                    <em>3</em>
+                    <a href="javascipt:;">我的购物车</a>
+                    <div class="search_myCar_nav" id="mycar_nav">
+                        <ul>
+                            <li>购物车中还没有商品，赶紧选购吧!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div><!-- inner内容 end-->
+
+    </div><!-- end inner -->
+
+
+    <!-- 头部位置header  start-->
+    <div class="header">
+        <div class="w inner">
+
+            <!-- logo -->
+            <div class="logo">
+                <h1>
+                    <a href="javascipt:;" title="京东网">京东</a>
+                </h1>
+            </div>
+
+            <!-- 搜索框search -->
+            <div class="search">
+                <input type="text" name="" id="" placeholder="man  Think about it, choose what you love.....">
+                <span class="iconfont">&#xe611;</span>
+                <button></button>
+                <i class="iconfont">&#xeafe;</i>
+
+                <!-- 购物车  -->
+                <div class="search_myCar">
+                    <span class="iconfont">&#xe600;</span>
+                    <em>3</em>
+                    <a href="javascipt:;">我的购物车</a>
+                    <div class="search_myCar_nav" id="mycar_nav">
+                        <ul>
+                            <li>购物车中还没有商品，赶紧选购吧!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 热词搜索 -->
+            <div class="hotwords">
+                <a style="color: #c81623" href="JavaScript:;">券145减100</a>
+                <a href="JavaScript:;">立减3000</a>
+                <a href="JavaScript:;">高端电视</a>
+                <a href="JavaScript:;">百丽5折</a>
+                <a href="JavaScript:;">个护神券</a>
+                <a href="JavaScript:;">纸尿裤</a>
+                <a href="JavaScript:;">vivo手机</a>
+                <a href="JavaScript:;">百货节</a>
+                <a href="JavaScript:;">每100-50</a>
+            </div>
+
+            <!-- header导航栏部分 -->
+            <div class="navitems">
+                <ul>
+                    <li><a style="color:#c1251b" href="javascript:;">秒杀</a></li>
+                    <li><a style="color:#c1251b" href="javascript:;">优惠券</a></li>
+                    <li><a href="javascript:;">PLUS会员</a></li>
+                    <li><a href="javascript:;">品牌闪购</a></li>
+                    <li><a href="javascript:;">拍卖</a></li>
+                    <li><a href="javascript:;">京东时尚</a></li>
+                    <li><a href="javascript:;">京东超市</a></li>
+                    <li><a href="javascript:;">京东生鲜</a></li>
+                    <li><a href="javascript:;">海囤全球</a></li>
+                    <li><a href="javascript:;">京东金融</a></li>
+                </ul>
+            </div>
+
+
+        </div><!-- inner内容 end-->
+
+    </div><!-- end inner -->
+    <!-- 头部位置header--end -->
+
+    <!-- 主页版心位置开始 -->
+    <!-- 这里是个通栏的盒子 -->
+    <div class="jd_main">
+        <!-- 这里是一个版心 -->
+        <div class="w jd_inner">
+
+
+            <!-- 左边nav -->
+            <div class="inner_main_lf">
+                <!-- 菜单内详细内容 -->
+                <div class="inner_main_lf_box">
+                    <div class="lf_box_connet">
+                        <div class="lf_box_connet_title">
+                            <a href="javascript:;">企业购
+                                <span class="iconfont">&#xe6e0;</span>
+                            </a>
+
+                            <a href="javascript:;">工业品
+                                <span class="iconfont">&#xe6e0;</span>
+                            </a>
+
+                            <a href="javascript:;">京东商用
+                                <span class="iconfont">&#xe6e0;</span>
+                            </a>
+
+                            <a href="javascript:;">礼品卡
+                                <span class="iconfont">&#xe6e0;</span>
+                            </a>
+
+                            <a href="javascript:;">元器件
+                                <span class="iconfont">&#xe6e0;</span>
+                            </a>
+
+                        </div>
+                        <div class="lf_box_connet_nav">
+                            <ul>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">工具
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">手动工具</a>
+                                    <a href="javascript:;">电动工具</a>
+                                    <a href="javascript:;">测量工具</a>
+                                    <a href="javascript:;">气动工具</a>
+                                    <a href="javascript:;">工具套装</a>
+                                    <a href="javascript:;">工具配件</a>
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">劳动防护
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">手部防护</a>
+                                    <a href="javascript:;">足部防护</a>
+                                    <a href="javascript:;">身体防护</a>
+                                    <a href="javascript:;">头部防护</a>
+                                    <a href="javascript:;">眼脸部防护</a>
+                                    <a href="javascript:;">呼吸防护</a>
+                                    <a href="javascript:;">坠落防护</a>
+                                    <a href="javascript:;">静电无尘</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">工控配电
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">电线电缆</a>
+                                    <a href="javascript:;">开关插座</a>
+                                    <a href="javascript:;">低压配电</a>
+                                    <a href="javascript:;">控制保护</a>
+                                    <a href="javascript:;">电力检测</a>
+                                    <a href="javascript:;">工业控制</a>
+                                    <a href="javascript:;">自动化</a>
+                                    <a href="javascript:;">电料辅件</a>
+
+                                </li>
+
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">仪器仪表
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+
+                                    <a href="javascript:;">温度仪表</a>
+                                    <a href="javascript:;">电工仪表</a>
+                                    <a href="javascript:;">气体检测</a>
+                                    <a href="javascript:;">分析检测</a>
+                                    <a href="javascript:;">压力仪表</a>
+                                    <a href="javascript:;">流量仪表</a>
+                                    <a href="javascript:;">物位仪表</a>
+                                    <a href="javascript:;">阻容感及晶振</a>
+                                    <a href="javascript:;">半导体</a>
+                                    <a href="javascript:;">模块及开发板</a>
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">清洁用品
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">清洁工具</a>
+                                    <a href="javascript:;">清洁设备</a>
+                                    <a href="javascript:;">清洗保养品</a>
+                                    <a href="javascript:;">工业擦拭</a>
+                                    <a href="javascript:;">地垫</a>
+                                    <a href="javascript:;">垃圾处理</a>
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">化学品
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">润滑剂</a>
+                                    <a href="javascript:;">胶粘剂</a>
+                                    <a href="javascript:;">化学试剂</a>
+                                    <a href="javascript:;">工业涂层</a>
+                                    <a href="javascript:;">清洗剂</a>
+                                    <a href="javascript:;">防锈剂</a>
+                                    <a href="javascript:;">脱模剂</a>
+
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">安全消防
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">警示标识</a>
+                                    <a href="javascript:;">应急处理</a>
+                                    <a href="javascript:;">监控设备</a>
+                                    <a href="javascript:;">安全锁具</a>
+                                    <a href="javascript:;">化学品存储</a>
+                                    <a href="javascript:;">消防器材</a>
+                                    <a href="javascript:;">消防服装</a>
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">仓储包装
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">包装工具</a>
+                                    <a href="javascript:;">包装耗材</a>
+                                    <a href="javascript:;">标签耗材</a>
+                                    <a href="javascript:;">搬运设备</a>
+                                    <a href="javascript:;">存储设备</a>
+
+                                </li>
+                                <li>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">焊接紧固
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">五金紧固件</a>
+                                    <a href="javascript:;">密封件</a>
+                                    <a href="javascript:;">焊接设备</a>
+                                    <a href="javascript:;">焊接耗材</a>
+                                    <a href="javascript:;">机械配件</a>
+                                    <a href="javascript:;">轴承</a>
+                                    <a href="javascript:;">皮带链条</a>
+                                    <a href="javascript:;">机械零配件</a>
+                                    <a href="javascript:;">机床及附件</a>
+                                    <a href="javascript:;">刀具</a>
+                                    <a href="javascript:;">气动元件</a>
+                                    <a href="javascript:;">泵阀类</a>
+
+                                </li>
+                                <ul>
+                                    <a class="lf_box_connet_nav_a1" href="javascript:;">暖通照明
+                                        <span class="iconfont">&#xe6e0;</span>
+                                    </a>
+
+                                    <a href="javascript:;">暖通</a>
+                                    <a href="javascript:;">工业照明</a>
+                                    <a href="javascript:;">管材管件</a>
+
+                                    <li>
+                                        <a class="lf_box_connet_nav_a1" href="javascript:;">实验用品
+                                            <span class="iconfont">&#xe6e0;</span>
+                                        </a>
+
+                                        <a href="javascript:;">实验室试剂</a>
+                                        <a href="javascript:;">实验室耗材</a>
+                                        <a href="javascript:;">实验室设备</a>
+                                    </li>
+
+                                </ul>
+                        </div>
+
+                    </div>
+                    <!-- 菜单右侧广告 -->
+                    <div class="lf_box_ad">
+
+                        <ul class="lf_box_ad_8small clearfix">
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (1).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (2).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (3).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (4).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (5).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (6).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (7).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad (8).webp" alt=""></a></li>
+                        </ul>
+                        <ul class="lf_box_ad_2big">
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad_big (1).webp" alt=""></a></li>
+                            <li><a href="javascript:;"><img src="./images/lf_box_ad_big (2).webp" alt=""></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- 左边详细菜单 -->
+                <ul class="inner_main_lf_list">
+
+                    <li>
+                        <a href="javascript:;">家用电器</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">手机</a>
+                        <span>/</span>
+                        <a href="javascript:;">运营商</a>
+                        <span>/</span>
+                        <a href="javascript:;">数码</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">电脑</a>
+                        <span>/</span>
+                        <a href="javascript:;">办公</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">家居</a>
+                        <span>/</span>
+                        <a href="javascript:;">家具</a>
+                        <span>/</span>
+                        <a href="javascript:;">家装</a>
+                        <span>/</span>
+                        <a href="javascript:;">厨具</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">男装</a>
+                        <span>/</span>
+                        <a href="javascript:;">女装</a>
+                        <span>/</span>
+                        <a href="javascript:;">童装</a>
+                        <span>/</span>
+                        <a href="javascript:;">内衣</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">美妆</a>
+                        <span>/</span>
+                        <a href="javascript:;">个护清洁</a>
+                        <span>/</span>
+                        <a href="javascript:;">宠物</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">女鞋</a>
+                        <span>/</span>
+                        <a href="javascript:;">箱包</a>
+                        <span>/</span>
+                        <a href="javascript:;">钟表</a>
+                        <span>/</span>
+                        <a href="javascript:;">珠宝</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">男鞋</a>
+                        <span>/</span>
+                        <a href="javascript:;">运动</a>
+                        <span>/</span>
+                        <a href="javascript:;">户外</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">房产</a>
+                        <span>/</span>
+                        <a href="javascript:;">汽车</a>
+                        <span>/</span>
+                        <a href="javascript:;">汽车用品</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">母婴</a>
+                        <span>/</span>
+                        <a href="javascript:;">玩具乐器</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">食品</a>
+                        <span>/</span>
+                        <a href="javascript:;">酒类</a>
+                        <span>/</span>
+                        <a href="javascript:;">生鲜</a>
+                        <span>/</span>
+                        <a href="javascript:;">特产</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">艺术</a>
+                        <span>/</span>
+                        <a href="javascript:;">礼品鲜花</a>
+                        <span>/</span>
+                        <a href="javascript:;">农资绿植</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">医药保健</a>
+                        <span>/</span>
+                        <a href="javascript:;">计生情趣</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">图书</a>
+                        <span>/</span>
+                        <a href="javascript:;">文娱</a>
+                        <span>/</span>
+                        <a href="javascript:;">电子书</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">机票</a>
+                        <span>/</span>
+                        <a href="javascript:;">酒店</a>
+                        <span>/</span>
+                        <a href="javascript:;">旅游</a>
+                        <span>/</span>
+                        <a href="javascript:;">生活</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">理财</a>
+                        <span>/</span>
+                        <a href="javascript:;">众筹</a>
+                        <span>/</span>
+                        <a href="javascript:;">白条</a>
+                        <span>/</span>
+                        <a href="javascript:;">保险</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">安装</a>
+                        <span>/</span>
+                        <a href="javascript:;">维修</a>
+                        <span>/</span>
+                        <a href="javascript:;">清洗</a>
+                        <span>/</span>
+                        <a href="javascript:;">二手</a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">工业品</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- 中间轮播 -->
+            <div class="inner_main_mid">
+                <!-- 小箭头 -->
+                <div class="arrow">
+                    <a class="arrow_fl" href="javascript:;">
+                        <span class="iconfont">&#xe6e1;</span>
+                    </a>
+                    <a class="arrow_fr" href="javascript:;">
+                        <span class="iconfont">&#xe6e0;</span>
+                    </a>
+                </div>
+                <!-- 小圆点 -->
+                <ol class="clearfix">
+                    <li class="lb_yd_active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ol>
+                <!-- 轮播图片 -->
+                <ul>
+                    <li class="lb_mid_active">
+                        <a href="javascript:;"><img src="./images/lpt (1).jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/lpt (2).jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/lpt (3).jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/lpt (4).jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/lpt (5).jpg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/lpt (6).jpg" alt=""></a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- 中间靠右小轮播 -->
+            <div class="inner_main_mid2">
+                <!-- 图片区域 -->
+                <div class="inner_main_mid2_lb">
+                    <ul class="mid2_lb mid2_lb1">
+                        <li><a href="javascript:;"><img src="./images/xlb (1).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (2).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (3).webp" alt=""></a></li>
+                    </ul>
+                    <ul class="mid2_lb mid2_lb2">
+                        <li><a href="javascript:;"><img src="./images/xlb (4).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (5).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (6).webp" alt=""></a></li>
+                    </ul>
+                    <ul class="mid2_lb mid2_lb3">
+                        <li><a href="javascript:;"><img src="./images/xlb (7).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (8).webp" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="./images/xlb (9).webp" alt=""></a></li>
+                    </ul>
+
+
+                </div>
+                <!-- 小箭头 -->
+                <div class="mid2_arrow">
+                    <a class="mid2_arrow_fl" href="javascript:;">
+                        <span class="iconfont">&#xe6e1;</span>
+                    </a>
+                    <a class="mid2_arrow_fr" href="javascript:;">
+                        <span class="iconfont">&#xe6e0;</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- 右边nav -->
+            <div class="inner_main_ri">
+
+                <!-- user -->
+                <div class="inner_ri_user">
+                    <ul>
+                        <li class="inner_ri_user_img">
+                            <a href="javascript:;"><img src="./images/logetouxiang.png" alt=""></a>
+                        </li>
+                        <li class="inner_ri_user_p">
+                            <a href="javascript:;">Hi~欢迎逛京东！</a>
+
+                        </li>
+
+                        <li class="inner_ri_user_login">
+                            <a href="javascript:;">登录</a>
+                            <span class="iconfont">&#xe63a;</span>
+                            <a href="javascript:;">注册</a>
+                        </li>
+
+                    </ul>
+                    <div class="inner_ri_user_plus">
+                        <a class="ri_user_plus1" href="javascript:;">新人福利</a>
+                        <a class="ri_user_plus2" href="javascript:;">Plus会员</a>
+                    </div>
+                </div>
+
+                <!-- news -->
+                <span class="linear"></span>
+                <div class="inner_ri_news">
+                    <div class="ri_news_biaoti clearfix">
+                        <h5>
+                            京东快报
+                        </h5>
+                        <a href="javascript:;">
+                            更多<i class="iconfont">&#xe6e0;</i>
+                        </a>
+
+
+                    </div>
+                    <ul>
+                        <li>
+                            <span>HOT</span>
+                            <a href="javascript:;">HOT没买华为P30的恭喜！8G+128G版突发福利！</a>
+                        </li>
+                        <li>
+                            <span>热荐</span>
+                            <a href="javascript:;">推荐小米电动车上市，续航120公里，重点是厚道。</a>
+                        </li>
+                        <li>
+                            <span>热议</span>
+                            <a href="javascript:;">热议新iPhone定价彻底确定！XR2比上代还便宜！</a>
+                        </li>
+                        <li>
+                            <span>热门</span>
+                            <a href="javascript:;">H热门小米MIX4再次确认!</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <span class="linear"></span>
+
+                <!-- fuwu -->
+                <div class="inner_ri_fuwu">
+                    <div class="inner_ri_fuwu_tab clearfix">
+                        <ul>
+                            <li class="tab_active">
+                                <a href="javascript:;">游戏</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">机票</a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:;">酒店</a>
+                            </li>
+
+                            <!-- <span class="tab_underline"></span> -->
+                        </ul>
+
+                    </div>
+
+                    <div class="inner_ri_fuwu_menu">
+                        <div class="ri_fuwu_menu_qqmenu">
+                            <ul class="ri_fuwu_menu_qq">
+
+                                <li>
+                                    QQ<input class='ares0' type="text" name="" id="" placeholder="Q币"><br />
+
+                                </li>
+                                <li>
+                                    面值<input class='ares' type="text" name="" id="collage" list="cList"
+                                        placeholder="请选择">
+                                    <datalist id="cList">
+                                        <option value="15元"></option>
+                                        <option value="25元"></option>
+                                        <option value="35元"></option>
+                                        <option value="45元"></option>
+                                        <option value="55元"></option>
+                                        <option value="65元"></option>
+                                        <option value="75元"></option>
+                                    </datalist>
+                                </li>
+                                <li>
+                                    ￥:1.00
+
+                                </li>
+                                <li>
+
+                                    <input type="radio" name="" id="">直充
+                                </li>
+                                <li class="ri_fuwu_menu_qqmenu_last">
+                                    <a href="javascript:;">快速充值</a>
+
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div class="ri_fuwu_menu_jipiao">
+                            <ul>
+                                <li>国内机票</li>
+                                <li>
+                                    <input type="radio" name="function" id="">单程&nbsp;
+                                    <input type="radio" name="function" id="">往返
+                                </li>
+                                <li>
+                                    出发 <input type="text" name="" id="">
+
+                                </li>
+                                <li>
+                                    到达 <input type="text" name="" id="">
+                                </li>
+                                <li>
+                                    日期 <input type="text" name="" id="">
+                                </li>
+                                <li class="ri_fuwu_menu_jipiao_last">
+                                    <a href="javascript:;">机票查询</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ri_fuwu_menu_hotel">
+                            <ul>
+                                <li>国内酒店</li>
+                                <li>
+                                    <input type="radio" name="function" id="">男&nbsp;
+                                    <input type="radio" name="function" id="">女
+                                </li>
+                                <li>
+                                    入住&nbsp;&nbsp; <input type="text" name="" id="">
+
+                                </li>
+                                <li>
+                                    离店&nbsp;&nbsp; <input type="text" name="" id="">
+                                </li>
+                                <li>
+                                    目的地 <input type="text" name="" id="">
+                                </li>
+                                <li class="ri_fuwu_menu_hotel_last">
+                                    <a href="javascript:;">酒店查询</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div><!-- 主页版心end  w-->
+
+
+        <!-- 这里是广告位置 -->
+        <div class="ad">
+            <a href=""></a>
+        </div>
+
+
+    </div> <!-- 主页通栏标签end  -->
+
+    <!-- 发现好货 -->
+    <div class="jd_findgood">
+        <a name='find' id='#find' href="javascript:;"></a>
+        <!-- 版心位置 -->
+        <div class="w jd_findgood_inner">
+            <a class="findGood_a" href="javascirpt:;">
+                <img src="./images/find_fl2.png" alt="">
+                <p>探索新生活
+                    <span class="iconfont">&#xe626;</span></p>
+            </a>
+
+            <div class="findGood_inner_lb">
+                <ul class="findGood_inner_lbmove clearfix">
+                    <li>
+                        <p> description</p>
+                        <a href="javascript:;"><img src="./images/find (1).webp" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/find (2).webp" alt=""></a>
+                        <p> description</p>
+                    </li>
+                    <li>
+                        <p> description</p>
+                        <a href="javascript:;"><img src="./images/find (3).webp" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/find (4).webp" alt=""></a>
+                        <p> description</p>
+                    </li>
+                    <li>
+                        <p> description</p>
+                        <a href="javascript:;"><img src="./images/find (5).webp" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/find (6).webp" alt=""></a>
+                        <p> description</p>
+                    </li>
+                    <li>
+                        <p> description</p>
+                        <a href="javascript:;"><img src="./images/find (7).webp" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="./images/find (8).webp" alt=""></a>
+                        <p> description</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 特色推荐优选 -->
+    <div class="jd_best">
+        <div class="w jd_best_inner">
+
+            <!-- 领劵中心 -->
+            <div class="jd_best_box best_magin10 jd_best_lqzx">
+
+                <div class="best_box">
+                    <a href="javascript:;">领券中心</a>
+                    <span class="iconfont">&#xe626;</span>
+                </div>
+
+                <div class="jd_best_lqzx_bottom clearfix">
+
+                    <div class="lqzx_itme clearfix">
+
+                        <div class="lqzx_img">
+                            <a href=""><img src="./images/ljzx_xt.jpg" alt=""></a>
+                        </div>
+
+                        <div class="lqzx_text">
+                            <i>￥</i>
+                            <span>150</span>
+                            <p>满999可用</p>
+                            <p>仅可购买自营冰箱,洗衣机部分商品</p>
+                        </div>
+                        <div class="lqzx_ri">
+                            <a href="javascript:;">更多好券</a>
+                        </div>
+                    </div>
+
+                    <div class="lqzx_itme clearfix">
+
+                        <div class="lqzx_img">
+                            <a href=""><img src="./images/ljzx_xt2.jpg" alt=""></a>
+                        </div>
+
+                        <div class="lqzx_text">
+                            <i>￥</i>
+                            <span>550</span>
+                            <p>满999可用</p>
+                            <p>仅可购买自营冰箱,洗衣机部分商品</p>
+                        </div>
+                        <div class="lqzx_ri">
+                            <a href="javascript:;">更多好券</a>
+                        </div>
+                    </div>
+
+                    <div class="lqzx_itme clearfix">
+
+                        <div class="lqzx_img">
+                            <a href=""><img src="./images/ljzx_xt3.jpg" alt=""></a>
+                        </div>
+
+                        <div class="lqzx_text">
+                            <i>￥</i>
+                            <span>50</span>
+                            <p>满999可用</p>
+                            <p>仅可购买自营冰箱,洗衣机部分商品</p>
+                        </div>
+                        <div class="lqzx_ri">
+                            <a href="javascript:;">更多好券</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 逛好店 -->
+            <div class="jd_best_box best_magin10 jd_best_ghd">
+                <div class="best_box">
+                    <a href="javascript:;">逛好店</a>
+                    <span class="iconfont">&#xe626;</span>
+                </div>
+                <div class="jd_best_ghd_bottom">
+                    <div class="jd_best_ghd_bottom_t">
+                        <a class="jd_best_ghd_bottom_t1" href="javascript:;">
+                            <p>金龙鱼京东旗舰店</p>
+                            <span>自营</span>
+                            <i>吃货最爱</i>
+                            <em>200.6万关注</em>
+                        </a>
+                        <a class="jd_best_ghd_bottom_t2" href="javascript:;">
+                            <img src="./images/ghd_xt.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="jd_best_ghd_bottom_t">
+                        <a class="jd_best_ghd_bottom_t1" href="javascript:;">
+                            <p>进口奶粉京东旗舰店</p>
+                            <span>自营</span>
+                            <i>吃货最爱</i>
+                            <em>4500.6万关注</em>
+                        </a>
+                        <a class="jd_best_ghd_bottom_t2" href="javascript:;">
+                            <img src="./images/ghd_xt2.jpg" alt="">
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 发现 -->
+            <div class="jd_best_box best_magin10 jd_best_fx">
+                <div class="best_box">
+                    <a href="javascript:;">发现</a>
+                    <span class="iconfont">&#xe626;</span>
+                </div>
+                <div class="jd_best_fx_lb">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="jd_best_fx_lb_con">
+
+                                    <a href=""><img src="./images/weiper1.jpg" alt=""></a>
+
+                                    <p>荣耀真无线耳机，耳朵佩戴舒适 </p>
+                                    <p>严选汇</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="jd_best_fx_lb_con">
+
+                                    <a href=""><img src="./images/weiper2.jpg" alt=""></a>
+
+                                    <p>苹果今年新款iPhone发售日期曝光，升级幅度不大</p>
+                                    <p>天极数码</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="jd_best_fx_lb_con">
+
+                                    <a href=""><img src="./images/weiper3.jpg" alt=""></a>
+
+                                    <p>智能变频空调 </p>
+                                    <p>爱果科技</p>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+                        <div class="swiper-button-prev">
+                        </div>
+                        <!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+                        <div class="swiper-button-next"></div>
+                        <!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
+                    </div>
+                    <script>
+                        var mySwiper = new Swiper('.swiper-container', {
+                            autoplay: true, //可选选项，自动滑动
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                            pagination: {
+                                el: '.swiper-pagination',
+                            },
+
+                        })
+                    </script>
+
+                </div>
+            </div>
+
+            <!-- 新品首发 -->
+            <div class="jd_best_box jd_best_xpsf">
+                <div class="best_box">
+                    <a href="javascript:;">新品首发</a>
+                    <span class="iconfont">&#xe626;</span>
+                </div>
+
+                <div class="jd_best_ghd_bottom">
+                    <div class="jd_best_ghd_bottom_t">
+                        <a class="jd_best_ghd_bottom_t1" href="javascript:;">
+                            <p>nike京东旗舰店</p>
+                            <span>自营</span>
+                            <i>行走必备</i>
+                            <em>30.6万关注</em>
+                        </a>
+                        <a class="jd_best_ghd_bottom_t2" href="javascript:;">
+                            <img src="./images/ghd_xt3 (2).jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="jd_best_ghd_bottom_t">
+                        <a class="jd_best_ghd_bottom_t1" href="javascript:;">
+                            <p>三星京东旗舰店</p>
+                            <span>自营</span>
+                            <i>影迷最爱</i>
+                            <em>1400.6万关注</em>
+                        </a>
+                        <a class="jd_best_ghd_bottom_t2" href="javascript:;">
+                            <img src="./images/ghd_xt3 (1).jpg" alt="">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 为你推荐 -->
+    <div class="jd_foryou">
+        <a name='fy' id='#fy' href="javascript:;"></a>
+        <div class="jd_foryou_inner w">
+
+            <!-- 为你推荐标题 -->
+            <div class="jd_foryou_title">
+
+                <h3>
+                    <span></span>
+                    为你推荐
+                    <i></i>
+                </h3>
+
+            </div>
+
+            <!-- 为你推荐类目 -->
+            <div class="jd_foryou_class">
+                <ul class="clearfix">
+                    <li>
+                        <p class="jd_foryou_class_red">
+                            精选
+                        </p>
+                        <a class="jd_foryou_class_red_a">
+                            猜你喜欢
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <p>
+                            智能先锋
+                        </p>
+                        <a>
+                            3C家电
+                        </a>
+                        <span class="yline"></span>
+                    </li>
+
+                    <li>
+                        <p>
+                            居家优品
+                        </p>
+                        <a>
+                            居家日用
+                        </a>
+                        <span class="yline"></span>
+                    </li>
+
+                    <li>
+                        <p>
+                            生活百货
+                        </p>
+                        <a>
+                            百货生鲜
+                        </a>
+                        <span class="yline"></span>
+                    </li>
+
+                    <li>
+
+                        <p>
+                            时尚达人
+                        </p>
+                        <a>
+                            美妆穿搭
+                        </a>
+                        <span class="yline"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 懒加载方框类容 -->
+            <div class="jd_foryou_item">
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (1).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (2).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (3).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (4).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (5).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (6).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (7).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (8).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (9).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (10).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (11).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (12).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (13).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (14).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (15).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (16).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (17).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (18).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (19).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (20).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (21).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (22).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (23).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (24).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (25).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (26).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (27).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (28).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (29).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <div class="jd_foryou_item_img"><img src="./images/mylouding.gif"
+                                    _src="./images/ljz (30).jpg" alt=""></div>
+                            <div class="jd_foryou_item_text">
+                                商品内容描述
+                                Product content description
+                            </div>
+                            <div class="jd_foryou_item_rmb">
+                                <span>￥</span>
+                                <i>1499</i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 底部描述footer -->
+    <div class="footer">
+        <!-- 多快好省模块 -->
+        <div class="footer_servers">
+            <div class="footer_servers_inner w">
+                <ul class="clearfix">
+                    <!-- 多 -->
+                    <li>
+                        <div class="footer_servers_inner_content">
+                            <h5 class="duo">多</h5>
+                            <p>
+                                品类齐全，轻松购物
+                            </p>
+                        </div>
+                    </li>
+                    <!--快 -->
+                    <li>
+                        <div class="footer_servers_inner_content">
+                            <h5 class="kuai">快</h5>
+                            <p>
+                                多仓直发，极速配送
+                            </p>
+                        </div>
+                    </li>
+                    <!--好-->
+                    <li>
+                        <div class="footer_servers_inner_content">
+                            <h5 class="hao">好</h5>
+                            <p>
+                                正品行货，精致服务
+                            </p>
+                        </div>
+                    </li>
+                    <!--省 -->
+                    <li>
+                        <div class="footer_servers_inner_content">
+                            <h5 class="sheng">省</h5>
+                            <p>
+                                天天低价，畅选无忧
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 底部帮助服务模块hlpe -->
+        <div class="w clearfix help">
+            <dl>
+                <dt>购物指南</dt>
+                <dd><a href="javascript:;">购物流程</a></dd>
+                <dd><a href="javascript:;">会员介绍</a></dd>
+                <dd><a href="javascript:;">生活旅行</a></dd>
+                <dd><a href="javascript:;">常见问题</a></dd>
+                <dd><a href="javascript:;">大家电</a></dd>
+                <dd><a href="javascript:;">联系客服</a></dd>
+            </dl>
+
+            <dl>
+                <dt>配送方式</dt>
+                <dd><a href="javascript:;">上门自提</a></dd>
+                <dd><a href="javascript:;">211限时达</a></dd>
+                <dd><a href="javascript:;">配送服务查询</a></dd>
+                <dd><a href="javascript:;">配送费收取标准</a></dd>
+                <dd><a href="javascript:;">海外配送</a></dd>
+            </dl>
+
+
+
+            <dl>
+                <dt>支付方式</dt>
+                <dd><a href="javascript:;">货到付款</a></dd>
+                <dd><a href="javascript:;">在线支付</a></dd>
+                <dd><a href="javascript:;">分期付款</a></dd>
+                <dd><a href="javascript:;">邮局汇款</a></dd>
+                <dd><a href="javascript:;">公司转账</a></dd>
+            </dl>
+
+            <dl>
+                <dt>售后服务</dt>
+
+                <dd><a href="javascript:;">售后政策</a></dd>
+                <dd><a href="javascript:;">价格保护</a></dd>
+                <dd><a href="javascript:;">退款说明</a></dd>
+                <dd><a href="javascript:;">返修/退换货</a></dd>
+                <dd><a href="javascript:;">取消订单</a></dd>
+            </dl>
+
+
+            <dl>
+                <dt>特色服务</dt>
+                <dd><a href="javascript:;">夺宝岛</a></dd>
+                <dd><a href="javascript:;">DIY装机</a></dd>
+                <dd><a href="javascript:;">延保服务</a></dd>
+                <dd><a href="javascript:;">京东E卡</a></dd>
+                <dd><a href="javascript:;">京东通信</a></dd>
+                <dd><a href="javascript:;">京鱼座智能</a></dd>
+            </dl>
+
+
+            <dl class="help_last_dl">
+                <dt>京东自营覆盖区县</dt>
+
+                <dd><a href="javascript:;">京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</a>
+                </dd>
+                <dd class="help_last_dd">
+                    <a href="javascript:;">
+                        查看详情 <span class="iconfont">&#xe6e0;</span>
+                    </a>
+                </dd>
+
+            </dl>
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- 版权模块 -->
+        <div class="w copyright">
+            <!-- 友情链接 -->
+            <div class="friendLinks">
+                <a href="javascript">关于我们</a>
+                <span>|</span>
+                <a href="javascript">联系我们</a>
+                <span>|</span>
+                <a href="javascript">联系客服</a>
+                <span>|</span>
+                <a href="javascript">合作招商</a>
+                <span>|</span>
+                <a href="javascript">商家帮助</a>
+                <span>|</span>
+                <a href="javascript">营销中心</a>
+                <span>|</span>
+                <a href="javascript">手机京东</a>
+                <span>|</span>
+                <a href="javascript">友情链接</a>
+                <span>|</span>
+                <a href="javascript">销售联盟</a>
+                <span>|</span>
+                <a href="javascript">京东社区</a>
+                <span>|</span>
+                <a href="javascript">风险监测</a>
+                <span>|</span>
+                <a href="javascript">隐私政策</a>
+                <span>|</span>
+                <a href="javascript">京东公益</a>
+                <span>|</span>
+                <a href="javascript">English Site</a>
+                <span>|</span>
+                <a href="javascript">Media & IR</a>
+
+            </div>
+            <!-- 备案模块 -->
+            <div class="copyright_info">
+                <p>
+                    <a href="javascript:;">京公网安备 11000002000088号</a>
+                    <i>|</i>
+                    <span>京ICP证070359号</span>
+                    <i>|</i>
+                    <a href="javascript:;">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+                    <i>|</i>
+                    <span>新出发京零&nbsp字第大120007号</span>
+                </p>
+
+                <p>
+                    <span>互联网出版许可证编号新出网证(京)字150号</span>
+                    <i>|</i>
+                    <a href="javascript:;">出版物经营许可证</a>
+                    <i>|</i>
+                    <a href="javascript:;">网络文化经营许可证京网文[2014]2148-348号</a>
+                    <i>|</i>
+                    <span>违法和不良信息举报电话：4006561155</span>
+                </p>
+
+                <p>
+                    <span>Copyright © 2004 - 2019 京东JD.com 版权所有</span>
+                    <i>|</i>
+                    <span>消费者维权热线：4006067733</span>
+                    <a href="javascript:;">经营证照</a>
+                    <i>|</i>
+                    <span>(京)网械平台备字(2018)第00003号</span>
+                    <i>|</i>
+                    <a href="javascript:;">营业执照</a>
+                </p>
+
+                <p>
+                    <em class="copy_info_a"></em>
+                    <a href="javascript:;">Global Site</a>
+                    <i>|</i>
+                    <em class="copy_info_b"></em>
+                    <a href="javascript:;">Сайт России</a>
+                    <i>|</i>
+                    <em class="copy_info_c"></em>
+                    <a href="javascript:;">Situs Indonesia</a>
+                    <i>|</i>
+                    <em class="copy_info_d"></em>
+                    <a href="javascript:;">Sitio de España</a>
+                    <i>|</i>
+                    <em class="copy_info_e"></em>
+                    <a href="javascript:;">เว็บไซต์ประเทศไทย</a>
+                </p>
+
+                <p>
+                    <span>京东旗下网站：</span>
+                    <a href="javascript:;">京东钱包</a>
+                    <i>|</i>
+                    <a href="javascript:;">京东云</a>
+                </p>
+            </div>
+            <!--底部备案举报  -->
+            <div class="copyright_records">
+                <p>
+                    <a class="copyright_records_1" href="javascipt:;"></a>
+                    <a class="copyright_records_2" href="javascipt:;"></a>
+                    <a class="copyright_records_3" href="javascipt:;"></a>
+                    <a class="copyright_records_4" href="javascipt:;"></a>
+                    <a class="copyright_records_5" href="javascipt:;"></a>
+
+                </p>
+            </div>
+        </div>
+
+
+    </div><!-- 底部描述 end -->
+
+    <!-- 滑动返回顶部 -->
+    <div class="jd_returnTop">
+        <div class="jd_returnTop_yx">
+            <a href="#find">发现好货</a>
+        </div>
+        <span></span>
+        <div class="jd_returnTop_fy">
+            <a href="#fy">为你推荐</a>
+        </div>
+        <span></span>
+        <div class="jd_returnTop_kf">
+
+            <a href="javascrot:;">
+                <i class="iconfont">&#xe60b;</i>
+                客服</a>
+        </div>
+        <span></span>
+        <div class="jd_returnTop_fh">
+
+            <a href="javascrot:;">
+                <i class="iconfont">&#xeafe;</i>
+                反馈</a>
+        </div>
+        <span></span>
+        <div class="jd_returnTop_top">
+
+            <a href="javascrot:;">
+                <i class="iconfont">&#xe619;</i>
+                顶部</a>
+        </div>
+    </div>
+
 </body>
+
 
 </html>
