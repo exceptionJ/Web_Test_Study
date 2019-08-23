@@ -13,7 +13,7 @@
 
 // var_dump($_POST);
 function isTrue()
-{
+F{
     //判断输入是否合法,合法就存入txt文档,否则返回,注册时失败,请检查
     if (empty($_POST['username'])) {
         $GLOBALS['message'] = '请输入用户名';
@@ -44,7 +44,7 @@ function isTrue()
 
     $GLOBALS['message'] = '注册成功';
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {F
     isTrue();
 }
 
@@ -59,25 +59,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>表单提交</title>
         <style>
-            table {
+        table {
 
-                text-align: left;
-                padding: 15px;
-                width: 100%;
+            text-align: left;
+            padding: 15px;
+            width: 100%;
 
-            }
+        }
 
-            input {
-                padding: 5px;
-                margin: 10px 0;
+        input {
+            padding: 5px;
+            margin: 10px 0;
 
-            }
+        }
 
 
-            .my_form {
-                width: 400px;
-                margin: auto;
-            }
+        .my_form {
+            width: 400px;
+            margin: auto;
+        }
         </style>
     </head>
 
@@ -138,6 +138,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            <input type="file" name="" id="">
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="2">
                             <a href="">注册即代表同意服务条款</a>
                         </td>
@@ -147,8 +152,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <td colspan="2">
                             <input type="submit" value="确认注册">
                         </td>
-
-
                     </tr>
                 </table>
         </div>
