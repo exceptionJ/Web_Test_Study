@@ -1,0 +1,38 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-27 17:25:55
+ * @LastEditTime: 2019-08-29 16:30:51
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ready-state</title>
+</head>
+<body>
+    <button>ajax请求</button>
+
+
+    <script>
+        
+        //初始化ajax对象
+        var xhr =new XMLHttpRequest();
+        //打开通道;
+        xhr.open('get','echo.php');
+
+        // xhr.setRequestHeader()
+        //发动请求;
+        xhr.send();
+        //如果radystate=4,就可以接受请求
+        xhr.addEventListener('readystatechange',function () { 
+           var time=this.response;
+            
+         });
+
+    </script>
+</body>
+</html>

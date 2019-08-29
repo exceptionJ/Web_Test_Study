@@ -13,7 +13,7 @@
 
 // var_dump($_POST);
 function isTrue()
-F{
+{
     //判断输入是否合法,合法就存入txt文档,否则返回,注册时失败,请检查
     if (empty($_POST['username'])) {
         $GLOBALS['message'] = '请输入用户名';
