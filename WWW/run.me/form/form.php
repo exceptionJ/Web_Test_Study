@@ -44,7 +44,7 @@ function isTrue()
 
     $GLOBALS['message'] = '注册成功';
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {F
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     isTrue();
 }
 
