@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-30 17:21:29
- * @LastEditTime: 2019-08-30 21:20:43
+ * @LastEditTime: 2019-09-02 15:39:29
  * @LastEditors: Please set LastEditors
  */
 $.ajax({
@@ -46,18 +46,18 @@ $.ajax({
     }
 })
 
-实际开发中用的最多的就是这种模式
-// $.get('json.php', { id: 1 }, function (res) {
-//   console.log(res)
-// })
+// 实际开发中用的最多的就是这种模式
+$.get('json.php', { id: 1 }, function (res) {
+  console.log(res)
+})
 
-// $.post('json.php', { id: 1 }, function (res) {
-//   console.log(res)
-// })
+$.post('json.php', { id: 1 }, function (res) {
+  console.log(res)
+})
 
-// $.getJSON('json.php', { id: 1 }, function (res) {
-//   console.log(res)
-// })
+$.getJSON('json.php', { id: 1 }, function (res) {
+  console.log(res)
+})
 
 
 // 明确请求的方式 根据方式选择快捷方法

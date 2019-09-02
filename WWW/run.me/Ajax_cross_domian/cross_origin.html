@@ -1,0 +1,56 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-09-02 15:40:27
+ * @LastEditTime: 2019-09-02 17:45:29
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSONP 客户端</title>
+</head>
+<body>
+  <script>
+        //jsonp 封装
+      //只适用get请求的跨域;
+
+    function jsonp (url, params, callback) {
+      var funcName = 'jsonp_' + Date.now() + Math.random().toString().substr(2, 6)
+
+      if (typeof params === 'object') {
+        var tempArr = []
+        for (var key in params) {
+          var value = params[key]
+          tempArr.push(key + '=' + value)
+        }
+        params = tempArr.join('&')
+      }
+
+      var script = document.createElement('script')
+      script.src = url + '?' + params + '&callback=' + funcName
+      document.body.appendChild(script)
+
+      window[funcName] = function (data) {
+        callback(data)
+
+        delete window[funcName]
+        document.body.removeChild(script)
+      }
+    }
+
+//jsonp调用
+    jsonp('http://run.co/server.php', { id: 123 }, function (res) {
+     
+      console.log(res);
+      
+
+    })
+
+    jsonp('http://run.co/server.php', { id: 123 }, function (res) {
+      console.log(res)
+    })
+  </script>
+</body>
+</html>
